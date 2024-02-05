@@ -1,0 +1,28 @@
+# Virtual Environment
+venv/
+
+# Compiled Python files
+__pycache__/
+
+# .pyc files
+*.pyc
+
+# .pyo files
+*.pyo
+
+# IDE specific directories
+.idea/
+.vscode/
+
+# Environment variable file
+.env
+
+# Compiled files
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# Ignore local development settings
+.env.local

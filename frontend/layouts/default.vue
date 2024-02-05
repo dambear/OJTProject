@@ -16,7 +16,7 @@
         </aside>
 
         <!-- Output page content -->
-        <div class="flex-1 bg-white container w-5/6 h-screen mt-4 mx-auto p-4 border-gray-200 border-[.5px] rounded-3xl">
+        <div class="flex-1 bg-white container w-5/6 h-screen mt-4 mx-auto p-4 border-gray-200 border-[2px] rounded-3xl">
             <slot />
         </div>
     </div>
