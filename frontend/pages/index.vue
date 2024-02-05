@@ -1,8 +1,6 @@
 <template>
     <div>
 
-
-
         <h2>Home</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, in doloribus? Sint tempora repellendus accusamus
             nemo. Nesciunt, quo incidunt aliquid deserunt esse dolorum omnis rem voluptatibus quae! Perferendis, minima
