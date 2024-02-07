@@ -7,4 +7,4 @@ def base(request):
 
 
 def ojt(request):
-    return render(request, "")
+    return render(request, 'ojt-trainees.html')
