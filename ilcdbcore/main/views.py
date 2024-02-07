@@ -7,4 +7,4 @@ def base(request):
 
 
 def ojt(request):
-    return render(request, 'ojt-trainees.html')
+    return render(request, 'epmd-page/ojttrainees.html')
