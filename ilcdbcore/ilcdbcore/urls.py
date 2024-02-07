@@ -17,6 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+
+from main.views import base, ojt
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', base, name='base'),      # URL for the home view
+    path('ojt/', ojt, name='ojt'),      # URL for the home vie
+    
 ]
