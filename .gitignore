@@ -1,0 +1,23 @@
+# Virtual Environment
+venv/
+env/
+django-env/
+ilcdbcore-env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*$py.class
+
+# Caches
+*.sqlite3
+*.pyc
+
+# Distribution / packaging
+.Python
+env/
+bin/
+include/
+lib/
+lib64/
+share/
