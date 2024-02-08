@@ -15,14 +15,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-
-from main.views import base, ojt
+from main.views import dashboard, epmd_ojt
 
 urlpatterns = [
+    
+    # for auto reload
+    path("__reload__/", include("django_browser_reload.urls")),
+    
     path('admin/', admin.site.urls),
-    path('', base, name='base'),      # URL for the home view
-    path('ojt/', ojt, name='ojt'),      # URL for the home vie
+    
+    
+    path('', dashboard, name='dashboard'),      
+    
+    
+    # EMPD
+    path('epmd_ojt', epmd_ojt, name='epmd_ojt'),      
+    
+    
     
 ]
