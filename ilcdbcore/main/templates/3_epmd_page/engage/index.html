@@ -1,3 +1,70 @@
-{% include "base.html" %}
+{% extends "base.html" %}
 
-<div> Enggageeggeee </div>
+{% load static %}
+
+{%block maincss %}
+
+<!-- css -->
+<link rel="stylesheet" href="{% static '/css/epmd/_ojttrainees.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
+        <h1 class="text-3xl font-bold mb-4">ENGAGE TEMPLATE</h1>
+        <button class="bg-gray-700 text-white font-bold py-2 px-4 rounded hover:bg-gray-300 hover:text-white">
+          <a href="{% url 'add_data_engage_form' %}" style="text-decoration: none; color: inherit; display: inline-block; width: 100%; height: 100%;">Add Data</a>
+         </button>
+  
+              
+        <br></br>
+          <!-- Table -->
+          <table id="dataTable" class="table table-striped">
+              <thead>
+                  <tr>
+                   
+                      <th scope="col">Province</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Name of office</th>
+                      <th scope="col">Contact Number</th>
+                      <th scope="col">Action</th>
+                     
+                  </tr>
+              </thead>
+              <tbody>
+                {% for application in applications %}
+                    <tr>
+                      <td>
+                        <a href="{% url 'edit_data_engage' application.id %}">
+                            <button type="button" style="padding: 5px 13px; background-color: #4A5568; color: white; border: none; border-radius: 4px; cursor: pointer;" onmouseover="this.style.backgroundColor='#CBD5E0'; this.style.color='black'" onmouseout="this.style.backgroundColor='#4A5568'; this.style.color='white'">Edit</button>
+                        </a>
+                        <a href="{% url 'view_data_engage' application.id %}">
+                          <button type="button" style="padding: 5px 13px; background-color: #4A5568; color: white; border: none; border-radius: 4px; cursor: pointer;" onmouseover="this.style.backgroundColor='#CBD5E0'; this.style.color='black'" onmouseout="this.style.backgroundColor='#4A5568'; this.style.color='white'">View</button>
+                      </a>
+
+                      </td>
+                        <td>{{ application.id }}</td>
+                        <td>{{ application.province }}</td>
+                        <td>{{ application.category }}</td>
+                        <td>{{ application.nameofoffice }}</td>
+                        <td>{{ application.contactnumber }}</td>
+                       
+                    </tr>
+                {% endfor %}
+            </tbody>              
+          </table>
+      </main>
+
+  </div>
+
+{% block mainjs %}
+<script src="{% static "/js/epmd/epmd.js" %}"></script>
+{% endblock mainjs %}
+
+{% endblock content %}
+
