@@ -1,4 +1,4 @@
-{% include "base.html" %}
+{% extends "base.html" %}
 
 {% load static %}
 
@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="{% static '/css/epmd/_ojttrainees.css' %}">
 
 {% endblock %}
+
+
+{% block content %}
 
 <div class="container">
   <h2>Bootstrap Table Example</h2>
@@ -41,3 +44,7 @@
     </tbody>
   </table>
 </div>
+
+
+{% endblock content %}
+
