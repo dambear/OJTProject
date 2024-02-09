@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{%block maincss %}
+
+<!-- css -->
+<link rel="stylesheet" href="{% static '/css/epmd/_ojttrainees.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Main Content -->
+<main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
+    <H1>View DATA TEMPLATE</H1>
+
+    <form method="" action="{% url 'edit_data_ojt' application.id %}" class="max-w-md mx-auto">
+        {% csrf_token %}
+        <input type="hidden" name="application_id" value="{{ application.id }}">
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="ojt_duration">OJT Duration: {{ application.ojt_duration }}</label>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="province">Province: {{ application.province }}</label>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="school">School: {{ application.school }}</label>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="school_address">Address: {{ application.school_address }}</label>
+        </div>
+    </form>                
+</main>
+    
+{% block mainjs %}
+<script src="{% static "/js/epmd/epmd.js" %}"></script>
+{% endblock mainjs %}
+
+{% endblock content %}
+

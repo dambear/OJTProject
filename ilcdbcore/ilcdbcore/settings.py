@@ -79,16 +79,17 @@ WSGI_APPLICATION = "ilcdbcore.wsgi.application"
 
 # To use Neon with Django, you have to create a Project on Neon and specify the project connection settings in your settings.py in the same way as for standalone Postgres.
 
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "DICT",
-        "USER": "cyberhood01",
-        "PASSWORD": "wl2nkTIqXi4W",
-        "HOST": "ep-orange-cherry-a1ml85mu.ap-southeast-1.aws.neon.tech",
-        "PORT": "5432",
-        "OPTIONS": {"sslmode": "require"},
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'ilcdbcore',
+    'USER': 'postgres',
+    'PASSWORD': '12345',
+    'HOST': 'localhost',
+    'PORT': '5432',
+
+  }
 }
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
