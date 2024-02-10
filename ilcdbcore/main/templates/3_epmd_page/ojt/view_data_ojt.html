@@ -16,22 +16,82 @@
 <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
     <H1>View DATA TEMPLATE</H1>
 
-    <form method="" action="{% url 'edit_data_ojt' application.id %}" class="max-w-md mx-auto">
-        {% csrf_token %}
-        <input type="hidden" name="application_id" value="{{ application.id }}">
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="ojt_duration">OJT Duration: {{ application.ojt_duration }}</label>
-        </div>
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="province">Province: {{ application.province }}</label>
-        </div>
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="school">School: {{ application.school }}</label>
-        </div>
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="school_address">Address: {{ application.school_address }}</label>
-        </div>
-    </form>                
+    <form method="" action="{% url 'view_data_ojt' ojt.id %}" class="max-w-md mx-auto">
+        <label for="ojt_duration">OJT Duration:</label>
+        <span id="ojt_duration">{{ ojt.ojt_duration }}</span><br><br>
+    
+        <label for="province">Province:</label>
+        <span id="province">{{ ojt.province }}</span><br><br>
+    
+        <label for="school_name">School Name:</label>
+        <span id="school_name">{{ ojt.school_name }}</span><br><br>
+    
+        <label for="school_address">School Address:</label>
+        <span id="school_address">{{ ojt.school_address }}</span><br><br>
+    
+        <label for="contact_person">Contact Person:</label>
+        <span id="contact_person">{{ ojt.contact_person }}</span><br><br>
+    
+        <label for="contact_number">Contact Number:</label>
+        <span id="contact_number">{{ ojt.contact_number }}</span><br><br>
+    
+        <label for="student_name">Student Name:</label>
+        <span id="student_name">{{ ojt.student_name }}</span><br><br>
+    
+        <label for="sex">Sex:</label>
+        <span id="sex">{{ ojt.sex }}</span><br><br>
+    
+        <label for="start_date">Start Date:</label>
+        <span id="start_date">{{ ojt.start_date }}</span><br><br>
+    
+        <label for="end_date">End Date:</label>
+        <span id="end_date">{{ ojt.end_date }}</span><br><br>
+    
+        <label for="mode">Mode:</label>
+        <span id="mode">{{ ojt.mode }}</span><br><br>
+    
+        <label for="recommendation_letter">Recommendation Letter:</label>
+        <input type="checkbox" id="recommendation_letter" name="recommendation_letter" {% if ojt.recommendation_letter %}checked{% endif %} value="True" disabled><br><br>
+        
+        <label for="application_form">Application Form:</label>
+        <input type="checkbox" id="application_form" name="application_form" {% if ojt.application_form %}checked{% endif %} value="True" disabled><br><br>
+        
+        <label for="cv_resume">CV/Resume:</label>
+        <input type="checkbox" id="cv_resume" name="cv_resume" {% if ojt.cv_resume %}checked{% endif %} value="True" disabled><br><br>
+        
+        <label for="medical_certificate">Medical Certificate:</label>
+        <input type="checkbox" id="medical_certificate" name="medical_certificate" {% if ojt.medical_certificate %}checked{% endif %} value="True" disabled><br><br>
+        
+        <label for="workplan_form">Workplan Form:</label>
+        <input type="checkbox" id="workplan_form" name="workplan_form" {% if ojt.workplan_form %}checked{% endif %} value="True" disabled><br><br>
+        
+        <label for="interview_form">Interview Form:</label>
+        <input type="checkbox" id="interview_form" name="interview_form" {% if ojt.interview_form %}checked{% endif %} value="True" disabled><br><br>
+        
+        <label for="acceptance_letter">Acceptance Letter:</label>
+        <input type="checkbox" id="acceptance_letter" name="acceptance_letter" {% if ojt.acceptance_letter %}checked{% endif %} value="True" disabled><br><br>
+        
+        <label for="wfh_arrangement">WFH Arrangement:</label>
+        <input type="checkbox" id="wfh_arrangement" name="wfh_arrangement" {% if ojt.wfh_arrangement %}checked{% endif %} value="True" disabled><br><br>
+        
+        <label for="nda">NDA:</label>
+        <input type="checkbox" id="nda" name="nda" {% if ojt.nda %}checked{% endif %} value="True" disabled><br><br>
+        
+        <label for="work_assignment_form">Work Assignment Form:</label>
+        <input type="checkbox" id="work_assignment_form" name="work_assignment_form" {% if ojt.work_assignment_form %}checked{% endif %} value="True" disabled><br><br>
+        
+        <label for="war">WAR:</label>
+        <input type="checkbox" id="war" name="war" {% if ojt.war %}checked{% endif %} value="True" disabled><br><br>
+        
+        <label for="timesheet">Timesheet:</label>
+        <input type="checkbox" id="timesheet" name="timesheet" {% if ojt.timesheet %}checked{% endif %} value="True" disabled><br><br>
+        
+        <label for="coc">COC:</label>
+        <input type="checkbox" id="coc" name="coc" {% if ojt.coc %}checked{% endif %} value="True" disabled><br><br>
+    
+        <label for="remarks">Remarks:</label><br>
+        <span id="remarks">{{ ojt.remarks }}</span><br><br>
+    </form>
 </main>
     
 {% block mainjs %}

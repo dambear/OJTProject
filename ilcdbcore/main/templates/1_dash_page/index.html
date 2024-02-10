@@ -1,14 +1,59 @@
-{% extends "base.html" %} 
+{% extends "base.html" %} {% load static %} {%block maincss %}
 
-{% load static %}
+<link rel="stylesheet" href="{% static '/css/_table_design.css' %}" />
 
-{%block maincss %}
+{% endblock %} {%block content %}
 
+<div class="container">
+  <table>
+    <caption>
+      <div id="table_title">
+        <h2>Ojt Trainees</h2>
+      </div>
+    </caption>
+    <thead>
+      <tr>
 
-{% endblock %} 
+        <th scope="col">OJT ID</th>
+        <th scope="col">Province</th>
+        <th scope="col">Name of School</th>
+        <th scope="col">Name of Student</th>
+        <th scope="col">Number offfffff Hours</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Actions</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      {% for ojt in ojts %}
+      <tr>
+        <td>{{ application.id }}</td>
+        <td>{{ application.province }}</td>
+        <td>{{ application.school_name }}</td>
+        <td>{{ application.student_name }}</td>
+        <td>{{ application.id }}</td>
+        <td>{{ application.id }}</td>
+        <td>{{ application.id }}</td>
+        <td data-label="Actions">
+          <div class="action-buttons">
+            <a href="{% url 'view_data_ojt' ojt.id %}">
+              <button type="button" class="view-btn">View</button>
+            </a>
 
+            <a href="{% url 'update_data_ojt' ojt.id %}">
+              <button class="update-btn">Update</button>
+            </a>
 
-{% block content %}
-<h1>Your Content Goes Here</h1>
+            <a href="{% url 'delete_data_ojt' ojt.id %}">
+              <button class="delete-btn">Delete</button>
+            </a>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 
 {% endblock content %}

@@ -3,12 +3,16 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from main.models import InternshipApplication
+from django.apps import apps
 # Create your views here.
 
 
 # Create your views here.
 def dashboard(request):
     return render(request, "1_dash_page/index.html")
+
+
+
 
 
 # EPMD

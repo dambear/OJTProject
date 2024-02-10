@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{%block maincss %}
+
+<!-- css -->
+<link rel="stylesheet" href="{% static '/css/epmd/_ojttrainees.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Main Content -->
+ <!-- Main Content -->
+ <div class="flex-1 flex flex-col overflow-hidden">
+          
+    <main class="flex-5 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
+        <H1>EDIT DATA TEMPLATE</H1>
+            
+            <form method="post" action="{% url 'update_data_ojt' ojt.id %}" class="max-w-md mx-auto">
+                {% csrf_token %}
+                <input type="hidden" name="ojt_id" value="{{ ojt.id }}">
+
+                <label for="ojt_duration">OJT Duration:</label>
+                <input type="number" id="ojt_duration" name="ojt_duration" value="{{ojt.ojt_duration}}" required><br><br>
+                
+                <label for="province">Province:</label>
+                <input type="text" id="province" name="province" value="{{ojt.province}}" required><br><br>
+                
+                <label for="school_name">School Name:</label>
+                <input type="text" id="school_name" name="school_name" value="{{ojt.school_name}}" required><br><br>
+                
+                <label for="school_address">School Address:</label>
+                <input type="text" id="school_address" name="school_address" value="{{ojt.school_address}}" required><br><br>
+                
+                <label for="contact_person">Contact Person:</label>
+                <input type="text" id="contact_person" name="contact_person" value="{{ojt.contact_person}}" required><br><br>
+                
+                <label for="contact_number">Contact Number:</label>
+                <input type="text" id="contact_number" name="contact_number" value="{{ojt.contact_number}}" required><br><br>
+                
+                <label for="student_name">Student Name:</label>
+                <input type="text" id="student_name" name="student_name" value="{{ojt.student_name}}" required><br><br>
+                
+                <label for="sex">Sex:</label>
+                <input type="text" id="sex" name="sex" value="{{ojt.sex}}" required><br><br>
+                
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="start_date" name="start_date" value="{{ ojt.start_date|date:'Y-m-d' }}" required><br><br>
+                
+                <label for="end_date">End Date:</label>
+                <input type="date" id="end_date" name="end_date" value="{{ojt.end_date|date:'Y-m-d' }}" required><br><br>
+                
+                <label for="mode">Mode:</label>
+                <input type="text" id="mode" name="mode" value="{{ojt.mode}}" required><br><br>
+                
+                <label for="recommendation_letter">Recommendation Letter:</label>
+                <input type="checkbox" id="recommendation_letter" name="recommendation_letter"   {% if ojt.recommendation_letter %}checked{% endif %} value="True"><br><br>
+                
+                <label for="application_form">Application Form:</label>
+                <input type="checkbox" id="application_form" name="application_form"  {% if ojt.application_form %}checked{% endif %} value="True"><br><br>
+                
+                <label for="cv_resume">CV/Resume:</label>
+                <input type="checkbox" id="cv_resume" name="cv_resume"  {% if ojt.cv_resume %}checked{% endif %} value="True"><br><br>
+                
+                <label for="medical_certificate">Medical Certificate:</label>
+                <input type="checkbox" id="medical_certificate" name="medical_certificate"  {% if ojt.medical_certificate %}checked{% endif %} value="True"><br><br>
+                
+                <label for="workplan_form">Workplan Form:</label>
+                <input type="checkbox" id="workplan_form" name="workplan_form"  {% if ojt.workplan_form %}checked{% endif %} value="True"><br><br>
+                
+                <label for="interview_form">Interview Form:</label>
+                <input type="checkbox" id="interview_form" name="interview_form"  {% if ojt.interview_form %}checked{% endif %} value="True"><br><br>
+                
+                <label for="acceptance_letter">Acceptance Letter:</label>
+                <input type="checkbox" id="acceptance_letter" name="acceptance_letter"  {% if ojt.acceptance_letter %}checked{% endif %} value="True"><br><br>
+                
+                <label for="wfh_arrangement">WFH Arrangement:</label>
+                <input type="checkbox" id="wfh_arrangement" name="wfh_arrangement"   {% if ojt.wfh_arrangement %}checked{% endif %} value="True"><br><br>
+                
+                <label for="nda">NDA:</label>
+                <input type="checkbox" id="nda" name="nda"  {% if ojt.nda %}checked{% endif %} value="True"><br><br>
+                
+                <label for="work_assignment_form">Work Assignment Form:</label>
+                <input type="checkbox" id="work_assignment_form" name="work_assignment_form"  {% if ojt.work_assignment_form %}checked{% endif %} value="True"><br><br>
+                
+                <label for="war">WAR:</label>
+                <input type="checkbox" id="war" name="war"  {% if ojt.war %}checked{% endif %} value="True"><br><br>
+                
+                <label for="timesheet">Timesheet:</label>
+                <input type="checkbox" id="timesheet" name="timesheet"  {% if ojt.timesheet %}checked{% endif %} value="True"><br><br>
+                
+                <label for="coc">COC:</label>
+                <input type="checkbox" id="coc" name="coc"  {% if ojt.coc %}checked{% endif %} value="True"><br><br>
+                
+                <label for="remarks">Remarks:</label><br>
+                <textarea id="remarks" name="remarks" rows="4" cols="50" value="{{ojt.remarks}}" ></textarea><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        
+    </main>
+</div>
+    
+{% block mainjs %}
+<script src="{% static "/js/epmd/epmd.js" %}"></script>
+{% endblock mainjs %}
+
+{% endblock content %}
+

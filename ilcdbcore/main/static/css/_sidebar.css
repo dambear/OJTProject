@@ -14,7 +14,7 @@ body {
 .custom-main-content {
   flex-grow: 1; /* Make the main content fill all the remaining width */
   padding: 20px; /* Add padding to the main content */
-  background-color: #0e03a8; /* Add a background color or any styles you prefer */
+  background-color:  rgb(230, 230, 230);/* Add a background color or any styles you prefer */
 }
 
 .custom-container {
@@ -92,8 +92,8 @@ body {
 
 .custom-menu ul li a:hover,
 .custom-menu ul li.custom-active > a {
-  color: #000;
-  background-color: #e6e3e3;
+  color: #fff;
+  background-color: #2462AB;
 }
 
 .custom-menu ul li .custom-icon {
