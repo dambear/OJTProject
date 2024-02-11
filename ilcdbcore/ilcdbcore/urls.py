@@ -2,12 +2,12 @@
 from django.contrib import admin
 from django.urls import path, include
 
-#from main.views import dashboard, epmd_ojt,insert_data,add_data_ojt_form,edit_data_ojt,view_data_ojt
-from main.views import dashboard
+
+from main.views import dashboard_page, login_page
 from main.view_ojt_trainees import epmd_ojt, view_data_ojt, add_data_ojt, update_data_ojt, delete_data_ojt
-from main.views_engage import engage, insert_data_engage,add_data_engage_form,edit_data_engage,view_data_engage
 
 
+from django.contrib.auth import views as auth_views
 
 
 
@@ -20,7 +20,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     
-    path('', dashboard, name='dashboard'),      
+    
+    path('login', login_page, name='login_page'),
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    
+    # path('register', register_page, name='register_page'),          
+    
+    
+    path('', dashboard_page, name='dashboard_page'),      
     
     
     # # EMPD
@@ -37,11 +44,11 @@ urlpatterns = [
     path('epmd_ojt/delete_data_ojt/<int:ojt_id>/',delete_data_ojt, name='delete_data_ojt'),
     path('epmd_ojt/view_data_ojt/<int:ojt_id>/',view_data_ojt, name='view_data_ojt'),
     
-    # engage
-    path('engage', engage, name='engage'),
-    path('engage/insert_data_engage_form/', insert_data_engage, name='insert_data_engage'),
-    path('engage/add_data_engage_form/', add_data_engage_form, name='add_data_engage_form'),
-    path('engage/edit_data_engage/<int:application_id>/',edit_data_engage, name='edit_data_engage'),
-    path('engage/view_data_engage/<int:application_id>/',view_data_engage, name='view_data_engage'),
+    # # engage
+    # path('engage', engage, name='engage'),
+    # path('engage/insert_data_engage_form/', insert_data_engage, name='insert_data_engage'),
+    # path('engage/add_data_engage_form/', add_data_engage_form, name='add_data_engage_form'),
+    # path('engage/edit_data_engage/<int:application_id>/',edit_data_engage, name='edit_data_engage'),
+    # path('engage/view_data_engage/<int:application_id>/',view_data_engage, name='view_data_engage'),
     
 ]
