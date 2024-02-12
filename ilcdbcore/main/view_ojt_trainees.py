@@ -1,7 +1,7 @@
 # myapp/views.py
 from datetime import datetime
 from django.shortcuts import render, redirect, get_object_or_404
-from main.models import intern_table
+from main.models import intern_table 
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -16,9 +16,7 @@ def epmd_ojt(request):
 
 @login_required(login_url="/login")
 def view_data_ojt(request, ojt_id):
-
     ojts = get_object_or_404(intern_table, id=ojt_id)
-
     return render(request, "3_epmd_page/ojt/view_data_ojt.html", {"ojt": ojts})
 
 @login_required(login_url="/login")

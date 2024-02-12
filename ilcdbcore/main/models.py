@@ -144,9 +144,9 @@ class intern_table(models.Model):
         super().save(*args, **kwargs)
         
         
-        
+   
 class Engage_Partners_Table(models.Model):
-    id = models.BigAutoField(primary_key=True, default=10001)
+    id = models.BigAutoField(primary_key=True)
     province = models.TextField()
     category = models.TextField()
     name_of_partner_or_office = models.TextField()
@@ -162,7 +162,12 @@ class Engage_Partners_Table(models.Model):
     class Meta:
         db_table = "Engage_Partners_Table"
 
-
+    def save(self, *args, **kwargs):
+        # Check if the object is being saved for the first time
+        if not self.pk:
+            # Set the initial value of id to 10001
+            self.id = 10001
+        super().save(*args, **kwargs)
 
 
         

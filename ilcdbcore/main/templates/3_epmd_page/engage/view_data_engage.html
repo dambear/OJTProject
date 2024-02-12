@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{%block maincss %}
+
+<!-- css -->
+<link rel="stylesheet" href="{% static '/css/epmd/_ojttrainees.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Main Content -->
+<main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
+    <H1>View DATA TEMPLATE</H1>
+
+    <form method="post" action="{% url 'view_data_engage' engage.id %}" class="max-w-md mx-auto">
+        <label for="province">Province:</label>
+        <span id="province">{{ engage.province }}</span><br><br>
+    
+        <label for="category">Category:</label>
+        <span id="category">{{ engage.category }}</span><br><br>
+    
+        <label for="name_of_partner_or_office">Name of Partner/Office:</label>
+        <span id="name_of_partner_or_office">{{ engage.name_of_partner_or_office }}</span><br><br>
+    
+        <label for="address">Address:</label>
+        <span id="address">{{ engage.address }}</span><br><br>
+    
+        <label for="contact_person">Contact Person:</label>
+        <span id="contact_person">{{ engage.contact_person }}</span><br><br>
+    
+        <label for="email">Email:</label>
+        <span id="email">{{ engage.email }}</span><br><br>
+    
+        <label for="contact_number">Contact Number:</label>
+        <span id="contact_number">{{ engage.contact_number }}</span><br><br>
+    
+        <label for="date_engaged">Date Engaged:</label>
+        <span id="date_engaged">{{ engage.date_engaged }}</span><br><br>
+    
+        <label for="engagement_mode">Engagement Mode:</label>
+        <span id="engagement_mode">{{ engage.engagement_mode }}</span><br><br>
+    
+        <label for="loi">LOI:</label>
+        <span id="loi">{{ engage.loi }}</span><br><br>
+    
+        <label for="remarks">Remarks:</label><br>
+        <span id="remarks">{{ engage.remarks }}</span><br><br>
+        
+        <!-- Add CSRF token -->
+        {% csrf_token %}
+    
+    </form>
+    
+                
+</main>
+    
+{% block mainjs %}
+<script src="{% static "/js/epmd/epmd.js" %}"></script>
+{% endblock mainjs %}
+
+{% endblock content %}
+
