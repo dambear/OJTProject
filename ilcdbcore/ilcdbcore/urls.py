@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-from main.views import dashboard_page, login_page
+from main.views import dashboard_page, login_page, logout_page
 from main.view_ojt_trainees import epmd_ojt, view_data_ojt, add_data_ojt, update_data_ojt, delete_data_ojt
 from main.view_engage_partner import  epmd_engage, add_data_engage_partner,view_data_engage,update_data_engage, delete_data_engage
 from django.contrib.auth import views as auth_views
@@ -22,6 +22,8 @@ urlpatterns = [
     
     path('login', login_page, name='login_page'),
     path('login/', auth_views.LoginView.as_view(), name='login'),
+
+    path('logout', logout_page, name='logout_page'),
     
     # path('register', register_page, name='register_page'),          
     
