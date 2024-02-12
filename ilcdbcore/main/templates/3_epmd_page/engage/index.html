@@ -2,35 +2,55 @@
 
 {% load static %}
 
-{%block maincss %}
+{% block mainjs %}
+<!-- Include jQuery (Required) -->
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<!-- Include DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<!-- Include DataTables Bootstrap 5 JS -->
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+<!-- DataTables Initialization -->
+<script>
+    $(document).ready( function () {
+        $('#dataTable').DataTable();
+    });
+</script>
+{% endblock mainjs  %}
 
-<!-- css -->
-<link rel="stylesheet" href="{% static '/css/epmd/_ojttrainees.css' %}">
 
-{% endblock %}
+{% block maincss %}
 
+
+ <!-- Include Bootstrap 5 CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+ <!-- Include DataTables CSS -->
+ <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+ <!-- Include Tailwind CSS (Optional) -->
+ <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css'>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+{% endblock maincss %}
 
 {% block content %}
-
-
     <!-- Main Content -->
     <div class="flex-1 flex flex-col overflow-hidden">
       <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
         <h1 class="text-3xl font-bold mb-4">ENGAGE TEMPLATE</h1>
-    
-  
-              
+        <caption>
+          <div id="table_title">
+            <a href="/epmd_engage/add_data_engage">
+              <button type="button" style="background-color:#008CBA; border: none; color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer;">
+                Add Data
+              </button>
+            </a>
+          </div>
+        </caption>
+      
         <br></br>
           <!-- Table -->
-          <table id="dataTable" class="table table-striped">
-            <caption>
-              <div id="table_title">
-                <h2>Ojt Trainees</h2>
-                <a href="/epmd_engage/add_data_engage">
-                  <button type="button" class="view-btn">Add Data</button>
-                </a>
-              </div>
-            </caption>
+          <table id="dataTable"  class="table table-striped">
               <thead>
                   <tr>
                     <th scope="col">Id</th>
@@ -38,7 +58,8 @@
                       <th scope="col">Category</th>
                       <th scope="col">Name of office</th>
                       <th scope="col">address</th>
-                      <th scope="col">Action</th>
+                      <th scope="col" style="text-align: center;">Action</th>
+
                      
                   </tr>
               </thead>
@@ -51,37 +72,30 @@
                         <td>{{ engage.category }}</td>
                         <td>{{ engage.name_of_partner_or_office }}</td>
                         <td>{{ engage.address }}</td>
-                        <td data-label="Actions">
+                        <td data-label="Actions" style="text-align: center;">
                           <div class="action-buttons">
                             <a href="{% url 'view_data_engage' engage.id %}">
-                              <button type="button" class="view-btn">View</button>
+                              <button type="button" style="background-color:#008CBA; color:white; padding:5px 10px; border-radius:5px; border:none; cursor:pointer;">View</button>
                             </a>
                 
                             <a href="{% url 'update_data_engage' engage.id %}">
-                              <button class="update-btn">Update</button>
+                              <button style="background-color:#008CBA; color:white; padding:5px 10px; border-radius:5px; border:none; cursor:pointer;">Update</button>
                             </a>
                 
                             <a>
-                              <form method="post" action="{% url 'delete_data_engage' engage.id %}">
+                              <form method="post" action="{% url 'delete_data_engage' engage.id %}" style="display:inline-block;">
                                 {% csrf_token %}
-                                <button class="delete-btn">Delete</button>
+                                <button style="background-color:#f44336; color:white; padding:5px 10px; border-radius:5px; border:none; cursor:pointer;">Delete</button>
                               </form>
                             </a>
                           </div>
-                        </td>
-                        
-                       
+                        </td>     
                     </tr>
                 {% endfor %}
             </tbody>              
           </table>
       </main>
-
   </div>
-
-{% block mainjs %}
-<script src="{% static "/js/epmd/epmd.js" %}"></script>
-{% endblock mainjs %}
 
 {% endblock content %}
 
