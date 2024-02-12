@@ -144,7 +144,7 @@ class intern_table(models.Model):
         super().save(*args, **kwargs)
         
         
-   
+ 
 class Engage_Partners_Table(models.Model):
     id = models.BigAutoField(primary_key=True)
     province = models.TextField()
@@ -165,10 +165,10 @@ class Engage_Partners_Table(models.Model):
     def save(self, *args, **kwargs):
         # Check if the object is being saved for the first time
         if not self.pk:
-            # Set the initial value of id to 10001
-            self.id = 10001
+            # Get the current maximum id value
+            max_id = Engage_Partners_Table.objects.aggregate(models.Max('id'))['id__max']
+            # Set the id to the next available value
+            self.id = max_id + 1 if max_id is not None else 10001
         super().save(*args, **kwargs)
-
-
         
         
