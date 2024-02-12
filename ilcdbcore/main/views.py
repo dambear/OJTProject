@@ -27,3 +27,8 @@ def login_page(request):
             return redirect("/login")
 
     return render(request, "auth/_login.html", {})
+
+
+def logout_page(request):
+    logout(request)
+    return redirect("/login")
