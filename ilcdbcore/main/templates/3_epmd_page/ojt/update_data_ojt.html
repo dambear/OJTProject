@@ -4,8 +4,12 @@
 
 {%block maincss %}
 
-<!-- css -->
-<link rel="stylesheet" href="{% static '/css/epmd/_ojttrainees.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
+
 
 {% endblock %}
 
@@ -18,89 +22,269 @@
           
     <main class="flex-5 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
         <H1>EDIT DATA TEMPLATE</H1>
+
+        <div class="col-8">
             
             <form method="post" action="{% url 'update_data_ojt' ojt.id %}" class="max-w-md mx-auto">
-                {% csrf_token %}
-                <input type="hidden" name="ojt_id" value="{{ ojt.id }}">
-
-                <label for="ojt_duration">OJT Duration:</label>
-                <input type="number" id="ojt_duration" name="ojt_duration" value="{{ojt.ojt_duration}}" required><br><br>
-                
-                <label for="province">Province:</label>
-                <input type="text" id="province" name="province" value="{{ojt.province}}" required><br><br>
-                
-                <label for="school_name">School Name:</label>
-                <input type="text" id="school_name" name="school_name" value="{{ojt.school_name}}" required><br><br>
-                
-                <label for="school_address">School Address:</label>
-                <input type="text" id="school_address" name="school_address" value="{{ojt.school_address}}" required><br><br>
-                
-                <label for="contact_person">Contact Person:</label>
-                <input type="text" id="contact_person" name="contact_person" value="{{ojt.contact_person}}" required><br><br>
-                
-                <label for="contact_number">Contact Number:</label>
-                <input type="text" id="contact_number" name="contact_number" value="{{ojt.contact_number}}" required><br><br>
-                
-                <label for="student_name">Student Name:</label>
-                <input type="text" id="student_name" name="student_name" value="{{ojt.student_name}}" required><br><br>
-                
-                <label for="sex">Sex:</label>
-                <input type="text" id="sex" name="sex" value="{{ojt.sex}}" required><br><br>
-                
-                <label for="start_date">Start Date:</label>
-                <input type="date" id="start_date" name="start_date" value="{{ ojt.start_date|date:'Y-m-d' }}" required><br><br>
-                
-                <label for="end_date">End Date:</label>
-                <input type="date" id="end_date" name="end_date" value="{{ojt.end_date|date:'Y-m-d' }}" required><br><br>
-                
-                <label for="mode">Mode:</label>
-                <input type="text" id="mode" name="mode" value="{{ojt.mode}}" required><br><br>
-                
-                <label for="recommendation_letter">Recommendation Letter:</label>
-                <input type="checkbox" id="recommendation_letter" name="recommendation_letter"   {% if ojt.recommendation_letter %}checked{% endif %} value="True"><br><br>
-                
-                <label for="application_form">Application Form:</label>
-                <input type="checkbox" id="application_form" name="application_form"  {% if ojt.application_form %}checked{% endif %} value="True"><br><br>
-                
-                <label for="cv_resume">CV/Resume:</label>
-                <input type="checkbox" id="cv_resume" name="cv_resume"  {% if ojt.cv_resume %}checked{% endif %} value="True"><br><br>
-                
-                <label for="medical_certificate">Medical Certificate:</label>
-                <input type="checkbox" id="medical_certificate" name="medical_certificate"  {% if ojt.medical_certificate %}checked{% endif %} value="True"><br><br>
-                
-                <label for="workplan_form">Workplan Form:</label>
-                <input type="checkbox" id="workplan_form" name="workplan_form"  {% if ojt.workplan_form %}checked{% endif %} value="True"><br><br>
-                
-                <label for="interview_form">Interview Form:</label>
-                <input type="checkbox" id="interview_form" name="interview_form"  {% if ojt.interview_form %}checked{% endif %} value="True"><br><br>
-                
-                <label for="acceptance_letter">Acceptance Letter:</label>
-                <input type="checkbox" id="acceptance_letter" name="acceptance_letter"  {% if ojt.acceptance_letter %}checked{% endif %} value="True"><br><br>
-                
-                <label for="wfh_arrangement">WFH Arrangement:</label>
-                <input type="checkbox" id="wfh_arrangement" name="wfh_arrangement"   {% if ojt.wfh_arrangement %}checked{% endif %} value="True"><br><br>
-                
-                <label for="nda">NDA:</label>
-                <input type="checkbox" id="nda" name="nda"  {% if ojt.nda %}checked{% endif %} value="True"><br><br>
-                
-                <label for="work_assignment_form">Work Assignment Form:</label>
-                <input type="checkbox" id="work_assignment_form" name="work_assignment_form"  {% if ojt.work_assignment_form %}checked{% endif %} value="True"><br><br>
-                
-                <label for="war">WAR:</label>
-                <input type="checkbox" id="war" name="war"  {% if ojt.war %}checked{% endif %} value="True"><br><br>
-                
-                <label for="timesheet">Timesheet:</label>
-                <input type="checkbox" id="timesheet" name="timesheet"  {% if ojt.timesheet %}checked{% endif %} value="True"><br><br>
-                
-                <label for="coc">COC:</label>
-                <input type="checkbox" id="coc" name="coc"  {% if ojt.coc %}checked{% endif %} value="True"><br><br>
-                
-                <label for="remarks">Remarks:</label><br>
-                <textarea id="remarks" name="remarks" rows="4" cols="50" value="{{ojt.remarks}}" ></textarea><br><br>
-                
-                <input type="submit" value="Submit">
-            </form>
         
+              
+                    {% csrf_token %}
+      
+                      <div class="mb-3">
+                      <h5>Personal Details</h5>
+                      <hr size="5">
+      
+                          <div class="d-flex flex-row justify-content-between">
+                              <div class="d-flex flex-column bd-highlight mb-3 justify-content-between">
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <label for="studentName" class="form-label">Student Name</label>
+                                      <input type="text" class="form-control" id="student_name" name="student_name" value="{{ojt.student_name}}">
+                                  </div>
+                          
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <label for="contactNumber" class="form-label">Contact Number</label>
+                                      <input type="text" class="form-control" id="contact_number" name="contact_number" value="{{ojt.contact_number}}">
+                                  
+                                  </div>
+                                  <div class="my-2">
+                                    <label for="province" class="form-label">Province</label>
+                                    <select class="form-select" id="province" name="province" value="{{ ojt.province }}">
+                                        <option value="" disabled >Select Province</option>
+                                        <option value="Cavite" {% if ojt.province == 'Cavite' %} selected {% endif %}>Cavite</option>
+                                        <option value="Laguna" {% if ojt.province == 'Laguna' %} selected {% endif %}>Laguna</option>
+                                        <option value="Batangas" {% if ojt.province == 'Batangas' %} selected {% endif %}>Batangas</option>
+                                        <option value="Rizal" {% if ojt.province == 'Rizal' %} selected {% endif %}>Rizal</option>
+                                        <option value="Quezon" {% if ojt.province == 'Quezon' %} selected {% endif %}>Quezon</option>
+                                    </select>
+                                </div>
+                      
+                                 
+                              </div>
+      
+                              <div class="d-flex flex-column bd-highlight mb-3 ">
+                                <div class="my-2">
+                                    <label for="gender" class="form-label">Gender</label>
+                                    <select class="form-select" id="gender" name="gender">
+                                        <option value="" disabled>Select Gender</option>
+                                        <option value="male" {% if ojt.gender == 'male' %} selected {% endif %}>Male</option>
+                                        <option value="female" {% if ojt.gender == 'female' %} selected {% endif %}>Female</option>
+                                    </select>
+                                </div>
+                                
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <label for="contactPerson" class="form-label">Contact Person</label >
+                                      <input type="text" class="form-control" id="contact_person" name="contact_person" value="{{ojt.contact_person}}">
+                                  </div>
+                          
+                                 
+                      
+                              </div>
+      
+                              <div class="d-flex flex-column bd-highlight mb-3 ">
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <label for="schoolName" class="form-label">School Name</label>
+                                      <input type="text" class="form-control" id="school_name" name="school_name" value="{{ojt.school_name}}">
+                                  </div>
+                          
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                    <label for="schoolAddress" class="form-label">School Address</label>
+                                    <input type="text" class="form-control" id="school_address" name="school_address" value="{{ojt.school_address}}">
+                                </div>
+                      
+                              
+                              </div>
+      
+      
+                          </div>
+                      </div>  
+                          
+                          
+                  
+      
+                      <div class="mb-3">
+                      <h5>OJT Details</h5>
+                      <hr size="5">
+                          <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
+                              <div class=""> <!-- Increased margin here -->
+                                  <label for="ojtDuration" class="form-label">OJT Duration:</label>
+                                  <input type="text" class="form-control" id="ojt_duration" name="ojt_duration" value="{{ojt.ojt_duration}}">
+                              </div>
+                      
+                  
+                              <div class=""> <!-- Increased margin here -->
+                              <label for="startDate" class="form-label">Start Date:</label>
+                              <input type="date" class="form-control" id="start_date" name="start_date" value="{{ojt.start_date | date:'Y-m-d'  }}">
+                              
+                              </div>  
+      
+                              <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
+                                  <div class=""> <!-- Increased margin here -->
+                                      <label for="endDate" class="form-label">End Date:</label>
+                                      <input type="date" class="form-control" id="end_date" name="end_date" value="{{ojt.end_date | date:'Y-m-d'  }}">
+                                  </div>
+                              </div>
+                          </div>
+      
+                          <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
+                              <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
+                                <div class="">
+                                    <label for="mode" class="form-label">Mode</label>
+                                    <select class="form-select" id="mode" name="mode">
+                                        <option value="" disabled>Select Mode</option>
+                                        <option value="ftf" {% if ojt.mode == 'ftf' %} selected {% endif %}>Face-to-Face</option>
+                                        <option value="online" {% if ojt.mode == 'online' %} selected {% endif %}>Online</option>
+                                        <option value="hybrid" {% if ojt.mode == 'hybrid' %} selected {% endif %}>Hybrid</option>
+                                    </select>
+                                </div>
+                              </div>
+                          </div>
+      
+      
+                      </div>
+      
+      
+                      <div class="">
+                      <h5>Requirements</h5>
+                      <hr size="5">
+                          <div class="d-flex flex-row justify-content-between">
+      
+                              <div class="d-flex flex-column bd-highlight mb-3 justify-content-between">
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <input class="form-check-input" type="checkbox" id="application_form" name="application_form"  {% if ojt.application_form %}checked{% endif %} value="True">
+                                      <label class="form-check-label" for="defaultCheck1">
+                                      Application Form
+                                      </label>
+                                  </div>
+                          
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <input class="form-check-input" type="checkbox" id="cv_resume" name="cv_resume"  {% if ojt.cv_resume %}checked{% endif %} value="True">
+                                      <label class="form-check-label" for="defaultCheck1">
+                                      CV/Resume
+                                      </label>
+                                  </div>
+                      
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <input class="form-check-input" type="checkbox" id="medical_certificate" name="medical_certificate"  {% if ojt.medical_certificate %}checked{% endif %} value="True">
+                                      <label class="form-check-label" for="defaultCheck1">
+                                          Medical Certificate
+                                      </label>
+                                  
+                                  </div>  
+      
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <input class="form-check-input" type="checkbox" id="workplan_form" name="workplan_form"  {% if ojt.workplan_form %}checked{% endif %} value="True">
+                                      <label class="form-check-label" for="defaultCheck1">
+                                          Workplan Form
+                                      </label>
+                                  
+                                  </div>  
+      
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                    <input class="form-check-input" type="checkbox" id="work_assignment_form" name="work_assignment_form"  {% if ojt.work_assignment_form %}checked{% endif %} value="True">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                    Work Assignment Form
+                                    </label>
+                                </div>
+      
+                                  
+      
+                              </div>
+              
+              
+                              <div class="d-flex flex-column bd-highlight mb-3 justify-content-between">
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <input class="form-check-input" type="checkbox" id="interview_form" name="interview_form"  {% if ojt.interview_form %}checked{% endif %} value="True">
+                                      <label class="form-check-label" for="defaultCheck1">
+                                      Interview Form
+                                      </label>
+                                  </div>
+                          
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <input class="form-check-input" type="checkbox" id="acceptance_letter" name="acceptance_letter"  {% if ojt.acceptance_letter %}checked{% endif %} value="True">
+                                      <label class="form-check-label" for="defaultCheck1">
+                                      Acceptance Letter
+                                      </label>
+                                  </div>
+                      
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <input class="form-check-input" type="checkbox" id="wfh_arrangement" name="wfh_arrangement"  {% if ojt.wfh_arrangement %}checked{% endif %} value="True">
+                                      <label class="form-check-label" for="defaultCheck1">
+                                          WFH Arrangement
+                                      </label>
+                                  
+                                  </div>  
+      
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <input class="form-check-input" type="checkbox" id="nda" name="nda"  {% if ojt.nda %}checked{% endif %} value="True">
+                                      <label class="form-check-label" for="defaultCheck1">
+                                          NDA
+                                      </label>
+                                  
+                                  </div> 
+      
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                    <input class="form-check-input" type="checkbox" id="war" name="war"  {% if ojt.war %}checked{% endif %} value="True">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                    WAR
+                                    </label>
+                                </div> 
+                              </div>
+      
+                              <div class="d-flex flex-column bd-highlight mb-3 ">
+                                  
+                          
+                                  
+                      
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <input class="form-check-input" type="checkbox" id="timesheet" name="timesheet"  {% if ojt.timesheet %}checked{% endif %} value="True">
+                                      <label class="form-check-label" for="defaultCheck1">
+                                          Timesheet
+                                      </label>
+                                  
+                                  </div>  
+      
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                      <input class="form-check-input" type="checkbox" id="coc" name="coc"  {% if ojt.coc %}checked{% endif %} value="True">
+                                      <label class="form-check-label" for="defaultCheck1">
+                                          COC
+                                      </label>
+                                  
+                                  </div>  
+      
+                                  <div class="my-2"> <!-- Increased margin here -->
+                                    <input class="form-check-input" type="checkbox" id="recommendation_letter" name="recommendation_letter"  {% if ojt.recommendation_letter %}checked{% endif %} value="True">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                      Recommendation Letter
+                                    </label>
+                                
+                                </div>  
+                              </div>
+      
+                          </div>
+      
+            
+      
+                          <div class="d-flex flex-row justify-content-between col-8 mt-4">
+      
+                            <label for="remarks">Remarks:</label><br>
+                            <textarea id="remarks" name="remarks" rows="4" cols="50">{{ ojt.remarks }}</textarea>
+                          </div>
+      
+      
+                      </div>
+      
+                      <div class="my-4 d-flex justify-content-end" >
+                          <button type="submit" class="btnSub btn-primary btn-lg">Submit</button>
+                      </div>
+                      
+                      
+                  </form>
+
+
+                </div>
+      
+
+
     </main>
 </div>
     

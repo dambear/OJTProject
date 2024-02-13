@@ -1,7 +1,7 @@
 # myapp/views.py
 from datetime import datetime
 from django.shortcuts import render, redirect, get_object_or_404
-from main.models import intern_table 
+from main.models import Intern_Table 
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -10,13 +10,13 @@ from django.contrib.auth.decorators import login_required
 # Ojt Trainees
 @login_required(login_url="/login")
 def epmd_ojt(request):
-    ojts = intern_table.objects.all()
+    ojts = Intern_Table.objects.all()
     return render(request, "3_epmd_page/ojt/index.html", {"ojts": ojts})
 
 
 @login_required(login_url="/login")
 def view_data_ojt(request, ojt_id):
-    ojts = get_object_or_404(intern_table, id=ojt_id)
+    ojts = get_object_or_404(Intern_Table, id=ojt_id)
     return render(request, "3_epmd_page/ojt/view_data_ojt.html", {"ojt": ojts})
 
 @login_required(login_url="/login")
@@ -30,7 +30,7 @@ def add_data_ojt(request):
         contact_person = request.POST.get("contact_person")
         contact_number = request.POST.get("contact_number")
         student_name = request.POST.get("student_name")
-        sex = request.POST.get("sex")
+        gender = request.POST.get("gender")
         start_date = request.POST.get("start_date")
         end_date = request.POST.get("end_date")
         mode = request.POST.get("mode")
@@ -50,8 +50,8 @@ def add_data_ojt(request):
         remarks = request.POST.get("remarks")
 
 
-        # Create a new intern_table instance with the form data
-        new_intern = intern_table(
+        # Create a new Intern_Table instance with the form data
+        new_intern = Intern_Table(
             ojt_duration=ojt_duration,
             province=province,
             school_name=school_name,
@@ -59,7 +59,7 @@ def add_data_ojt(request):
             contact_person=contact_person,
             contact_number=contact_number,
             student_name=student_name,
-            sex=sex,
+            gender=gender,
             start_date=start_date,
             end_date=end_date,
             mode=mode,
@@ -79,7 +79,7 @@ def add_data_ojt(request):
             remarks=remarks
         )
 
-        # Save the new intern_table instance
+        # Save the new Intern_Table instance
         new_intern.save()
 
         # Redirect to a specific page (change "epmd_ojt" to your desired URL name)
@@ -96,7 +96,7 @@ def add_data_ojt(request):
 @login_required(login_url="/login")
 def update_data_ojt(request, ojt_id):
   
-    ojt = get_object_or_404(intern_table, id=ojt_id)
+    ojt = get_object_or_404(Intern_Table, id=ojt_id)
 
     if request.method == "POST":
         # Handle form submission to update data
@@ -108,7 +108,7 @@ def update_data_ojt(request, ojt_id):
         contact_person = request.POST.get("contact_person")
         contact_number = request.POST.get("contact_number")
         student_name = request.POST.get("student_name")
-        sex = request.POST.get("sex")
+        gender = request.POST.get("gender")
         start_date = request.POST.get("start_date")
         end_date = request.POST.get("end_date")
         mode = request.POST.get("mode")
@@ -135,7 +135,7 @@ def update_data_ojt(request, ojt_id):
         ojt.contact_person = contact_person
         ojt.contact_number = contact_number
         ojt.student_name = student_name
-        ojt.sex = sex
+        ojt.gender = gender
         ojt.start_date = start_date
         ojt.end_date = end_date
         ojt.mode = mode
@@ -170,7 +170,7 @@ def update_data_ojt(request, ojt_id):
 @login_required(login_url="/login")
 def delete_data_ojt(request, ojt_id):
     # Get the intern instance to be deleted or return 404 if not found
-    ojt = get_object_or_404(intern_table, id=ojt_id)
+    ojt = get_object_or_404(Intern_Table, id=ojt_id)
 
     if request.method == "POST":
         # Delete the intern instance

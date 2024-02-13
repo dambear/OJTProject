@@ -67,18 +67,9 @@ class User (AbstractBaseUser, PermissionsMixin):
 
 # until here ---------------------------------
 
-class User_Table(models.Model):
-    id = models.AutoField(primary_key=True)
-    email = models.EmailField(unique=True)
-    password = models.CharField(max_length=128)
-    role = models.CharField(max_length=50)
-    province = models.CharField(max_length=100)
-
-    class Meta:
-        db_table = "User_Table"
 
     
-class intern_table(models.Model):
+class Intern_Table(models.Model):
     id = models.BigIntegerField(primary_key=True)
     province = models.CharField(max_length=100)
     school_name = models.CharField(max_length=200)
@@ -87,7 +78,7 @@ class intern_table(models.Model):
     contact_person = models.CharField(max_length=100)
     contact_number = models.CharField(max_length=20)
     student_name = models.CharField(max_length=100)
-    sex = models.CharField(max_length=10)
+    gender = models.CharField(max_length=10)
     start_date = models.DateField()
     end_date = models.DateField()
     mode = models.CharField(max_length=20)
@@ -107,7 +98,7 @@ class intern_table(models.Model):
     remarks = models.TextField()
 
     class Meta:
-        db_table = "intern_table"
+        db_table = "Intern_Table"
 
     def save(self, *args, **kwargs):
         if not self.id:  # Only generate ID if it doesn't exist
@@ -123,7 +114,7 @@ class intern_table(models.Model):
             current_year = self.start_date.year
 
             # Get the latest entry for the current year
-            latest_entry = intern_table.objects.filter(
+            latest_entry = Intern_Table.objects.filter(
                 start_date__year=current_year
             ).order_by('-id').first()
             

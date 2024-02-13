@@ -4,8 +4,12 @@
 
 {%block maincss %}
 
-<!-- css -->
-<link rel="stylesheet" href="{% static '/css/epmd/_ojttrainees.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
+
 
 {% endblock %}
 
@@ -17,43 +21,119 @@
           
     <main class="flex-5 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
         <H1>ADD engage data</H1>
+
+        <div class="col-8">
+
         <form method="post" action="{% url 'add_data_engage' %}" class="max-w-md mx-auto">
           {% csrf_token %}
-          <label for="province">Province:</label><br>
-          <input type="text" id="province" name="province" required><br>
-  
-          <label for="category">Category:</label><br>
-          <input type="text" id="category" name="category" required><br>
-  
-          <label for="name_of_partner_or_office">Name of Partner or Office:</label><br>
-          <input type="text" id="name_of_partner_or_office" name="name_of_partner_or_office" required><br>
-  
-          <label for="address">Address:</label><br>
-          <textarea id="address" name="address" rows="4" required></textarea><br>
-  
-          <label for="contact_person">Contact Person:</label><br>
-          <input type="text" id="contact_person" name="contact_person" required><br>
-  
-          <label for="email">Email:</label><br>
-          <input type="email" id="email" name="email" required><br>
-  
-          <label for="contact_number">Contact Number:</label><br>
-          <input type="text" id="contact_number" name="contact_number" required><br>
-  
-          <label for="date_engaged">Date Engaged:</label><br>
-          <input type="date" id="date_engaged" name="date_engaged" required><br>
-  
-          <label for="engagement_mode">Engagement Mode:</label><br>
-          <input type="text" id="engagement_mode" name="engagement_mode" required><br>
-  
-          <label for="loi">Letter of Intent (LOI):</label><br>
-          <textarea id="loi" name="loi" rows="4" required></textarea><br>
-  
-          <label for="remarks">Remarks:</label><br>
-          <textarea id="remarks" name="remarks" rows="4" required></textarea><br>
-  
-          <button type="submit">Submit</button>
+          <div class="mb-3">
+            <h5>Engaged Partners Detail</h5>
+            <hr size="5">
+
+                <div class="d-flex flex-row justify-content-between">
+                    <div class="d-flex flex-column bd-highlight mb-3 justify-content-between">
+                        <div class="my-2"> <!-- Increased margin here -->
+                            <label for="contactNumber" class="form-label">Name of Partner/Office</label>
+                            <input type="text" class="form-control" id="name_of_partner_or_office" name="name_of_partner_or_office" required>
+                        
+                        </div>
+                        <div class="my-2"> <!-- Increased margin here -->
+                            <label for="contactPerson" class="form-label">Contact Person</label>
+                            <input type="text" class="form-control" id="contact_person" name="contact_person" required>
+                        </div>
+
+                        <div class="my-2"> <!-- Increased margin here -->
+                          <label for="engagement_mode" class="form-label">Mode of Engagement</label>
+                          <input type="text" class="form-control" id="engagement_mode" name="engagement_mode" required>
+                      </div>
+                
+                        <div class="my-2"> <!-- Increased margin here -->
+                          <label for="province" class="form-label">Province</label>
+                          <select class="form-select" id="province" name="province">
+                              <option value="" disabled selected>Select Province</option>
+                              <option value="ftf">Cavite</option>
+                              <option value="online">Laguna</option>
+                              <option value="hybrid">Batangas</option>
+                              <option value="hybrid">Rizal</option>
+                              <option value="hybrid">Quezon</option>
+                          </select>
+                      </div>
+                       
+
+                    </div>
+
+                    <div class="d-flex flex-column bd-highlight mb-3 ">
+                        <div class="my-2"> <!-- Increased margin here -->
+                            <label for="officeAddress" class="form-label">Office Address</label>
+                            <input type="text" class="form-control" id="address" name="address" required>
+                        </div>
+
+                       
+<div class="my-2"> <!-- Increased margin here -->
+                            <label for="contactNumber" class="form-label">Contact Number</label>
+                            <input type="number" class="form-control" id="contact_number" name="contact_number" required>
+                        </div>
+                        <div class="my-2"> <!-- Increased margin here -->
+                          <label for="province" class="form-label">Category</label>
+                          <select class="form-select" id="category" name="category" required>
+                              <option value="" disabled selected>Select Category</option>
+                              <option value="ftf">Face-to-Face</option>
+                              <option value="online">Online</option>
+                              <option value="hybrid">Hybrid</option>
+                              <!-- Add more options as needed -->
+                          </select>
+                      </div>
+                
+                       
+            
+                    </div>
+
+                    <div class="d-flex flex-column bd-highlight mb-3 ">
+                        <div class="my-2"> <!-- Increased margin here -->
+                            <label for="dateEngagement" class="form-label">Date of Engagement</label>
+                            <input type="date" class="form-control" id="date_engaged" name="date_engaged" required>
+                        
+                        </div>
+
+
+                        
+                       
+                       
+                        <div class="my-2"> <!-- Increased margin here -->
+                            <label for="contactNumber" class="form-label">Email Address</label>
+                            <input type="text" class="form-control" id="email" name="email" required>
+                        
+                        </div>
+                        <div class="my-2"> <!-- Increased margin here -->
+                            <label for="loi" class="form-label">Letter of Intent (LOI)</label>
+                            <input type="text" class="form-control" id="loi" name="loi" required>
+                        
+                        </div>
+
+                       
+            
+                    
+                    </div>
+
+
+                </div>
+
+                <div>
+
+                    <label for="remarks">Remarks:</label><br>
+                    <textarea id="remarks" name="remarks" rows="4" cols="50" ></textarea><br><br>
+                </div>
+
+            </div>  
+            
+
+            <div class="my-4 d-flex justify-content-end" >
+                <button type="submit" class="btnSub btn-primary btn-lg">Submit</button>
+            </div>
+            
       </form>
+
+    </div>
           
     </main>
 </div>
