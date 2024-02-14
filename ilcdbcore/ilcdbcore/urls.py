@@ -2,6 +2,8 @@
 from django.contrib import admin
 from django.urls import path, include
 
+from main.generate import export_intern_table_to_excel
+
 
 from main.views import dashboard_page, login_page, logout_page
 from main.view_ojt_trainees import epmd_ojt, view_data_ojt, add_data_ojt, update_data_ojt, delete_data_ojt
@@ -28,6 +30,10 @@ urlpatterns = [
     
     # path('register', register_page, name='register_page'),  
      
+    
+
+     path('export_intern_table_to_excel/', export_intern_table_to_excel, name='export_intern_table_to_excel'),
+    
     
     
     path('', dashboard_page, name='dashboard_page'),      
