@@ -1,68 +1,216 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% load static %} {%block maincss %}
 
-{% load static %}
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+  crossorigin="anonymous"
+/>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"
+></script>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+  rel="stylesheet"
+/>
 
-{%block maincss %}
-
-<!-- css -->
-<link rel="stylesheet" href="{% static '/css/epmd/_ojttrainees.css' %}">
-
-{% endblock %}
-
-
-{% block content %}
+{% endblock %} {% block content %}
 
 <!-- Main Content -->
- <!-- Main Content -->
- <div class="flex-1 flex flex-col overflow-hidden">
-          
-    <main class="flex-5 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
-        <H1>EDIT DATA TEMPLATE</H1>
-        <form method="post" action="{% url 'update_data_engage' engage.id %}" class="max-w-md mx-auto">
-            {% csrf_token %}
-            <label for="province">Province:</label>
-        <input type="text" id="province" name="province" value="{{engage.province}}" required><br>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col overflow-hidden">
+  <main class="flex-5 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
+    <h1>EDIT DATA TEMPLATE</h1>
 
-        <label for="category">Category:</label>
-        <input type="text" id="category" name="category" value="{{engage.category}}" required><br>
+    <div class="col-8">
+      <form
+        method="post"
+        action="{% url 'update_data_engage' engage.id %}"
+        class="max-w-md mx-auto"
+      >
+        {% csrf_token %}
+        <div class="mb-3">
+          <h5>Engaged Partners Detail</h5>
+          <hr size="5" />
 
-        <label for="name_of_partner_or_office">Name of Partner or Office:</label>
-        <input type="text" id="name_of_partner_or_office" name="name_of_partner_or_office" value="{{engage.name_of_partner_or_office}}" required><br>
+          <div class="d-flex flex-row justify-content-between">
+            <div
+              class="d-flex flex-column bd-highlight mb-3 justify-content-between"
+            >
+              <div class="my-2">
+                <!-- Increased margin here -->
+                <label for="contactNumber" class="form-label"
+                  >Name of Partner/Office</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name_of_partner_or_office"
+                  name="name_of_partner_or_office"
+                  value="{{engage.name_of_partner_or_office}}"
+                  required
+                />
+              </div>
+              <div class="my-2">
+                <!-- Increased margin here -->
+                <label for="contactPerson" class="form-label"
+                  >Contact Person</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contact_person"
+                  name="contact_person"
+                  value="{{engage.contact_person}}"
+                  required
+                />
+              </div>
 
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" value="{{engage.address}}" required><br>
+              <div class="my-2">
+                <!-- Increased margin here -->
+                <label for="engagement_mode" class="form-label"
+                  >Mode of Engagement</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="engagement_mode"
+                  name="engagement_mode"
+                  value="{{engage.engagement_mode}}"
+                  required
+                />
+              </div>
 
-        <label for="contact_person">Contact Person:</label>
-        <input type="text" id="contact_person" name="contact_person" value="{{engage.contact_person}}" required><br>
+              <div class="my-2">
+                <label for="province" class="form-label">Province</label>
+                <select class="form-select" id="province" name="province" value="{{ engage.province }}">
+                    <option value="" disabled >Select Province</option>
+                    <option value="Cavite" {% if ojt.province == 'Cavite' %} selected {% endif %}>Cavite</option>
+                    <option value="Laguna" {% if ojt.province == 'Laguna' %} selected {% endif %}>Laguna</option>
+                    <option value="Batangas" {% if ojt.province == 'Batangas' %} selected {% endif %}>Batangas</option>
+                    <option value="Rizal" {% if ojt.province == 'Rizal' %} selected {% endif %}>Rizal</option>
+                    <option value="Quezon" {% if ojt.province == 'Quezon' %} selected {% endif %}>Quezon</option>
+                </select>
+            </div>
+            </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="{{engage.email}}" required><br>
+            <div class="d-flex flex-column bd-highlight mb-3">
+              <div class="my-2">
+                <!-- Increased margin here -->
+                <label for="officeAddress" class="form-label"
+                  >Office Address</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  name="address"
+                  value="{{engage.address}}"
+                  required
+                />
+              </div>
 
-        <label for="contact_number">Contact Number:</label>
-        <input type="text" id="contact_number" name="contact_number" value="{{engage.contact_number}}" required><br>
+              <div class="my-2">
+                <!-- Increased margin here -->
+                <label for="contactNumber" class="form-label"
+                  >Contact Number</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="contact_number"
+                  name="contact_number"
+                  value="{{engage.contact_number}}"
+                  required
+                />
+              </div>
+              <div class="my-2">
+                <!-- Increased margin here -->
+                <label for="province" class="form-label">Category</label>
+                <select
+                  class="form-select"
+                  id="category"
+                  name="category"
+                  value="{{ engage.province }}"
+                  required
+                >
+                  <option value="" disabled selected>Select Category</option>
+                  <option value="ftf" {% if engage.category == 'ftf' %} selected {% endif %}>Face-to-Face</option>
+                  <option value="online" {% if engage.category == 'online' %} selected {% endif %}>Online</option>
+                  <option value="hybrid" {% if engage.category == 'hybrid' %} selected {% endif %}>Hybrid</option>
 
-        <label for="date_engaged">Date Engaged:</label>
-        <input type="date" id="date_engaged" name="date_engaged" value="{{ engage.date_engaged|date:'Y-m-d' }}" required><br>
+                 
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+            </div>
 
-        <label for="engagement_mode">Engagement Mode:</label>
-        <input type="text" id="engagement_mode" name="engagement_mode" value="{{engage.engagement_mode}}" required><br>
+            <div class="d-flex flex-column bd-highlight mb-3">
+              <div class="my-2">
+                <!-- Increased margin here -->
+                <label for="dateEngagement" class="form-label"
+                  >Date of Engagement</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="date_engaged"
+                  name="date_engaged"
+                  value="{{engage.date_engaged | date:'Y-m-d' }}"
+                  required
+                />
+              </div>
 
-        <label for="loi">Letter of Intent (LOI):</label>
-        <textarea id="loi" name="loi" required>{{engage.loi}}</textarea><br>
+              <div class="my-2">
+                <!-- Increased margin here -->
+                <label for="contactNumber" class="form-label"
+                  >Email Address</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  value="{{engage.email}}"
+                  required
+                />
+              </div>
+              <div class="my-2">
+                <!-- Increased margin here -->
+                <label for="loi" class="form-label"
+                  >Letter of Intent (LOI)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="loi"
+                  name="loi"
+                  value="{{engage.loi}}"
+                  required
+                />
+              </div>
+            </div>
+          </div>
 
-        <label for="remarks">Remarks:</label>
-        <textarea id="remarks" name="remarks">{{engage.remarks}}</textarea><br>
+          <div>
+            <label for="remarks">Remarks:</label><br />
+            <textarea id="remarks" name="remarks" rows="4" cols="50">
+{{engage.remarks}}</textarea
+            ><br /><br />
+          </div>
+        </div>
 
-        <button type="submit">Submit</button>
-            
-        </form>
-        
-    </main>
+        <div class="my-4 d-flex justify-content-end">
+          <button type="submit" class="btnSub btn-primary btn-lg">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
 </div>
-    
-{% block mainjs %}
-<script src="{% static "/js/epmd/epmd.js" %}"></script>
-{% endblock mainjs %}
 
 {% endblock content %}
-

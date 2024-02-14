@@ -11,6 +11,7 @@ from django.contrib.auth import views as auth_views
 
 
 
+
 urlpatterns = [
     
     # for auto reload
@@ -25,7 +26,8 @@ urlpatterns = [
 
     path('logout', logout_page, name='logout_page'),
     
-    # path('register', register_page, name='register_page'),          
+    # path('register', register_page, name='register_page'),  
+     
     
     
     path('', dashboard_page, name='dashboard_page'),      
