@@ -10,8 +10,32 @@ from django.contrib.auth.decorators import login_required
 # Ojt Trainees
 @login_required(login_url="/login")
 def epmd_ojt(request):
-    ojts = Intern_Table.objects.all()
-    return render(request, "3_epmd_page/ojt/index.html", {"ojts": ojts})
+
+    user = request.user
+
+    if user.province.lower() == "cavite":
+        ojts = Intern_Table.objects.filter(province__iexact="Cavite")
+        return render(request, "3_epmd_page/ojt/index.html", {"ojts": ojts})
+
+    elif user.province.lower() == "laguna":
+        ojts = Intern_Table.objects.filter(province__iexact="Laguna")
+        return render(request, "3_epmd_page/ojt/index.html", {"ojts": ojts})
+
+    elif user.province.lower() == "batangas":
+        ojts = Intern_Table.objects.filter(province__iexact="Batangas")
+        return render(request, "3_epmd_page/ojt/index.html", {"ojts": ojts})
+
+    elif user.province.lower() == "rizal":
+        ojts = Intern_Table.objects.filter(province__iexact="Rizal")
+        return render(request, "3_epmd_page/ojt/index.html", {"ojts": ojts})
+
+    elif user.province.lower() == "quezon":
+        ojts = Intern_Table.objects.filter(province__iexact="Quezon")
+        return render(request, "3_epmd_page/ojt/index.html", {"ojts": ojts})
+
+    else:
+        ojts = Intern_Table.objects.all()
+        return render(request, "3_epmd_page/ojt/index.html", {"ojts": ojts})
 
 
 @login_required(login_url="/login")
@@ -89,10 +113,6 @@ def add_data_ojt(request):
         return render(request, "3_epmd_page/ojt/add_data_ojt.html")
 
 
-
-
-
-
 @login_required(login_url="/login")
 def update_data_ojt(request, ojt_id):
   
@@ -166,7 +186,6 @@ def update_data_ojt(request, ojt_id):
     return render(request, "3_epmd_page/ojt/update_data_ojt.html", {"ojt": ojt})
 
 
-
 @login_required(login_url="/login")
 def delete_data_ojt(request, ojt_id):
     # Get the intern instance to be deleted or return 404 if not found
@@ -180,10 +199,3 @@ def delete_data_ojt(request, ojt_id):
     else:
         # Render a confirmation page with the option to delete
         return render(request, "3_epmd_page/ojt/delete_confirmation.html", {"ojt": ojt})
-
-
-
-
-
-
-

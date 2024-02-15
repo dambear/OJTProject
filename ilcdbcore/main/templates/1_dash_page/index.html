@@ -1,59 +1,69 @@
 {% extends "base.html" %} {% load static %} {%block maincss %}
 
-<link rel="stylesheet" href="{% static '/css/_table_design.css' %}" />
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+  crossorigin="anonymous"
+/>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"
+></script>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+  rel="stylesheet"
+/>
+
+<link rel="stylesheet" href="{% static '/css/1_dash/index.css' %}" />
 
 {% endblock %} {%block content %}
 
-<div class="container">
-  <table>
-    <caption>
-      <div id="table_title">
-        <h2>Ojt Trainees</h2>
-      </div>
-    </caption>
-    <thead>
-      <tr>
-
-        <th scope="col">OJT ID</th>
-        <th scope="col">Province</th>
-        <th scope="col">Name of School</th>
-        <th scope="col">Name of Student</th>
-        <th scope="col">Number offfffff Hours</th>
-        <th scope="col">Start Date</th>
-        <th scope="col">End Date</th>
-        <th scope="col">Actions</th>
-       
-      </tr>
-    </thead>
-    <tbody>
-      {% for ojt in ojts %}
-      <tr>
-        <td>{{ application.id }}</td>
-        <td>{{ application.province }}</td>
-        <td>{{ application.school_name }}</td>
-        <td>{{ application.student_name }}</td>
-        <td>{{ application.id }}</td>
-        <td>{{ application.id }}</td>
-        <td>{{ application.id }}</td>
-        <td data-label="Actions">
-          <div class="action-buttons">
-            <a href="{% url 'view_data_ojt' ojt.id %}">
-              <button type="button" class="view-btn">View</button>
-            </a>
-
-            <a href="{% url 'update_data_ojt' ojt.id %}">
-              <button class="update-btn">Update</button>
-            </a>
-
-            <a href="{% url 'delete_data_ojt' ojt.id %}">
-              <button class="delete-btn">Delete</button>
-            </a>
-          </div>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<div class="container text-center">
+  <div class="row">
+    <div class="col bar-1 m-3">
+      <canvas id="myChart"></canvas>
+    </div>
+    <div class="col bar-2 m-3">2 of 2</div>
+  </div>
+  <div class="row">
+    <div class="col bar-1 m-3">1 of 2</div>
+    <div class="col bar-2 m-3">2 of 2</div>
+    <div class="col bar-2 m-3">2 of 2</div>
+  </div>
 </div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chartData = JSON.parse('{{ chart_data|escapejs }}');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: chartData.labels,
+            datasets: [{
+                label: 'Number of Interns per Province',
+                data: chartData.counts,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    stepSize: 1 // Ensure y-axis labels are integers
+                }
+                
+            }
+
+            
+        }
+        
+    });
+</script>
 {% endblock content %}
