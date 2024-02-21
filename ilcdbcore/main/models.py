@@ -188,7 +188,7 @@ class Training_Webinars_Table(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     time = models.TimeField()
-    total_num_hours = models.IntegerField()
+    total_num_hours = models.IntegerField() 
     nga_m = models.IntegerField()
     nga_f = models.IntegerField()
     suc_m = models.IntegerField()
@@ -200,16 +200,20 @@ class Training_Webinars_Table(models.Model):
     total_m = models.IntegerField()
     total_f = models.IntegerField()
     total_participants = models.IntegerField()
-    participants_list = models.TextField()
-    attendance_sheet = models.TextField()
-    group_photo = models.TextField()
+    
     implementation_mode = models.CharField(max_length=255)
-    certificates_issued = models.IntegerField()
+    
     resource_persons = models.TextField()
-    resource_persons_cv = models.TextField()
+
     course_officers = models.TextField()
     course_officers_email = models.TextField()
     remarks = models.TextField()
+    
+    participants_list = models.BinaryField()
+    attendance_sheet = models.BinaryField()
+    group_photo = models.BinaryField()
+    certificates_issued = models.BinaryField()
+    resource_persons_cv = models.BinaryField()
 
     class Meta:
         db_table = "Training_Webinars_Table"
@@ -251,3 +255,18 @@ class Training_Webinars_Table(models.Model):
             self.id = new_id
 
         super().save(*args, **kwargs)
+
+
+
+class Exam_Table(models.Model):
+    id = models.AutoField(primary_key=True)
+    province = models.CharField(max_length=100)
+    name_of_examinee = models.CharField(max_length=255)
+    venue_or_school = models.CharField(max_length=255)
+    gender = models.CharField(max_length=10)
+    time = models.DateTimeField()
+    status = models.CharField(max_length=20)
+    remark_or_grade = models.CharField(max_length=255)
+    
+    class Meta:
+        db_table = "Exam_Table"

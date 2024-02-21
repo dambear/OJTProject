@@ -10,6 +10,8 @@ from main.view_ojt_trainees import epmd_ojt, view_data_ojt, add_data_ojt, update
 from main.view_engage_partner import  epmd_engage, add_data_engage_partner,view_data_engage,update_data_engage, delete_data_engage
 from django.contrib.auth import views as auth_views
 
+# from main.view_model import add_data_model
+
 
 
 
@@ -53,6 +55,6 @@ urlpatterns = [
     path('epmd_ojt/delete_data_ojt/<int:ojt_id>/',delete_data_ojt, name='delete_data_ojt'),
     path('epmd_ojt/view_data_ojt/<int:ojt_id>/',view_data_ojt, name='view_data_ojt'),
     
-    
+    # path('add_data_model/', add_data_model, name='add_data_model'),
     
 ]
