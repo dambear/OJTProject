@@ -8,9 +8,17 @@ Briefly describe your project and its purpose.
 
 - Python 3.x installed
 - [Optionally, any other dependencies]
+- node
 
 how to run in 
 
+
+first run 
+
+```
+npm install
+
+```
 ## Setting up Python Virtual Environment
 
 ### Create Virtual Environment

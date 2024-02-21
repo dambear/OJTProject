@@ -1,0 +1,372 @@
+<!-- templates/index.html -->
+
+{% extends "_base.html" %} {% block content %}
+
+<div
+  class="p-8 items-center justify-center h-auto rounded-xl bg-white dark:bg-gray-800"
+>
+  <div class="pl-8 mb-6 text-2xl font-bold">Engaged Partners</div>
+
+  <div class="relative shadow-md px-8 py-4">
+    <div class="grid grid-cols-3 gap-4 mb-4">
+      <div class="relative">
+        <label
+          for="name_of_partner_or_office"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Name of Partners/Office</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+          >
+            <svg
+              class="w-5 h-6 text-blue-800 dark:text-gray-400"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="5 4 20 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="name_of_partner_or_office"
+            name="name_of_partner_or_office"
+            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value="{{engage.name_of_partner_or_office}}"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="relative">
+        <label
+          for="address"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Office Address</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+          >
+            <svg
+              class="w-5 h-6 text-blue-800 dark:text-gray-400"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="3 0 24 24"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 4c0-.6.4-1 1-1h14a1 1 0 1 1 0 2v14a1 1 0 1 1 0 2H5a1 1 0 1 1 0-2V5a1 1 0 0 1-1-1Zm5 2a1 1 0 0 0-1 1v1c0 .6.4 1 1 1h1c.6 0 1-.4 1-1V7c0-.6-.4-1-1-1H9Zm5 0a1 1 0 0 0-1 1v1c0 .6.4 1 1 1h1c.6 0 1-.4 1-1V7c0-.6-.4-1-1-1h-1Zm-5 4a1 1 0 0 0-1 1v1c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-1c0-.6-.4-1-1-1H9Zm5 0a1 1 0 0 0-1 1v1c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-1c0-.6-.4-1-1-1h-1Zm-3 4a2 2 0 0 0-2 2v3h2v-3h2v3h2v-3a2 2 0 0 0-2-2h-2Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value="{{engage.address}}"
+            readonly     
+            />
+        </div>
+      </div>
+      <div class="relative">
+        <label
+          for="date_engaged"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Date of Engagement</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+          >
+          <svg 
+          class="w-5 h-6 text-blue-800 dark:text-gray-400"
+          aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
+          fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" d="M5 5c.6 0 1-.4 1-1a1 1 0 1 1 2 0c0 .6.4 1 1 1h1c.6 0 1-.4 1-1a1 1 0 1 1 2 0c0 .6.4 1 1 1h1c.6 0 1-.4 1-1a1 1 0 1 1 2 0c0 .6.4 1 1 1a2 2 0 0 1 2 2v1c0 .6-.4 1-1 1H4a1 1 0 0 1-1-1V7c0-1.1.9-2 2-2ZM3 19v-7c0-.6.4-1 1-1h16c.6 0 1 .4 1 1v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm6-6c0-.6-.4-1-1-1a1 1 0 1 0 0 2c.6 0 1-.4 1-1Zm2 0a1 1 0 1 1 2 0c0 .6-.4 1-1 1a1 1 0 0 1-1-1Zm6 0c0-.6-.4-1-1-1a1 1 0 1 0 0 2c.6 0 1-.4 1-1ZM7 17a1 1 0 1 1 2 0c0 .6-.4 1-1 1a1 1 0 0 1-1-1Zm6 0c0-.6-.4-1-1-1a1 1 0 1 0 0 2c.6 0 1-.4 1-1Zm2 0a1 1 0 1 1 2 0c0 .6-.4 1-1 1a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+          </svg>
+          
+          </div>
+          <input
+            type="date"
+            id="date_engaged"
+            name="date_engaged"
+            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value="{{engage.date_engaged | date:'Y-m-d' }}"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="relative">
+        <label
+          for="contact_person"
+          class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Contact Person</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+          >
+          <svg
+          class="w-5 h-6 text-blue-800 dark:text-gray-400"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="5 4 20 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+          </div>
+          <input
+            type="text"
+            id="contact_person"
+            name="contact_person"
+            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value="{{engage.contact_person}}"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="relative">
+        <label
+          for="contact_number"
+          class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Contact Number</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+          >
+          <svg
+          class="w-4 h-4 text-blue-800 dark:text-gray-400"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 19 18"
+        >
+          <path
+            d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z"
+          />
+        </svg>
+          </div>
+          <input
+            type="text"
+            id="contact_number"
+            name="contact_number"
+            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value="{{engage.contact_number}}"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="relative">
+        <label
+          for="email"
+          class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Email Address</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+          >
+            <svg
+              class="w-5 h-5 text-blue-800 dark:text-gray-400"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="3 0 24 24"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7 2a2 2 0 0 0-2 2v1a1 1 0 0 0 0 2v1a1 1 0 0 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H7Zm3 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm-1 7a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3c0 .6-.4 1-1 1h-6a1 1 0 0 1-1-1Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value="{{engage.email}}"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="relative">
+        <label
+          for="engagement_mode"
+          class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Mode of Engagement</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+          >
+          <svg
+          class="w-5 h-6 text-blue-800 dark:text-gray-400"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 8a1 1 0 0 0-1 1v10H9a1 1 0 1 0 0 2h11c.6 0 1-.4 1-1V9c0-.6-.4-1-1-1h-8Zm4 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"
+            clip-rule="evenodd"
+          />
+          <path
+            fill-rule="evenodd"
+            d="M5 3a2 2 0 0 0-2 2v6h6V9a3 3 0 0 1 3-3h8c.4 0 .7 0 1 .2V5a2 2 0 0 0-2-2H5Zm4 10H3v2c0 1.1.9 2 2 2h4v-4Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+          </div>
+          <input
+            type="text"
+            id="engagement_mode"
+            name="engagement_mode"
+            class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value="{{engage.engagement_mode}}"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="relative">
+        <label
+          for="province"
+          class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Category</label
+        >
+        <div class="flex">
+          <label
+            class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-white-100 border border-gray-900 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+          >
+          <svg 
+          class="w-5 h-6 text-blue-800 dark:text-gray-400"
+          aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
+          fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+          </svg>
+          </label>
+
+          <label for="category" class="sr-only"></label>
+          <select
+            id="category"
+            name="category"
+            class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value="{{ engage.province }}"
+            disabled
+            >
+            <option value="" disabled selected>Select Category</option>
+            <option value="ftf" {% if engage.category == 'ftf' %} selected {% endif %}>Face-to-Face</option>
+            <option value="online" {% if engage.category == 'online' %} selected {% endif %}>Online</option>
+            <option value="hybrid" {% if engage.category == 'hybrid' %} selected {% endif %}>Hybrid</option>
+          </select>
+        </div>
+      </div>
+      <div class="relative">
+        <label
+          for="loi"
+          class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Letter of Intent</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+          >
+          <svg 
+          class="w-5 h-6 text-blue-800 dark:text-gray-400"
+          aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
+          fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m3.5 5.5 7.9 6c.4.3.8.3 1.2 0l7.9-6M4 19h16c.6 0 1-.4 1-1V6c0-.6-.4-1-1-1H4a1 1 0 0 0-1 1v12c0 .6.4 1 1 1Z"/>
+          </svg>
+          </div>
+          <input
+            type="text"
+            id="loi"
+            name="loi"
+            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value="{{engage.loi}}"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="relative">
+        <label
+          for="province"
+          class="block mb-2 mt-1 text-sm font-medium text-gray-900 dark:text-white"
+          >Province</label
+        >
+        <div class="flex">
+          <label
+            class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-white-100 border border-gray-800 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+          >
+            <svg
+              class="w-4 h-4 text-blue-800 dark:text-gray-400"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 16 20"
+            >
+              <path
+                d="M8 0a7.992 7.992 0 0 0-6.583 12.535 1 1 0 0 0 .12.183l.12.146c.112.145.227.285.326.4l5.245 6.374a1 1 0 0 0 1.545-.003l5.092-6.205c.206-.222.4-.455.578-.7l.127-.155a.934.934 0 0 0 .122-.192A8.001 8.001 0 0 0 8 0Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
+              />
+            </svg>
+          </label>
+
+          <label for="province" class="sr-only">Choose a Province</label>
+          <select
+            id="province"
+            name="province"
+            class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value="{{ engage.province }}" 
+            disabled
+            >
+            <option value="" disabled selected>Select Province</option>
+            <option value="Cavite" {% if engage.province == 'Cavite' %} selected {% endif %}>Cavite</option>
+            <option value="Laguna" {% if engage.province == 'Laguna' %} selected {% endif %}>Laguna</option>
+            <option value="Batangas" {% if engage.province == 'Batangas' %} selected {% endif %}>Batangas</option>
+            <option value="Rizal" {% if engage.province == 'Rizal' %} selected {% endif %}>Rizal</option>
+            <option value="Quezon" {% if engage.province == 'Quezon' %} selected {% endif %}>Quezon</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- fdsf ___________________________________________________ -->
+
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div class="relative">
+        <label
+          for="remarks"
+          class="block mb-2 mt-1 text-sm font-medium text-gray-900 dark:text-white"
+          >Remarks</label
+        >
+        <div class="relative">
+
+          <textarea
+            id="remarks"
+            rows="4"
+            class="block p-2.5 w-full text-sm text-gray-900 bg-white-50 rounded-lg border border-gray-800 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            cols="50" disabled> {{ engage.remarks }}
+          </textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
