@@ -10,15 +10,40 @@ from django.contrib.auth.decorators import login_required
 # Ojt Trainees
 @login_required(login_url="/login")
 def epmd_engage(request):
-    engage_partner = Engage_Partners_Table.objects.all()
-    return render(request, "3_epmd/2_engage/index.html", {"engage_partner": engage_partner})
+    user = request.user
+
+    if user.province.lower() == "cavite":
+        engage_partner = Engage_Partners_Table.objects.filter(province__iexact="Cavite")
+        return render(request, "3_epmd/2_engage/index.html", {"engage_partner": engage_partner})
+
+    elif user.province.lower() == "laguna":
+        engage_partner = Engage_Partners_Table.objects.filter(province__iexact="Laguna")
+        return render(request, "3_epmd/2_engage/index.html", {"engage_partner": engage_partner})
+
+    elif user.province.lower() == "batangas":
+        engage_partner = Engage_Partners_Table.objects.filter(province__iexact="Batangas")
+        return render(request, "3_epmd/2_engage/index.html", {"engage_partner": engage_partner})
+
+    elif user.province.lower() == "rizal":
+        engage_partner = Engage_Partners_Table.objects.filter(province__iexact="Rizal")
+        return render(request, "3_epmd/2_engage/index.html", {"engage_partner": engage_partner})
+
+    elif user.province.lower() == "quezon":
+        engage_partner = Engage_Partners_Table.objects.filter(province__iexact="Quezon")
+        return render(request, "3_epmd/2_engage/index.html", {"engage_partner": engage_partner})
+
+    else:
+        engage_partner = Engage_Partners_Table.objects.all()
+        return render(request, "3_epmd/2_engage/index.html", {"engage_partner": engage_partner})
+    
+    
 
 @login_required(login_url="/login")
 def view_data_engage(request, engage_id):
     engage = get_object_or_404(Engage_Partners_Table, id=engage_id)
     return render(request, "3_epmd/2_engage/view_data_engage.html", {"engage": engage})
 
-
+@login_required(login_url="/login")
 def add_data_engage(request):
     if request.method == "POST":
         # Get the form data from POST request
@@ -61,7 +86,7 @@ def add_data_engage(request):
 
 
 
-
+@login_required(login_url="/login")
 def update_data_engage(request, engage_id):
   
     engage = get_object_or_404(Engage_Partners_Table, id=engage_id)
@@ -104,7 +129,7 @@ def update_data_engage(request, engage_id):
     return render(request, "3_epmd/2_engage/update_data_engage.html", {"engage": engage})
 
 
-
+@login_required(login_url="/login")
 def delete_data_engage(request, engage_id):
     # Get the intern instance to be deleted or return 404 if not found
     engage = get_object_or_404(Engage_Partners_Table, id=engage_id)

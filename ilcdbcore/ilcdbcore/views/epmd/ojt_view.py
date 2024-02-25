@@ -9,41 +9,41 @@ from main.models import Intern_Table
 
 
 # Ojt Trainees
-
+@login_required(login_url="/login")
 def epmd_ojt(request):
 
-    # user = request.user
+    user = request.user
 
-    # if user.province.lower() == "cavite":
-    #     ojts = Intern_Table.objects.filter(province__iexact="Cavite")
-    #     return render(request, "3_epmd/1_ojt/index.html", {"ojts": ojts})
+    if user.province.lower() == "cavite":
+        ojts = Intern_Table.objects.filter(province__iexact="Cavite")
+        return render(request, "3_epmd/1_ojt/index.html", {"ojts": ojts})
 
-    # elif user.province.lower() == "laguna":
-    #     ojts = Intern_Table.objects.filter(province__iexact="Laguna")
-    #     return render(request, "3_epmd/1_ojt/index.html", {"ojts": ojts})
+    elif user.province.lower() == "laguna":
+        ojts = Intern_Table.objects.filter(province__iexact="Laguna")
+        return render(request, "3_epmd/1_ojt/index.html", {"ojts": ojts})
 
-    # elif user.province.lower() == "batangas":
-    #     ojts = Intern_Table.objects.filter(province__iexact="Batangas")
-    #     return render(request, "3_epmd/1_ojt/index.html", {"ojts": ojts})
+    elif user.province.lower() == "batangas":
+        ojts = Intern_Table.objects.filter(province__iexact="Batangas")
+        return render(request, "3_epmd/1_ojt/index.html", {"ojts": ojts})
 
-    # elif user.province.lower() == "rizal":
-    #     ojts = Intern_Table.objects.filter(province__iexact="Rizal")
-    #     return render(request, "3_epmd/1_ojt/index.html", {"ojts": ojts})
+    elif user.province.lower() == "rizal":
+        ojts = Intern_Table.objects.filter(province__iexact="Rizal")
+        return render(request, "3_epmd/1_ojt/index.html", {"ojts": ojts})
 
-    # elif user.province.lower() == "quezon":
-    #     ojts = Intern_Table.objects.filter(province__iexact="Quezon")
-    #     return render(request, "3_epmd/1_ojt/index.html", {"ojts": ojts})
+    elif user.province.lower() == "quezon":
+        ojts = Intern_Table.objects.filter(province__iexact="Quezon")
+        return render(request, "3_epmd/1_ojt/index.html", {"ojts": ojts})
 
-    # else:
-    ojts = Intern_Table.objects.all()
-    return render(request, "3_epmd/1_ojt/index.html", {"ojts": ojts})
+    else:
+        ojts = Intern_Table.objects.all()
+        return render(request, "3_epmd/1_ojt/index.html", {"ojts": ojts})
 
-
+@login_required(login_url="/login")
 def view_data_ojt(request, ojt_id):
     ojts = get_object_or_404(Intern_Table, id=ojt_id)
     return render(request, "3_epmd/1_ojt/view_data_ojt.html", {"ojt": ojts})
 
-
+@login_required(login_url="/login")
 def add_data_ojt(request):
     if request.method == "POST":
         # Get the form data from POST request
@@ -114,7 +114,7 @@ def add_data_ojt(request):
         # Render the form page if the request method is not POST
         return render(request, "3_epmd/1_ojt/add_data_ojt.html")
 
-
+@login_required(login_url="/login")
 def update_data_ojt(request, ojt_id):
 
     ojt = get_object_or_404(Intern_Table, id=ojt_id)
@@ -192,7 +192,7 @@ def update_data_ojt(request, ojt_id):
     # Render the edit_data_ojt.html template with the retrieved application object
     return render(request, "3_epmd/1_ojt/update_data_ojt.html", {"ojt": ojt})
 
-
+@login_required(login_url="/login")
 def delete_data_ojt(request, ojt_id):
     # Get the intern instance to be deleted or return 404 if not found
     ojt = get_object_or_404(Intern_Table, id=ojt_id)

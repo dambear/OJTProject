@@ -1,0 +1,902 @@
+\<!-- templates/index.html -->
+
+{% extends "_base.html" %} {% block content %}
+
+<div
+  class="p-8 items-center justify-center h-auto rounded-xl bg-white dark:bg-gray-800"
+>
+  <div class="pl-8 text-2xl font-bold">Trainings and webinars</div>
+  <form method="post" action="{% url 'add_data_tmd' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="relative shadow-md px-8 py-4">
+      <h4 class="mb-8 text-lg font-semibold text-blue-800">
+        Student Information
+      </h4>
+      <div class="grid grid-cols-3 gap-4 mb-4">
+        <div class="relative">
+          <label
+            for="course_name"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Course Name</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="course_name"
+              name="course_name"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Juan S. Dela Cruz"
+              value="{{tmd.course_name}}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="training_track"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Training Track</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="training_track"
+              name="training_track"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Training Track"
+              value="{{tmd.training_track}}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="province"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Province</label
+          >
+          <div class="flex">
+            <label
+              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-white-100 border border-gray-800 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+            >
+              <svg
+                class="w-4 h-4 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 16 20"
+              >
+                <path
+                  d="M8 0a7.992 7.992 0 0 0-6.583 12.535 1 1 0 0 0 .12.183l.12.146c.112.145.227.285.326.4l5.245 6.374a1 1 0 0 0 1.545-.003l5.092-6.205c.206-.222.4-.455.578-.7l.127-.155a.934.934 0 0 0 .122-.192A8.001 8.001 0 0 0 8 0Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
+                />
+              </svg>
+            </label>
+
+            <label for="province" class="sr-only">Choose a Province</label>
+            <select
+              id="province"
+              name="province"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              disabled
+              >
+              <option value="" disabled selected>Select Province</option>
+              <option value="Cavite" {% if tmd.province == 'Cavite' %} selected {% endif %}>Cavite</option>
+              <option value="Laguna" {% if tmd.province == 'Laguna' %} selected {% endif %}>Laguna</option>
+              <option value="Batangas" {% if tmd.province == 'Batangas' %} selected {% endif %}>Batangas</option>
+              <option value="Rizal" {% if tmd.province == 'Rizal' %} selected {% endif %}>Rizal</option>
+              <option value="Quezon" {% if tmd.province == 'Quezon' %} selected {% endif %}>Quezon</option>
+
+            </select>
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="resource_persons"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Resource Person</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="resource_persons"
+              name="resource_persons"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Juan S. Dela Cruz"
+              value="{{tmd.resource_persons}}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="course_officers"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Course Officer</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="course_officers"
+              name="course_officers"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Juan S. Dela Cruz"
+              value="{{tmd.course_officers}}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="course_officers_email"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Course Officer Email</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="email"
+              id="course_officers_email"
+              name="course_officers_email"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Juan S. Dela Cruz"
+              value="{{tmd.course_officers_email}}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="time"
+            class="block mb-2 text-sm font-medium text-gray-800 dark:text-white"
+            >Time</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-5 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="3 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7 2a2 2 0 0 0-2 2v1a1 1 0 0 0 0 2v1a1 1 0 0 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H7Zm3 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm-1 7a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3c0 .6-.4 1-1 1h-6a1 1 0 0 1-1-1Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="time"
+              id="time"
+              name="time"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              {% if tmd.time %}checked{% endif %} 
+              value="True"
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="start_date"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Start Date</label
+          >
+          <div class="relative max-w-sm">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+                />
+              </svg>
+            </div>
+            <input
+              datepicker
+              datepicker-autohide
+              name="start_date"
+              type="text"
+              class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Select date"
+              value="{{tmd.start_date | date:'m-d-Y'}}"
+              disabled
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="end_date"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >End Date</label
+          >
+          <div class="relative max-w-sm">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+                />
+              </svg>
+            </div>
+            <input
+              datepicker
+              datepicker-autohide
+              name="end_date"
+              type="text"
+              class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Select date"
+              value="{{tmd.end_date | date:'m-d-Y'}}"
+              disabled
+            />
+          </div>
+        </div>
+
+        <div class="relative">
+          <label
+            for="implementation_mode"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Implementation Mode</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="implementation_mode"
+              name="implementation_mode"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.implementation_mode}}"
+              readonly
+            />
+          </div>
+        </div>
+
+        <div class="relative">
+          <label
+            for="total_num_hours"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Total Number of Hours</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="total_num_hours"
+              name="total_num_hours"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.total_num_hours}}"
+              readonly
+            />
+          </div>
+        </div>
+      </div>
+
+      <h4 class="mt-8 mb-8 text-lg font-semibold text-blue-800">
+        Numbers of Male and Female
+      </h4>
+      <div class="grid grid-cols-5 gap-4 mb-4">
+        <div class="relative">
+          <label
+            for="nga_m"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >NGA Male</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="number"
+              id="nga_m"
+              name="nga_m"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.nga_m}}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="suc_m"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >SUC Male</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="number"
+              id="suc_m"
+              name="suc_m"
+              class="bg-white-50 border border-grey-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.suc_m}}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="lgu_m"
+            class="block mb-2 text-sm font-medium text-gray-800 dark:text-white"
+            >LGU Male</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="number"
+              id="lgu_m"
+              name="lgu_m"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.lgu_m}}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="others_m"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Others Male</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="number"
+              id="others_m"
+              name="others_m"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.others_m}}"
+              readonly
+            />
+          </div>
+        </div>
+
+        <div class="relative">
+          <label
+            for="total_m"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Total Male</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="number"
+              id="total_m"
+              name="total_m"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.total_m}}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="nga_f"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >NGA Female</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="number"
+              id="nga_f"
+              name="nga_f"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.nga_f}}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="suc_f"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >SUC Female</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="number"
+              id="suc_f"
+              name="suc_f"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.suc_f}}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="lgu_f"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >LGU Female</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="number"
+              id="lgu_f"
+              name="lgu_f"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.lgu_f}}"
+              readonly
+            />
+          </div>
+        </div>
+
+        <div class="relative">
+          <label
+            for="others_f"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Others Female</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="number"
+              id="others_f"
+              name="others_f"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.others_f}}"
+              readonly
+            />
+          </div>
+        </div>
+
+        <div class="relative">
+          <label
+            for="total_f"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Total Female</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="number"
+              id="total_f"
+              name="total_f"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.total_f}}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="total_participants"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Total Participants</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="5 4 20 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="number"
+              id="total_participants"
+              name="total_participants"
+              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              value="{{tmd.total_participants}}"
+              readonly
+            />
+          </div>
+        </div>
+      </div>
+
+      <!--DITOOOOO-->
+
+      <!-- fdsf ___________________________________________________ -->
+
+      <h4 class="text-lg font-semibold mt-8 mb-8 text-blue-800">
+        Other Fields
+      </h4>
+      <div class="grid grid-cols-3 gap-4 mb-4">
+        <div class="relative">
+          <label
+            for="attendance_sheet"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Attendance Sheet</label
+          >
+          <div class="relative">
+
+            <a href="{% url 'download_file_attendance_sheet' tmd.id %}" download>Pdf - Download Attendance Sheet file</a><br>
+           
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="certificates_issued"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Certificates Issued</label
+          >
+          <div class="relative">
+            <a href="{% url 'download_file_certificates_issued' tmd.id %}" download>Pdf - Download Certificates file</a><br>
+
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="participants_list"
+            class="block mb-2 text-sm font-medium text-gray-800 dark:text-white"
+            >Participants List</label
+          >
+          <div class="relative">
+            <a href="{% url 'download_file_participants_list' tmd.id %}" download>Pdf - Download Participants List file</a><br>
+
+          </div>
+        </div>
+        <div class="relative">
+          <label
+            for="group_photo"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Photo Group</label
+          >
+          <div class="relative">
+            <a href="{% url 'download_file_group_photo' tmd.id %}" download>Image - Download Photo Group file</a><br>
+
+          </div>
+        
+        </div>
+        <div class="relative">
+          <label
+            for="resource_persons_cv"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Resource Person CV</label
+          >
+          <div class="relative">
+            <a href="{% url 'download_file_resource_persons_cv' tmd.id %}" download class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+              </svg>
+              Pdf - Download Person CV file
+            </a>
+          </div>
+          
+        </div>
+      </div>
+
+      <!--    ________________________________________________________    -->
+
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div class="relative">
+          <label
+            for="remarks"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Remarks</label
+          >
+          <div class="relative">
+            <textarea
+              id="remarks"
+              name="remarks"
+              rows="4"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-white-50 rounded-lg border border-gray-800 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Write your thoughts here..."
+              cols="50" readonly
+              >{{ tmd.remarks }}</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="my-4 d-flex justify-content-end">
+      <button type="submit" class="btnSub btn-primary btn-lg">Submit</button>
+    </div>
+  </form>
+</div>
+
+{% endblock content %}

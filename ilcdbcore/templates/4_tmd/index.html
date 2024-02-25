@@ -34,19 +34,19 @@ class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-80
       <thead class="uppercase text-center">
         <tr>
           <th scope="col" class="text-center bg-main-color text-white">
-            Engage ID
+            Course ID
+          </th>
+          <th scope="col" class="text-center bg-main-color text-white">
+            Course Name
+          </th>
+          <th scope="col" class="text-center bg-main-color text-white">
+            Training Track
           </th>
           <th scope="col" class="text-center bg-main-color text-white">
             Province
           </th>
           <th scope="col" class="text-center bg-main-color text-white">
-            Category
-          </th>
-          <th scope="col" class="text-center bg-main-color text-white">
-            Name of partner
-          </th>
-          <th scope="col" class="text-center bg-main-color text-white">
-            Address
+            Start Date
           </th>
           <th scope="col" class="text-center bg-main-color text-white">
             Action
@@ -54,16 +54,16 @@ class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-80
         </tr>
       </thead>
       <tbody class="uppercase text-center">
-        {% for engage in engage_partner %}
+        {% for tmd in tmd %}
         <tr>
-            <td>{{ engage.id }}</td>
-            <td>{{ engage.province }}</td>
-            <td>{{ engage.category }}</td>
-            <td>{{ engage.name_of_partner_or_office }}</td>
-            <td>{{ engage.address }}</td>
+            <td>{{ tmd.id }}</td>
+            <td>{{ tmd.course_name }}</td>
+            <td>{{ tmd.training_track }}</td>
+            <td>{{ tmd.province }}</td>
+            <td>{{ tmd.start_date }}</td>
           <td data-label="Actions" class="flex justify-between">
             <div class="action-buttons">
-               <a href="{% url 'view_data_engage' engage.id %}">
+               <a href="{% url 'view_data_tmd' tmd.id %}">
                 <button
                   type="button"
                   class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-gray-600 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -85,7 +85,7 @@ class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-80
                   V
                 </button>
               </a>
-              <a href="{% url 'update_data_engage' engage.id %}">
+              <a href="{% url 'update_data_tmd' tmd.id %}">
                 <button
                   type="button"
                   class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -108,7 +108,7 @@ class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-80
                 </button>
               </a>
 
-              <form method="post" action="{% url 'delete_data_engage' engage.id %}" style="display:inline-block;">
+              <form method="post" action="{% url 'delete_data_tmd' tmd.id %}">
                 {% csrf_token %}
                 <button
                   type="submit"

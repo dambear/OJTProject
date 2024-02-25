@@ -181,7 +181,7 @@ class Engage_Partners_Table(models.Model):
 
 
 class Training_Webinars_Table(models.Model):
-    id = models.BigAutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     province = models.CharField(max_length=255)
     course_name = models.CharField(max_length=255)
     training_track = models.CharField(max_length=255)
@@ -218,43 +218,6 @@ class Training_Webinars_Table(models.Model):
     class Meta:
         db_table = "Training_Webinars_Table"
 
-    def save(self, *args, **kwargs):
-        if not self.id:  # Only generate ID if it doesn't exist
-            # Convert start_date to a date object if it's a string
-            if isinstance(self.start_date, str):
-                try:
-                    self.start_date = datetime.strptime(
-                        self.start_date, "%Y-%m-%d"
-                    ).date()
-                except ValueError:
-                    # Handle the case where start_date is not a valid date string
-                    pass
-
-            # Get current year from start_date
-            current_year = self.start_date.year
-
-            # Get the latest entry for the current year
-            latest_entry = (
-                Intern_Table.objects.filter(start_date__year=current_year)
-                .order_by("-id")
-                .first()
-            )
-
-            if latest_entry:
-                latest_id = latest_entry.id
-                # Extract the last 4 digits from the latest_id
-                last_four_digits = str(latest_id)[-4:]
-                # Increment the last four digits by 1
-                new_last_four_digits = int(last_four_digits) + 1
-                # Construct the new_id
-                new_id = int(str(current_year) + "{:04d}".format(new_last_four_digits))
-            else:
-                # If no entry exists for the current year, start at "1001"
-                new_id = int(str(current_year) + "10001")
-
-            self.id = new_id
-
-        super().save(*args, **kwargs)
 
 
 

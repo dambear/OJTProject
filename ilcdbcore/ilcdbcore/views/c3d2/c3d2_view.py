@@ -1,18 +1,50 @@
 
 from django.shortcuts import render, redirect, get_object_or_404
 
+from django.contrib.auth.decorators import login_required
+
 from main.models import Exam_Table
 
-
+@login_required(login_url="/login")
 def c3d2(request):
-    c3d2s = Exam_Table.objects.all()
-    return render(request, "2_c3d2/index.html", {"c3d2s": c3d2s})
+    
+    user = request.user
+    
+    if user.province.lower() == "cavite":
+        c3d2s = Exam_Table.objects.filter(province__iexact="Cavite")
+        return render(request, "2_c3d2/index.html", {"c3d2s": c3d2s})
 
+    elif user.province.lower() == "laguna":
+        c3d2s = Exam_Table.objects.filter(province__iexact="Laguna")
+        return render(request, "2_c3d2/index.html", {"c3d2s": c3d2s})
 
+    elif user.province.lower() == "batangas":
+        c3d2s = Exam_Table.objects.filter(province__iexact="Batangas")
+        return render(request, "2_c3d2/index.html", {"c3d2s": c3d2s})
+
+    elif user.province.lower() == "rizal":
+        c3d2s = Exam_Table.objects.filter(province__iexact="Rizal")
+        return render(request, "2_c3d2/index.html", {"c3d2s": c3d2s})
+
+    elif user.province.lower() == "quezon":
+        c3d2s = Exam_Table.objects.filter(province__iexact="Quezon")
+        return render(request, "2_c3d2/index.html", {"c3d2s": c3d2s})
+
+    else:
+        c3d2s = Exam_Table.objects.all()
+        return render(request, "2_c3d2/index.html", {"c3d2s": c3d2s})
+    
+    
+    
+    
+
+@login_required(login_url="/login")
 def view_data_c3d2(request, c3d2_id):
+    
     c3d2 = get_object_or_404(Exam_Table, id=c3d2_id)
     return render(request, "2_c3d2/view_data_c3d2.html", {"c3d2": c3d2})
 
+@login_required(login_url="/login")
 def add_data_c3d2(request):
 
     if request.method == "POST":
@@ -47,7 +79,7 @@ def add_data_c3d2(request):
 
 
 
-
+@login_required(login_url="/login")
 def update_data_c3d2(request, c3d2_id):
 
     c3d2 = get_object_or_404(Exam_Table, id=c3d2_id)
@@ -84,7 +116,7 @@ def update_data_c3d2(request, c3d2_id):
     # Render the edit_data_ojt.html template with the retrieved application object
     return render(request, "2_c3d2/update_data_c3d2.html", {"c3d2": c3d2})
 
-
+@login_required(login_url="/login")
 def delete_data_c3d2(request, c3d2_id):
     # Get the intern instance to be deleted or return 404 if not found
     c3d2 = get_object_or_404(Exam_Table, id=c3d2_id)

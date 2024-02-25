@@ -17,14 +17,17 @@
 
     <link rel="stylesheet" href="{% static 'src/input.css' %}" />
 
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
+
     {% block maincss %} {% endblock maincss %}
   </head>
 
   <body class="bg-gray-300">
-    {% include "shared/_sidebar.html" %} 
+    {% include "shared/_sidebar.html" %}
 
-    <div class="p-4 sm:ml-64">  {% block content %}     {% endblock content%}  </div>
-
+    <div class="p-4 sm:ml-64 bg">{% block content %} {% endblock content%}</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 

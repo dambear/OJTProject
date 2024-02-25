@@ -1,10 +1,52 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from main.models import Training_Webinars_Table
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url="/login")
 def tmd(request):
-    return render(request, "4_tmd/index.html")
 
+    user = request.user
+    
+    if user.province.lower() == "cavite":
+        tmd = Training_Webinars_Table.objects.filter(province__iexact="Cavite")
+        return render(request, "4_tmd/index.html", {"tmd": tmd})
+
+    elif user.province.lower() == "laguna":
+        tmd = Training_Webinars_Table.objects.filter(province__iexact="Laguna")
+        return render(request, "4_tmd/index.html", {"tmd": tmd})
+
+    elif user.province.lower() == "batangas":
+        tmd = Training_Webinars_Table.objects.filter(province__iexact="Batangas")
+        return render(request, "4_tmd/index.html", {"tmd": tmd})
+
+    elif user.province.lower() == "rizal":
+        tmd = Training_Webinars_Table.objects.filter(province__iexact="Rizal")
+        return render(request, "4_tmd/index.html", {"tmd": tmd})
+
+    elif user.province.lower() == "quezon":
+        tmd = Training_Webinars_Table.objects.filter(province__iexact="Quezon")
+        return render(request, "4_tmd/index.html", {"tmd": tmd})
+
+    else:
+        tmd = Training_Webinars_Table.objects.all()
+        return render(request, "4_tmd/index.html", {"tmd": tmd})
+
+ 
+
+@login_required(login_url="/login")
+def view_data_tmd(request, tmd_id):
+    tmd = get_object_or_404(Training_Webinars_Table, id=tmd_id)
+    return render(request, "4_tmd/view_data_tmd.html", {"tmd": tmd})
+
+
+@login_required(login_url="/login")
+def update_data_tmd(request, tmd_id):
+    tmd = get_object_or_404(Training_Webinars_Table, id=tmd_id)
+    return render(request, "4_tmd/update_data_tmd.html", {"tmd": tmd})
+
+
+@login_required(login_url="/login")
 def add_data_tmd(request):
     if request.method == "POST":
         # Get the form data from POST request
@@ -103,3 +145,19 @@ def add_data_tmd(request):
         # Render the form page if the request method is not POST
           return render(request, "4_tmd/add_data_tmd.html")
 
+
+@login_required(login_url="/login")
+def delete_data_tmd(request, tmd_id):
+    # Get the intern instance to be deleted or return 404 if not found
+    tmd = get_object_or_404(Training_Webinars_Table, id=tmd_id)
+
+    if request.method == "POST":
+        # Delete the intern instance
+        tmd.delete()
+
+        return redirect("tmd")  # Redirect to 'epmd_ojt' URL pattern
+    else:
+        # Render a confirmation page with the option to delete
+        return render(
+            request, "4_tmd/delete_confirmation.html", {"tmd": tmd}
+        )

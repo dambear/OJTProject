@@ -1,0 +1,173 @@
+<!-- templates/index.html -->
+
+{% extends "_base.html" %} {% block content %}
+
+<div
+  class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700"
+>
+  <div class="grid grid-cols-5 gap-4 mb-4">
+    <div class="flex-col h-24 rounded bg-gray-50 dark:bg-gray-800">
+      <div class="w-full">
+        <p class="text-left text-2xl text-blue-800">Cavite</p>
+      </div>
+
+      <div class="w-full h-16 text-center bg-green-300">
+        <div class=" flex h-full items-center justify-center">
+          <p>{{ cavite_count_ojt }} / 15</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex col items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+     
+      {{ laguna_count_ojt }} / 15
+    </div>
+    <div
+      class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
+    >
+      {{ batangas_count_ojt }} / 15
+    </div>
+    <div
+      class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
+    >
+      {{ rizal_count_ojt }} / 15
+    </div>
+    <div
+      class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
+    >
+      {{ quezon_count_ojt }} / 15
+    </div>
+  </div>
+
+  <!-- ____________________________________________________________ 2nd div -->
+  <div
+    class="flex items-center justify-center h-auto mb-4 rounded bg-gray-50 dark:bg-gray-800"
+  >
+    <div id="column-chart"></div>
+  </div>
+
+  <!-- ____________________________________________________________ -->
+  <div
+    class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800"
+  >
+    <p class="text-2xl text-gray-400 dark:text-gray-500">
+      <svg
+        class="w-3.5 h-3.5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 18 18"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 1v16M1 9h16"
+        />
+      </svg>
+    </p>
+  </div>
+</div>
+
+{% endblock content %} {% block mainjs %}
+
+<script>
+
+  const options = {
+    series: [
+      {
+        name: "Ojt Trainees",
+        color:"",
+        data: [
+          { x: "Cavite", y: {{ cavite_count_ojt }}, fillColor: "#008000" },
+          { x: "Laguna", y: {{ laguna_count_ojt }}, fillColor: "#FFFF00"},
+          { x: "Batangas", y: {{ batangas_count_ojt }}, fillColor: "#FF0000"},
+          { x: "Rizal", y: {{ rizal_count_ojt }}, fillColor: "#008000" },
+          { x: "Quezon", y:  {{ quezon_count_ojt }}, fillColor: "#FFFF00"},
+        ],
+      },
+    ],
+    chart: {
+      type: "bar",
+      height: "320px",
+      width: "800px",
+      fontFamily: "Inter, sans-serif",
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: "70%",
+        borderRadiusApplication: "end",
+        borderRadius: 8,
+      },
+    },
+    tooltip: {
+      shared: true,
+      intersect: false,
+      style: {
+        fontFamily: "Inter, sans-serif",
+      },
+    },
+    states: {
+      hover: {
+        filter: {
+          type: "darken",
+          value: 1,
+        },
+      },
+    },
+    stroke: {
+      show: true,
+      width: 0,
+      colors: ["transparent"],
+    },
+    grid: {
+      show: false,
+      strokeDashArray: 4,
+      padding: {
+        left: 2,
+        right: 2,
+        top: -14
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: false,
+    },
+    xaxis: {
+      floating: false,
+      labels: {
+        show: true,
+        style: {
+          fontFamily: "Inter, sans-serif",
+          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+        }
+      },
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+    },
+    fill: {
+      opacity: 1,
+    },
+  }
+
+  if(document.getElementById("column-chart") && typeof ApexCharts !== 'undefined') {
+    const chart = new ApexCharts(document.getElementById("column-chart"), options);
+    chart.render();
+  }
+</script>
+
+{% endblock mainjs %}
