@@ -5,6 +5,24 @@
 <div
   class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700"
 >
+  <!-- ____________________________________________________________  Dropdown -->
+  <div class="flex justify-end h-24 mb-4 rounded bg-gray-50 dark:bg-gray-800">
+    <div class="">
+      <select
+        id="small"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      >
+        <option selected>Ojt Trainnee</option>
+        <option value="exam">Exam</option>
+        <option value="ojt">Ojt Trainnee</option>
+        <option value="engage">Engage Partner</option>
+        <option value="tmd">Trainning and Webinars</option>
+      </select>
+    </div>
+  </div>
+
+
+
   <div class="grid grid-cols-5 gap-4 mb-4">
     <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
       <h1 class="pt-2 pl-3 text-xl font-semibold text-left">Cavite</h1>
@@ -388,7 +406,6 @@
   }
 </script>
 
-
 <script>
   // Ojt Rizal
   const getChartOptionsOjtRizal = (rizalValue, targetValue) => {
@@ -538,5 +555,7 @@
     chart.render();
   }
 </script>
+
+
 
 {% endblock mainjs %}
