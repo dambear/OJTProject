@@ -7,11 +7,12 @@
 >
   <div class="grid grid-cols-5 gap-4 mb-4">
     <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
-     <div class="" id="donut-chart"></div>
+      <div class="" id="donut-chart"></div>
     </div>
 
-    <div class="flex col items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-     
+    <div
+      class="flex col items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
+    >
       {{ laguna_count_ojt }} / 15
     </div>
     <div
@@ -162,82 +163,79 @@
   }
 </script>
 
+<script>
 
+  const getChartOptions = (caviteValue, targetValue) => {
+  // Calculate the remaining value to reach the target
+  const remainingValue = targetValue - caviteValue;
 
-<script> 
-
-   const getChartOptions = (caviteValue, targetValue) => {
-    // Calculate the remaining value to reach the target
-    const remainingValue = targetValue - caviteValue;
-
-    return {
-      series: [caviteValue, remainingValue],
-      colors: ["#1C64F2", "#E5E7EB"],
-      chart: {
-        height: 200,
-        width: "100%",
-        type: "donut",
-      },
-      plotOptions: {
-        pie: {
-          donut: {
-            labels: {
+  return {
+    series: [caviteValue, remainingValue],
+    colors: ["#1C64F2", "#E5E7EB"],
+    chart: {
+      height: 200,
+      width: "100%",
+      type: "donut",
+    },
+    plotOptions: {
+      pie: {
+        donut: {
+          labels: {
+            show: true,
+            name: {
               show: true,
-              name: {
-                show: true,
-                fontFamily: "Inter, sans-serif",
-                offsetY: 20,
-              },
-              total: {
-                showAlways: true,
-                show: true,
-                label: "Unique visitors",
-                fontFamily: "Inter, sans-serif",
-                formatter: function (w) {
-                  // Display the target value as the total
-                  return targetValue + "k";
-                },
-              },
-              value: {
-                show: true,
-                fontFamily: "Inter, sans-serif",
-                offsetY: -20,
-                formatter: function (value) {
-                  return value + "k";
-                },
+              fontFamily: "Inter, sans-serif",
+              offsetY: 0,
+            },
+            total: {
+              showAlways: true,
+              show: true,
+              label: "",
+              fontFamily: "Inter, sans-serif",
+              formatter: function (w) {
+                // Calculate the percentage of the caviteValue compared to the targetValue
+                const percentage = (caviteValue / targetValue) * 100;
+                return `${percentage.toFixed(0)}%`;
               },
             },
-            size: "60%",
+            value: {
+              show: true,
+              fontFamily: "Inter, sans-serif",
+              offsetY: 0,
+              formatter: function (value) {
+                return value.toString();
+              },
+            },
           },
+          size: "60%",
         },
       },
-      grid: {
-        padding: {
-          top: -2,
-        },
+    },
+    grid: {
+      padding: {
+        top: -2,
       },
-      labels: ["Cavite", "Remaining"],
-      dataLabels: {
-        enabled: false,
-      },
-      legend: {
-        position: "bottom",
-        fontFamily: "Inter, sans-serif",
-      },
-    };
+    },
+    labels: ["Cavite", "Remaining"],
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      position: "bottom",
+      fontFamily: "Inter, sans-serif",
+    },
+  };
   };
 
   if (document.getElementById("donut-chart") && typeof ApexCharts !== 'undefined') {
-    // Set the cavite value and the target value
-    const caviteValue = {{ cavite_count_ojt }};
-    const targetValue = 15;
+  // Set the cavite value and the target value
+  const caviteValue = {{ cavite_count_ojt }};
+  const targetValue = 15;
 
-    // Create the chart with the updated options
-    const chart = new ApexCharts(document.getElementById("donut-chart"), getChartOptions(caviteValue, targetValue));
-    chart.render();
+  // Create the chart with the updated options
+  const chart = new ApexCharts(document.getElementById("donut-chart"), getChartOptions(caviteValue, targetValue));
+  chart.render();
   }
-
-
 </script>
 
 {% endblock mainjs %}
