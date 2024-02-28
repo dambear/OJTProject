@@ -9,7 +9,7 @@ from .views.epmd.engage_view import epmd_engage, add_data_engage, update_data_en
 from .views.tmd.tmd_view import tmd, add_data_tmd, view_data_tmd, update_data_tmd, delete_data_tmd
 from .views.c3d2.c3d2_view import c3d2, add_data_c3d2, update_data_c3d2, delete_data_c3d2, view_data_c3d2
 
-from .views.util.download import download_file_attendance_sheet, download_file_participants_list, download_file_group_photo, download_file_certificates_issued, download_file_resource_persons_cv
+from .views.util.download import download_file_attendance_sheet, download_file_participants_list, download_file_group_photo, download_file_certificates_issued, download_file_resource_persons_cv, pdf_view_participants_list
 
 
 from .views.util.generate import export_intern_table_to_excel, export_exam_table_to_excel, export_engage_partners_table_to_excel, export_trainings_and_webinars_table_to_excel
@@ -72,6 +72,9 @@ urlpatterns = [
     path('tmd/download_file_certificates_issued/<int:tmd_id>/',download_file_certificates_issued, name='download_file_certificates_issued'),
     path('tmd/download_file_resource_persons_cv/<int:tmd_id>/',download_file_resource_persons_cv, name='download_file_resource_persons_cv'),
     
+    path('tmd/pdf_view_participants_list/<int:tmd_id>/',pdf_view_participants_list, name='pdf_view_participants_list'),
+
+
     #
 
     path('c3d2/', c3d2, name='c3d2'),

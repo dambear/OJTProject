@@ -233,3 +233,32 @@ class Exam_Table(models.Model):
     
     class Meta:
         db_table = "Exam_Table"
+
+class Limit_Table(models.Model):
+    id = models.AutoField(primary_key=True)
+    ojt_cavite_limit = models.IntegerField()
+    ojt_laguna_limit = models.IntegerField()
+    ojt_batangas_limit = models.IntegerField()
+    ojt_rizal_limit = models.IntegerField()
+    ojt_quezon_limit = models.IntegerField()
+
+    exam_cavite_limit = models.IntegerField()
+    exam_laguna_limit = models.IntegerField()
+    exam_batangas_limit = models.IntegerField()
+    exam_rizal_limit = models.IntegerField()
+    exam_quezon_limit = models.IntegerField()
+
+    engage_cavite_limit = models.IntegerField()
+    engage_laguna_limit = models.IntegerField()
+    engage_batangas_limit = models.IntegerField()
+    engage_rizal_limit = models.IntegerField()
+    engage_quezon_limit = models.IntegerField()
+
+    tmd_cavite_limit = models.IntegerField()
+    tmd_laguna_limit = models.IntegerField()
+    tmd_batangas_limit = models.IntegerField()
+    tmd_rizal_limit = models.IntegerField()
+    tmd_quezon_limit = models.IntegerField()
+
+    class Meta:
+        db_table = "Limit_Table"
