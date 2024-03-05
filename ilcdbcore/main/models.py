@@ -235,7 +235,7 @@ class Exam_Table(models.Model):
         db_table = "Exam_Table"
 
 class Limit_Table(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.IntegerField(primary_key=True)
     ojt_cavite_limit = models.IntegerField()
     ojt_laguna_limit = models.IntegerField()
     ojt_batangas_limit = models.IntegerField()

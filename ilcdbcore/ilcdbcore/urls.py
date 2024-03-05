@@ -14,6 +14,7 @@ from .views.util.download import download_file_attendance_sheet, download_file_p
 
 from .views.util.generate import export_intern_table_to_excel, export_exam_table_to_excel, export_engage_partners_table_to_excel, export_trainings_and_webinars_table_to_excel
 
+from .views.limit.limit_view import limit
 
 from .views.auth.auth import login_page, logout_page
 
@@ -82,6 +83,9 @@ urlpatterns = [
     path('c3d2/update_data_c3d2/<int:c3d2_id>/',update_data_c3d2, name='update_data_c3d2'),
     path('c3d2/delete_data_c3d2/<int:c3d2_id>/',delete_data_c3d2, name='delete_data_c3d2'),
     path('c3d2/view_data_c3d2/<int:c3d2_id>/',view_data_c3d2, name='view_data_c3d2'),
+    
+    
+    path('limit/', limit, name='limit'),
 
     
     

@@ -1,0 +1,722 @@
+<!-- templates/index.html -->
+
+{% extends "_base.html" %} {% block content %}
+
+<div
+  class="p-8 items-center justify-center h-auto rounded-xl bg-white dark:bg-gray-800"
+>
+  <div class="pl-8 text-2xl font-bold">Limit</div>
+
+  <form method="post" action="{% url 'add_data_c3d2' %}">
+    {% csrf_token %}
+
+    <div class="relative shadow-md px-8 py-4">
+      <h4 class="mb-4 text-2xl font-semibold text-blue-800">
+        Examinee Profile (Exam)
+      </h4>
+
+        <div class="grid grid-cols-5 gap-4 mb-4">
+            <div class="relative">
+                <label
+                    for="exam_cavite_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Cavite</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="exam_cavite_limit"
+                    name="exam_cavite_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="exam_laguna_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Laguna</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="exam_laguna_limit"
+                    name="exam_laguna_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="exam_batangas_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Batangas</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="exam_batangas_limit"
+                    name="exam_batangas_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="exam_rizal_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Rizal</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="exam_rizal_limit"
+                    name="exam_rizal_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="exam_quezon_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Quezon</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="exam_quezon_limit"
+                    name="exam_quezon_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+        
+            
+        </div>
+        <!--End of Exam Limit-->
+
+        <!--Start of Engaged Partners Limit-->
+        <h4 class="mb-4 text-2xl font-semibold text-blue-800">
+            Limit (Engaged Partners)
+          </h4>
+        <div class="grid grid-cols-5 gap-4 mb-4">
+            <div class="relative">
+                <label
+                    for="engage_cavite_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Cavite</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="engage_cavite_limit"
+                    name="engage_cavite_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="engage_laguna_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Laguna</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="engage_laguna_limit"
+                    name="engage_laguna_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="engage_batangas_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Batangas</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="engage_batangas_limit"
+                    name="engage_batangas_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="engage_rizal_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Rizal</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="engage_rizal_limit"
+                    name="engage_rizal_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="engage_quezon_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Quezon</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="engage_quezon_limit"
+                    name="engage_quezon_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+        
+            
+        </div>
+        <!--End of Engaged Partners Limit-->
+
+        <!--Start of OJT Trainees Limit-->
+        <h4 class="mb-4 text-2xl font-semibold text-blue-800">
+            Limit (OJT Trainees)
+          </h4>
+        <div class="grid grid-cols-5 gap-4 mb-4">
+            <div class="relative">
+                <label
+                    for="ojt_cavite_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Cavite</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="ojt_cavite_limit"
+                    name="ojt_cavite_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="ojt_laguna_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Laguna</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="ojt_laguna_limit"
+                    name="ojt_laguna_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="ojt_batangas_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Batangas</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="ojt_batangas_limit"
+                    name="ojt_batangas_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="ojt_rizal_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Rizal</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="ojt_rizal_limit"
+                    name="ojt_rizal_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="ojt_quezon_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Quezon</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="ojt_quezon_limit"
+                    name="ojt_quezon_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+        
+            
+        </div>
+        <!--End of OJT Trainees Limit-->
+
+        <!--Start of Trainings and Webinars Limit-->
+        <h4 class="mb-4 text-2xl font-semibold text-blue-800">
+            Limit (Trainings and Webinars)
+          </h4>
+        <div class="grid grid-cols-5 gap-4 mb-4">
+            <div class="relative">
+                <label
+                    for="tmd_cavite_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Cavite</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="tmd_cavite_limit"
+                    name="tmd_cavite_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="tmd_laguna_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Laguna</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="tmd_laguna_limit"
+                    name="tmd_laguna_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="tmd_batangas_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Batangas</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="tmd_batangas_limit"
+                    name="tmd_batangas_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="tmd_rizal_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Rizal</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="tmd_rizal_limit"
+                    name="tmd_rizal_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+            <div class="relative">
+                <label
+                    for="tmd_quezon_limit"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Quezon</label
+                >
+                <div class="relative">
+                    <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                    <svg
+                        class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="5 4 20 16"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+                    </div>
+                    <input
+                    type="number"
+                    id="tmd_quezon_limit"
+                    name="tmd_quezon_limit"
+                    class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder=""
+                    />
+                </div>
+            </div>
+        
+            
+        </div>
+        <!--End of Trainings and Webinars Limit-->
+
+      <!-- fdsf ___________________________________________________ -->
+    </div>
+    <div class="my-4 d-flex justify-content-end">
+      <button type="submit" class="btnSub btn-primary btn-lg">Submit</button>
+    </div>
+  </form>
+</div>
+
+{% endblock content %}
