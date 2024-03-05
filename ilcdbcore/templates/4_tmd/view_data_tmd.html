@@ -905,9 +905,7 @@
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <!-- Modal header -->
             <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-
                 <p> Participants List </p>
-                
                 <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
@@ -916,24 +914,31 @@
                 </button>
             </div>
             <!-- Modal body -->
-            <div class=" flex-col justify-center">
+            <div class=" flex-col justify-center px-4">
+                <div class="flex justify-between"> 
 
-                <div class="px-8"> 
-                  <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download</button> 
+                    <div>
+                      <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download</button> 
+
+                    </div>
+                   
+                    <div class="flex justify-between">
+                      <button id="prevPageButton" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="display: none;">Previous</button>
+                      <button id="nextPageButton" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="display: none;">Next</button>
+                    </div>
+
+
                 </div>
 
                 <div id="pdfContainer" class="w-auto h-auto flex justify-center"></div>
-
                 
             </div>
             <!-- Modal footer -->
-            <div class="flex justify-end items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                
-               
-            </div>
+            <div class="flex justify-end items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600"></div>
         </div>
     </div>
 </div>
+
 
 
 {% endblock content %}
@@ -945,37 +950,81 @@
 <script>
 // Fetch the PDF file using AJAX
 fetch('{% url 'pdf_view_participants_list' tmd.id %}')
-  .then(response => response.blob())
-  .then(blob => {
-    // Render the PDF using PDF.js
-    const pdfContainer = document.getElementById('pdfContainer');
-    const url = URL.createObjectURL(blob);
-    const loadingTask = pdfjsLib.getDocument(url);
-    loadingTask.promise.then(pdf => {
-      pdf.getPage(1).then(page => {
+    .then(response => response.blob())
+    .then(blob => {
+        // Render the PDF using PDF.js
+        const pdfContainer = document.getElementById('pdfContainer');
+        const url = URL.createObjectURL(blob);
+        const loadingTask = pdfjsLib.getDocument(url);
+
+        loadingTask.promise.then(pdf => {
+            // Get the total number of pages in the PDF
+            const numPages = pdf.numPages;
+
+            // Display the "Previous" and "Next" buttons if there's more than 1 page
+            if (numPages > 1) {
+                const prevPageButton = document.getElementById('prevPageButton');
+                const nextPageButton = document.getElementById('nextPageButton');
+
+                prevPageButton.style.display = 'block';
+                nextPageButton.style.display = 'block';
+
+                // Add event listeners to the buttons to navigate through the pages
+                prevPageButton.addEventListener('click', () => {
+                    // Navigate to the previous page
+                    if (currentPageNum > 1) {
+                        currentPageNum--;
+                        renderPage(pdf, currentPageNum);
+                    }
+                });
+
+                nextPageButton.addEventListener('click', () => {
+                    // Navigate to the next page
+                    if (currentPageNum < numPages) {
+                        currentPageNum++;
+                        renderPage(pdf, currentPageNum);
+                    }
+                });
+            }
+
+            // Render the first page of the PDF
+            currentPageNum = 1;
+            renderPage(pdf, currentPageNum);
+        });
+    });
+
+// Function to render a page of the PDF
+function renderPage(pdf, num) {
+    pdf.getPage(num).then(page => {
         const scale = 1;
-        const viewport = page.getViewport({ scale });
+        const viewport = page.getViewport({ scale: scale });
+
+        // Prepare canvas using PDF page dimensions
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
 
-        // Increase canvas resolution for better quality
-        const pixelRatio = window.devicePixelRatio || 1;
-        const canvasWidth = viewport.width * pixelRatio;
-        const canvasHeight = viewport.height * pixelRatio;
-        canvas.width = canvasWidth;
-        canvas.height = canvasHeight;
-        canvas.style.width = `${viewport.width}px`;
-        canvas.style.height = `${viewport.height}px`;
+        // Render PDF page into canvas context
+        const renderContext = {
+            canvasContext: context,
+            viewport: viewport
+        };
+        const renderTask = page.render(renderContext);
 
-        pdfContainer.appendChild(canvas);
-        page.render({
-          canvasContext: context,
-          viewport,
-          transform: [pixelRatio, 0, 0, pixelRatio, 0, 0] // Apply pixel ratio to the canvas
+        // Wait for rendering to finish
+        renderTask.promise.then(() => {
+            // Remove any previously rendered pages from the container
+            while (pdfContainer.firstChild) {
+                pdfContainer.removeChild(pdfContainer.firstChild);
+            }
+
+            // Display the canvas in the PDF container
+            pdfContainer.appendChild(canvas);
         });
-      });
     });
-  });
+}
+
 </script>
 
 {% endblock mainjs %}

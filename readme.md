@@ -31,6 +31,9 @@ python -m venv ./ilcdbcore-env
 
 ./ilcdbcore-env/Scripts/activate
 
+
+pip install -r requirements.txt
+
 ```
 
 ## Setting up New Database Reminder
