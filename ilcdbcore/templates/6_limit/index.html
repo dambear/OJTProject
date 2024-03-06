@@ -7,7 +7,7 @@
 >
   <div class="pl-8 text-2xl font-bold">Limit</div>
 
-  <form method="post" action="{% url 'add_data_c3d2' %}">
+  <form method="post" action="{% url 'limit' %}">
     {% csrf_token %}
 
     <div class="relative shadow-md px-8 py-4">
@@ -46,6 +46,7 @@
                     name="exam_cavite_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.exam_cavite_limit }}"
                     />
                 </div>
             </div>
@@ -79,6 +80,8 @@
                     name="exam_laguna_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.exam_laguna_limit }}"
+
                     />
                 </div>
             </div>
@@ -112,6 +115,8 @@
                     name="exam_batangas_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.exam_batangas_limit }}"
+
                     />
                 </div>
             </div>
@@ -145,6 +150,8 @@
                     name="exam_rizal_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.exam_rizal_limit }}"
+
                     />
                 </div>
             </div>
@@ -178,6 +185,8 @@
                     name="exam_quezon_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.exam_quezon_limit }}"
+
                     />
                 </div>
             </div>
@@ -221,6 +230,8 @@
                     name="engage_cavite_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.engage_cavite_limit }}"
+
                     />
                 </div>
             </div>
@@ -254,6 +265,8 @@
                     name="engage_laguna_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.engage_laguna_limit }}"
+
                     />
                 </div>
             </div>
@@ -287,6 +300,8 @@
                     name="engage_batangas_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.engage_batangas_limit }}"
+
                     />
                 </div>
             </div>
@@ -320,6 +335,8 @@
                     name="engage_rizal_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.engage_rizal_limit }}"
+
                     />
                 </div>
             </div>
@@ -353,6 +370,8 @@
                     name="engage_quezon_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.engage_quezon_limit }}"
+
                     />
                 </div>
             </div>
@@ -396,6 +415,8 @@
                     name="ojt_cavite_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.ojt_cavite_limit }}"
+
                     />
                 </div>
             </div>
@@ -429,6 +450,8 @@
                     name="ojt_laguna_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.ojt_laguna_limit }}"
+
                     />
                 </div>
             </div>
@@ -462,6 +485,8 @@
                     name="ojt_batangas_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.ojt_batangas_limit }}"
+
                     />
                 </div>
             </div>
@@ -495,6 +520,8 @@
                     name="ojt_rizal_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.ojt_rizal_limit }}"
+
                     />
                 </div>
             </div>
@@ -528,6 +555,8 @@
                     name="ojt_quezon_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.ojt_quezon_limit }}"
+
                     />
                 </div>
             </div>
@@ -571,6 +600,8 @@
                     name="tmd_cavite_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.tmd_cavite_limit }}"
+
                     />
                 </div>
             </div>
@@ -604,6 +635,8 @@
                     name="tmd_laguna_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.ojt_laguna_limit }}"
+
                     />
                 </div>
             </div>
@@ -637,6 +670,8 @@
                     name="tmd_batangas_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.ojt_batangas_limit }}"
+
                     />
                 </div>
             </div>
@@ -670,6 +705,8 @@
                     name="tmd_rizal_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.ojt_rizal_limit }}"
+
                     />
                 </div>
             </div>
@@ -703,6 +740,8 @@
                     name="tmd_quezon_limit"
                     class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
+                    value="{{ limit.tmd_quezon_limit }}"
+
                     />
                 </div>
             </div>

@@ -3,6 +3,8 @@ from main.models import Training_Webinars_Table
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
 
+import cloudinary.uploader
+
 @login_required(login_url="/login")
 def tmd(request):
 
@@ -37,6 +39,7 @@ def tmd(request):
 @login_required(login_url="/login")
 def view_data_tmd(request, tmd_id):
     tmd = get_object_or_404(Training_Webinars_Table, id=tmd_id)
+    
     return render(request, "4_tmd/view_data_tmd.html", {"tmd": tmd})
 
 
@@ -86,13 +89,6 @@ def add_data_tmd(request):
         resource_persons_cv = request.FILES['resource_persons_cv']
         
         
-        # Convert files to binary data
-        participants_list_binary = participants_list.read()
-        attendance_sheet_binary = attendance_sheet.read()
-        group_photo_binary = group_photo.read()
-        certificates_issued_binary = certificates_issued.read()
-        resource_persons_cv_binary = resource_persons_cv.read()
-        
         
         start_date_obj = datetime.strptime(start_date, "%m/%d/%Y").strftime("%Y-%m-%d")
         end_date_obj = datetime.strptime(end_date, "%m/%d/%Y").strftime("%Y-%m-%d")
@@ -126,12 +122,11 @@ def add_data_tmd(request):
             course_officers_email=course_officers_email,
             remarks=remarks,
             
-            participants_list = participants_list_binary,
-            attendance_sheet = attendance_sheet_binary,
-            group_photo = group_photo_binary,
-            certificates_issued = certificates_issued_binary,
-            resource_persons_cv = resource_persons_cv_binary,
-            
+            participants_list = participants_list,
+            attendance_sheet = attendance_sheet,
+            group_photo = group_photo,
+            certificates_issued = certificates_issued,
+            resource_persons_cv = resource_persons_cv,
             
             
         )

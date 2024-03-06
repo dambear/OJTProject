@@ -15,7 +15,6 @@ from .views.util.download import download_file_attendance_sheet, download_file_p
 from .views.util.generate import export_intern_table_to_excel, export_exam_table_to_excel, export_engage_partners_table_to_excel, export_trainings_and_webinars_table_to_excel
 
 from .views.limit.limit_view import limit
-
 from .views.auth.auth import login_page, logout_page
 
 from django.contrib.auth import views as auth_views
@@ -87,6 +86,7 @@ urlpatterns = [
     
     path('limit/', limit, name='limit'),
 
+   
     
     
 ]

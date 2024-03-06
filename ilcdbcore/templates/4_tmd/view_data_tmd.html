@@ -1,7 +1,7 @@
 \<!-- templates/index.html -->
 
 {% extends "_base.html" %} 
-
+{% load cloudinary %}
 
 {% block content %}
 
@@ -926,20 +926,7 @@
 
                     <div>
 
-                      <a href="{% url 'pdf_view_participants_list' tmd.id %}" download>
-
-                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-
-                        <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                          <path fill-rule="evenodd" d="M13 11.1V4a1 1 0 1 0-2 0v7.1L8.8 8.4a1 1 0 1 0-1.6 1.2l4 5a1 1 0 0 0 1.6 0l4-5a1 1 0 1 0-1.6-1.2L13 11Z" clip-rule="evenodd"/>
-                          <path fill-rule="evenodd" d="M9.7 15.9 7.4 13H5a2 2 0 0 0-2 2v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.4l-2.3 2.9a3 3 0 0 1-4.6 0Zm7.3.1a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z" clip-rule="evenodd"/>
-                        </svg>
-
-                      </button> 
-
-                      </a><br>
-            
-                      
+                      <a href="{{ tmd.participants_list.url }}" target="_blank">View PDF</a>
 
                     </div>
                    
@@ -963,7 +950,7 @@
 
                 </div>
 
-                <div id="pdfContainer" class="w-auto h-auto flex justify-center"></div>
+                <embed src="{{ tmd.participants_list.url }}" type="application/pdf" width="100%" height="500px">
                 
             </div>
             <!-- Modal footer -->
@@ -978,85 +965,7 @@
 
 {% block mainjs %}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-
 <script>
-// Fetch the PDF file using AJAX
-fetch('{% url 'pdf_view_participants_list' tmd.id %}')
-    .then(response => response.blob())
-    .then(blob => {
-        // Render the PDF using PDF.js
-        const pdfContainer = document.getElementById('pdfContainer');
-        const url = URL.createObjectURL(blob);
-        const loadingTask = pdfjsLib.getDocument(url);
-
-        loadingTask.promise.then(pdf => {
-            // Get the total number of pages in the PDF
-            const numPages = pdf.numPages;
-
-            // Display the "Previous" and "Next" buttons if there's more than 1 page
-            if (numPages > 1) {
-                const prevPageButton = document.getElementById('prevPageButton');
-                const nextPageButton = document.getElementById('nextPageButton');
-
-                prevPageButton.style.display = 'block';
-                nextPageButton.style.display = 'block';
-
-                // Add event listeners to the buttons to navigate through the pages
-                prevPageButton.addEventListener('click', () => {
-                    // Navigate to the previous page
-                    if (currentPageNum > 1) {
-                        currentPageNum--;
-                        renderPage(pdf, currentPageNum);
-                    }
-                });
-
-                nextPageButton.addEventListener('click', () => {
-                    // Navigate to the next page
-                    if (currentPageNum < numPages) {
-                        currentPageNum++;
-                        renderPage(pdf, currentPageNum);
-                    }
-                });
-            }
-
-            // Render the first page of the PDF
-            currentPageNum = 1;
-            renderPage(pdf, currentPageNum);
-        });
-    });
-
-// Function to render a page of the PDF
-function renderPage(pdf, num) {
-    pdf.getPage(num).then(page => {
-        const scale = 1;
-        const viewport = page.getViewport({ scale: scale });
-
-        // Prepare canvas using PDF page dimensions
-        const canvas = document.createElement('canvas');
-        const context = canvas.getContext('2d');
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        // Render PDF page into canvas context
-        const renderContext = {
-            canvasContext: context,
-            viewport: viewport
-        };
-        const renderTask = page.render(renderContext);
-
-        // Wait for rendering to finish
-        renderTask.promise.then(() => {
-            // Remove any previously rendered pages from the container
-            while (pdfContainer.firstChild) {
-                pdfContainer.removeChild(pdfContainer.firstChild);
-            }
-
-            // Display the canvas in the PDF container
-            pdfContainer.appendChild(canvas);
-        });
-    });
-}
 
 </script>
 

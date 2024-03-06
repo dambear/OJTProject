@@ -1,6 +1,8 @@
 from django.db import models
 from datetime import datetime
 
+from cloudinary_storage.storage import MediaCloudinaryStorage
+
 # comment this next line of code if you migrate or have new database
 from django.contrib.auth.models import (
     AbstractBaseUser,
@@ -209,11 +211,11 @@ class Training_Webinars_Table(models.Model):
     course_officers_email = models.TextField()
     remarks = models.TextField()
     
-    participants_list = models.BinaryField()
-    attendance_sheet = models.BinaryField()
-    group_photo = models.BinaryField()
-    certificates_issued = models.BinaryField()
-    resource_persons_cv = models.BinaryField()
+    participants_list = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage())
+    attendance_sheet = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage())
+    group_photo = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage())
+    certificates_issued = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage())
+    resource_persons_cv = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage())
 
     class Meta:
         db_table = "Training_Webinars_Table"
@@ -235,30 +237,30 @@ class Exam_Table(models.Model):
         db_table = "Exam_Table"
 
 class Limit_Table(models.Model):
-    id = models.IntegerField(primary_key=True)
-    ojt_cavite_limit = models.IntegerField()
-    ojt_laguna_limit = models.IntegerField()
-    ojt_batangas_limit = models.IntegerField()
-    ojt_rizal_limit = models.IntegerField()
-    ojt_quezon_limit = models.IntegerField()
+    id = models.IntegerField(primary_key=True, default=1)
+    ojt_cavite_limit = models.IntegerField(default=15)
+    ojt_laguna_limit = models.IntegerField(default=15)
+    ojt_batangas_limit = models.IntegerField(default=15)
+    ojt_rizal_limit = models.IntegerField(default=15)
+    ojt_quezon_limit = models.IntegerField(default=15)
 
-    exam_cavite_limit = models.IntegerField()
-    exam_laguna_limit = models.IntegerField()
-    exam_batangas_limit = models.IntegerField()
-    exam_rizal_limit = models.IntegerField()
-    exam_quezon_limit = models.IntegerField()
+    exam_cavite_limit = models.IntegerField(default=15)
+    exam_laguna_limit = models.IntegerField(default=15)
+    exam_batangas_limit = models.IntegerField(default=15)
+    exam_rizal_limit = models.IntegerField(default=15)
+    exam_quezon_limit = models.IntegerField(default=15)
 
-    engage_cavite_limit = models.IntegerField()
-    engage_laguna_limit = models.IntegerField()
-    engage_batangas_limit = models.IntegerField()
-    engage_rizal_limit = models.IntegerField()
-    engage_quezon_limit = models.IntegerField()
+    engage_cavite_limit = models.IntegerField(default=15)
+    engage_laguna_limit = models.IntegerField(default=15)
+    engage_batangas_limit = models.IntegerField(default=15)
+    engage_rizal_limit = models.IntegerField(default=15)
+    engage_quezon_limit = models.IntegerField(default=15)
 
-    tmd_cavite_limit = models.IntegerField()
-    tmd_laguna_limit = models.IntegerField()
-    tmd_batangas_limit = models.IntegerField()
-    tmd_rizal_limit = models.IntegerField()
-    tmd_quezon_limit = models.IntegerField()
+    tmd_cavite_limit = models.IntegerField(default=15)
+    tmd_laguna_limit = models.IntegerField(default=15)
+    tmd_batangas_limit = models.IntegerField(default=15)
+    tmd_rizal_limit = models.IntegerField(default=15)
+    tmd_quezon_limit = models.IntegerField(default=15)
 
     class Meta:
         db_table = "Limit_Table"

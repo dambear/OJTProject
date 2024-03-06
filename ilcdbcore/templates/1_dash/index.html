@@ -204,7 +204,10 @@
   </div>
   <!-- </div> -->
 
-  {% endblock content %} {% block mainjs %}
+  {% endblock content %} 
+  
+  
+  {% block mainjs %}
   <!--    Start of Exam Script           -->
 
   <script>
@@ -274,7 +277,7 @@
     if (document.getElementById("donut-chart-exam-cavite") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const caviteValue = {{ cavite_count_exam }};
-      const targetValue = 15;
+      const targetValue = {{ exam_cavite_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-exam-cavite"), getChartOptionsExamCavite(caviteValue, targetValue));
@@ -349,7 +352,7 @@
     if (document.getElementById("donut-chart-exam-laguna") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const lagunaValue = {{ laguna_count_exam }};
-      const targetValue = 15;
+      const targetValue = {{ exam_laguna_limit }};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-exam-laguna"), getChartOptionsExamLaguna(lagunaValue, targetValue));
@@ -424,7 +427,7 @@
     if (document.getElementById("donut-chart-exam-batangas") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const batangasValue = {{ batangas_count_exam }};
-      const targetValue = 15;
+      const targetValue = {{exam_batangas_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-exam-batangas"), getChartOptionsExamBatangas(batangasValue, targetValue));
@@ -499,7 +502,7 @@
     if (document.getElementById("donut-chart-exam-rizal") && typeof ApexCharts !== 'undefined') {
       // Set the rizal value and the target value
       const rizalValue = {{ rizal_count_exam }};
-      const targetValue = 15;
+      const targetValue = {{exam_rizal_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-exam-rizal"), getChartOptionsExamRizal(rizalValue, targetValue));
@@ -574,7 +577,7 @@
     if (document.getElementById("donut-chart-exam-quezon") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const quezonValue = {{ quezon_count_exam }};
-      const targetValue = 15;
+      const targetValue = {{exam_quezon_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-exam-quezon"), getChartOptionsExamQuezon(quezonValue, targetValue));
@@ -652,7 +655,7 @@
     if (document.getElementById("donut-chart-ojt-cavite") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const caviteValue = {{ cavite_count_ojt }};
-      const targetValue = 15;
+      const targetValue = {{ojt_cavite_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-ojt-cavite"), getChartOptionsOjtCavite(caviteValue, targetValue));
@@ -727,7 +730,7 @@
     if (document.getElementById("donut-chart-ojt-laguna") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const lagunaValue = {{ laguna_count_ojt }};
-      const targetValue = 15;
+      const targetValue = {{ojt_laguna_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-ojt-laguna"), getChartOptionsOjtLaguna(lagunaValue, targetValue));
@@ -802,7 +805,7 @@
     if (document.getElementById("donut-chart-ojt-batangas") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const batangasValue = {{ batangas_count_ojt }};
-      const targetValue = 15;
+      const targetValue = {{ojt_batangas_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-ojt-batangas"), getChartOptionsOjtLaguna(batangasValue, targetValue));
@@ -877,7 +880,7 @@
     if (document.getElementById("donut-chart-ojt-rizal") && typeof ApexCharts !== 'undefined') {
       // Set the rizal value and the target value
       const rizalValue = {{ rizal_count_ojt }};
-      const targetValue = 15;
+      const targetValue = {{ojt_rizal_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-ojt-rizal"), getChartOptionsOjtRizal(rizalValue, targetValue));
@@ -952,7 +955,7 @@
     if (document.getElementById("donut-chart-ojt-quezon") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const quezonValue = {{ quezon_count_ojt }};
-      const targetValue = 15;
+      const targetValue = {{ojt_quezon_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-ojt-quezon"), getChartOptionsOjtQuezon(quezonValue, targetValue));
@@ -1030,7 +1033,7 @@
     if (document.getElementById("donut-chart-tmd-cavite") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const caviteValue = {{ cavite_count_tmd }};
-      const targetValue = 15;
+      const targetValue = {{tmd_cavite_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-tmd-cavite"), getChartOptionsTmdCavite(caviteValue, targetValue));
@@ -1105,7 +1108,7 @@
     if (document.getElementById("donut-chart-tmd-laguna") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const lagunaValue = {{ laguna_count_tmd }};
-      const targetValue = 15;
+      const targetValue = {{tmd_laguna_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-tmd-laguna"), getChartOptionsTmdLaguna(lagunaValue, targetValue));
@@ -1180,7 +1183,7 @@
     if (document.getElementById("donut-chart-tmd-batangas") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const batangasValue = {{ batangas_count_tmd }};
-      const targetValue = 15;
+      const targetValue = {{tmd_batangas_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-tmd-batangas"), getChartOptionsTmdLaguna(batangasValue, targetValue));
@@ -1255,7 +1258,7 @@
     if (document.getElementById("donut-chart-tmd-rizal") && typeof ApexCharts !== 'undefined') {
       // Set the rizal value and the target value
       const rizalValue = {{ rizal_count_tmd }};
-      const targetValue = 15;
+      const targetValue = {{tmd_rizal_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-tmd-rizal"), getChartOptionsTmdRizal(rizalValue, targetValue));
@@ -1330,7 +1333,7 @@
     if (document.getElementById("donut-chart-tmd-quezon") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const quezonValue = {{ quezon_count_tmd }};
-      const targetValue = 15;
+      const targetValue = {{tmd_quezon_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-tmd-quezon"), getChartOptionsTmdQuezon(quezonValue, targetValue));
@@ -1407,7 +1410,7 @@
     if (document.getElementById("donut-chart-engage-cavite") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const caviteValue = {{ cavite_count_engage }};
-      const targetValue = 15;
+      const targetValue = {{engage_cavite_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-engage-cavite"), getChartOptionsEngageCavite(caviteValue, targetValue));
@@ -1482,7 +1485,7 @@
     if (document.getElementById("donut-chart-engage-laguna") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const lagunaValue = {{ laguna_count_engage }};
-      const targetValue = 15;
+      const targetValue = {{engage_laguna_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-engage-laguna"), getChartOptionsEngageLaguna(lagunaValue, targetValue));
@@ -1557,7 +1560,7 @@
     if (document.getElementById("donut-chart-engage-batangas") && typeof ApexCharts !== 'undefined') {
       // Set the laguna value and the target value
       const batangasValue = {{ batangas_count_engage }};
-      const targetValue = 15;
+      const targetValue = {{engage_batangas_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-engage-batangas"), getChartOptionsEngageBatangas(batangasValue, targetValue));
@@ -1632,7 +1635,7 @@
     if (document.getElementById("donut-chart-engage-rizal") && typeof ApexCharts !== 'undefined') {
       // Set the rizal value and the target value
       const rizalValue = {{ rizal_count_engage }};
-      const targetValue = 15;
+      const targetValue = {{engage_rizal_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-engage-rizal"), getChartOptionsEngageRizal(rizalValue, targetValue));
@@ -1707,7 +1710,7 @@
     if (document.getElementById("donut-chart-engage-quezon") && typeof ApexCharts !== 'undefined') {
       // Set the quezon value and the target value
       const quezonValue = {{ quezon_count_engage }};
-      const targetValue = 15;
+      const targetValue = {{engage_quezon_limit}};
 
       // Create the chart with the updated options
       const chart = new ApexCharts(document.getElementById("donut-chart-engage-quezon"), getChartOptionsEngageQuezon(quezonValue, targetValue));

@@ -10,6 +10,8 @@ def pdf_view_participants_list(request, tmd_id):
     response['Content-Disposition'] = f'inline;  filename="{tmd_id}.pdf"'
     return response
 
+
+
 def download_file_participants_list(request, tmd_id):
    # Assuming you have a model called Training_Webinars_Table with a field named 'attendance_sheet' that stores the binary data of the PDF file
     
