@@ -12,6 +12,10 @@ Briefly describe your project and its purpose.
 
 how to run in 
 
+```
+requirements.txt generation code
+python -m pip freeze > requirements.txt
+```
 
 first run 
 
