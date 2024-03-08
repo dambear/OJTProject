@@ -131,4 +131,31 @@ def dash_province(request):
     if not Limit_Table.objects.exists():
         Limit_Table.objects.create()
     
-    return render(request, "1_dash/dash_province.html")
+    cavite_count_ojt = Intern_Table.objects.filter(province__iexact="Cavite").count()
+    cavite_count_engage = Engage_Partners_Table.objects.filter(province__iexact="Cavite").count()
+    cavite_count_exam = Exam_Table.objects.filter(province__iexact="Cavite").count()
+    cavite_count_tmd = Training_Webinars_Table.objects.filter(province__iexact="Cavite").count()
+
+    
+
+    exam_cavite_limit = Limit_Table.objects.get(id=1).exam_cavite_limit
+    ojt_cavite_limit = Limit_Table.objects.get(id=1).ojt_cavite_limit
+    engage_cavite_limit = Limit_Table.objects.get(id=1).engage_cavite_limit
+    tmd_cavite_limit = Limit_Table.objects.get(id=1).tmd_cavite_limit
+
+    
+    context = {
+        'cavite_count_ojt': cavite_count_ojt,
+        'cavite_count_engage': cavite_count_engage,
+        'cavite_count_exam': cavite_count_exam,
+        'cavite_count_tmd': cavite_count_tmd,
+        
+        'exam_cavite_limit' : exam_cavite_limit,
+        'ojt_cavite_limit' : ojt_cavite_limit,
+        'engage_cavite_limit' : engage_cavite_limit,
+        'tmd_cavite_limit' : tmd_cavite_limit,
+
+        
+    }
+    
+    return render(request, "1_dash/dash_province.html", context)
