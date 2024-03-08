@@ -1,110 +1,57 @@
 <!-- templates/index.html -->
 
 {% extends "_base.html" %} {% block content %}
-<p class="text-2xl font-bold">Dashboard</p>
+<p class="text-2xl font-bold mb-2">Dashboard</p>
 
 <!-- <div
   class="p-4 border-2 border-gray-200 border-solid rounded-lg dark:border-gray-700 "
 > -->
 
 <div
-  class="flex-col p-6 mb-6 border border-gray-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+  class="flex-col p-6 mb-6 border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
 >
   <!--jskkdk-->
-  <div class="text-xl font-bold text-black mb-6">
+  <div class="text-2xl font-semibold text-blue-800 mb-6">
     <p>Exams</p>
   </div>
   <!--      Exam      -->
   <div class="grid grid-cols-5 gap-4 mb-4">
-    <div class="flex-col h-auto rounded font-medium dark:bg-gray-800">
+    <div class="flex-col h-auto rounded bg-gray-50 font-medium dark:bg-gray-800 shadow-xl">
       <h1 class="pt-2 pl-3 text-lg text-left">Cavite</h1>
       <div class="" id="donut-chart-exam-cavite"></div>
     </div>
 
-    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800 shadow-xl">
       <h1 class="pt-2 pl-3 text-lg font-medium text-left">Laguna</h1>
       <div class="" id="donut-chart-exam-laguna"></div>
     </div>
 
-    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800 shadow-xl">
       <h1 class="pt-2 pl-3 text-lg font-medium text-left">Batangas</h1>
       <div class="" id="donut-chart-exam-batangas"></div>
     </div>
 
-    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800 shadow-xl">
       <h1 class="pt-2 pl-3 text-lg font-medium text-left">Rizal</h1>
       <div class="" id="donut-chart-exam-rizal"></div>
     </div>
 
-    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800 shadow-xl">
       <h1 class="pt-2 pl-3 text-lg font-medium text-left">Quezon</h1>
       <div class="" id="donut-chart-exam-quezon"></div>
     </div>
   </div>
 </div>
 <!-- end EXAM -->
-<div
-  class="flex-col p-6 bg-white border border-gray-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
->
-  <!-- <div class="flex-col mb-8"> -->
-  <!-- dropdown -->
-  <div class="flex col ml-auto">
-    <div class="text-xl font-bold text-black mb-6">
-      <p>Engaged Partners</p>
-    </div>
-    <button
-      id="dropdownDefaultButton"
-      data-dropdown-toggle="dropdown"
-      class="ml-auto mb-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-0 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-      type="button"
-    >
-      EPMD
-      <svg
-        class="w-2.5 h-2.5 ms-3"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 10 6"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="m1 1 4 4 4-4"
-        />
-      </svg>
-    </button>
-  </div>
-  <!-- Dropdown menu -->
-  <div
-    id="dropdown"
-    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-  >
-    <ul
-      class="text-xs text-gray-700 dark:text-gray-200"
-      aria-labelledby="dropdownDefaultButton"
-    >
-      <li>
-        <a
-          href="#"
-          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          >OJT Trainees</a
-        >
-      </li>
-      <li>
-        <a
-          href="#"
-          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          >Engaged Partners</a
-        >
-      </li>
-    </ul>
-  </div>
-  <!-- end of dropdown -->
-  <!--jskkdk-->
+
 
   <!--      Engage Partners      -->
+<div class="flex-col p-6 mb-6 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+
+  <div class="text-2xl font-semibold text-white mb-6">
+    <p>Engaged Partners</p>
+  </div>
+
   <div class="grid grid-cols-5 gap-4 mb-10">
     <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
       <h1 class="pt-2 pl-3 text-lg font-medium text-left">Cavite</h1>
@@ -134,7 +81,7 @@
 
   <div class="flex-col mb-8">
     <!--jskkdk-->
-    <div class="text-xl font-bold text-black mb-6">
+    <div class="text-2xl font-semibold text-white mb-6">
       <p>OJT Trainees</p>
     </div>
     <!--      OJT Trainees      -->
@@ -169,9 +116,9 @@
 <div class="flex-col">
   <!--jskkdk-->
   <div
-    class="flex-col p-6 mt-6 bg-white border border-gray-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+    class="flex-col p-6 mb-6 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
   >
-    <div class="text-xl font-bold text-black mb-6">
+    <div class="text-2xl font-semibold text-white mb-6">
       <p>Trainings and Webinars</p>
     </div>
     <!--      Trainings and Webinars     -->
