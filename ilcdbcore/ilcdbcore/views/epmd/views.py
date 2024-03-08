@@ -125,3 +125,10 @@ def index(request):
 
 
 
+
+@login_required(login_url="/login")
+def dash_province(request):
+    if not Limit_Table.objects.exists():
+        Limit_Table.objects.create()
+    
+    return render(request, "1_dash/dash_province.html")

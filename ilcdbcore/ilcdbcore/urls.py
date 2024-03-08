@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 
-from .views.epmd.views import index
+from .views.epmd.views import index, dash_province
 
 
 from .views.epmd.ojt_view import epmd_ojt, add_data_ojt, update_data_ojt, delete_data_ojt, view_data_ojt
@@ -40,6 +40,7 @@ urlpatterns = [
     #
     #
     path("", index, name="index"),
+    path("dash_province", dash_province, name="dash_province"),
     #
     #
     #

@@ -1,0 +1,1724 @@
+<!-- templates/index.html -->
+
+{% extends "_base.html" %} {% block content %}
+<p class="text-2xl font-bold">Dashboard</p>
+
+<!-- <div
+  class="p-4 border-2 border-gray-200 border-solid rounded-lg dark:border-gray-700 "
+> -->
+
+<div
+  class="flex-col p-6 mb-6 border border-gray-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+>
+  <!--jskkdk-->
+  <div class="text-xl font-bold text-black mb-6">
+    <p>Exams</p>
+  </div>
+  <!--      Exam      -->
+  <div class="grid grid-cols-5 gap-4 mb-4">
+    <div class="flex-col h-auto rounded font-medium dark:bg-gray-800">
+      <h1 class="pt-2 pl-3 text-lg text-left">Cavite</h1>
+      <div class="" id="donut-chart-exam-cavite"></div>
+    </div>
+
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Laguna</h1>
+      <div class="" id="donut-chart-exam-laguna"></div>
+    </div>
+
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Batangas</h1>
+      <div class="" id="donut-chart-exam-batangas"></div>
+    </div>
+
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Rizal</h1>
+      <div class="" id="donut-chart-exam-rizal"></div>
+    </div>
+
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Quezon</h1>
+      <div class="" id="donut-chart-exam-quezon"></div>
+    </div>
+  </div>
+</div>
+<!-- end EXAM -->
+<div
+  class="flex-col p-6 bg-white border border-gray-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+>
+  <!-- <div class="flex-col mb-8"> -->
+  <!-- dropdown -->
+  <div class="flex col ml-auto">
+    <div class="text-xl font-bold text-black mb-6">
+      <p>Engaged Partners</p>
+    </div>
+    <button
+      id="dropdownDefaultButton"
+      data-dropdown-toggle="dropdown"
+      class="ml-auto mb-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-0 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      type="button"
+    >
+      EPMD
+      <svg
+        class="w-2.5 h-2.5 ms-3"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 10 6"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m1 1 4 4 4-4"
+        />
+      </svg>
+    </button>
+  </div>
+  <!-- Dropdown menu -->
+  <div
+    id="dropdown"
+    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+  >
+    <ul
+      class="text-xs text-gray-700 dark:text-gray-200"
+      aria-labelledby="dropdownDefaultButton"
+    >
+      <li>
+        <a
+          href="#"
+          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >OJT Trainees</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >Engaged Partners</a
+        >
+      </li>
+    </ul>
+  </div>
+  <!-- end of dropdown -->
+  <!--jskkdk-->
+
+  <!--      Engage Partners      -->
+  <div class="grid grid-cols-5 gap-4 mb-10">
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Cavite</h1>
+      <div class="" id="donut-chart-engage-cavite"></div>
+    </div>
+
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Laguna</h1>
+      <div class="" id="donut-chart-engage-laguna"></div>
+    </div>
+
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Batangas</h1>
+      <div class="" id="donut-chart-engage-batangas"></div>
+    </div>
+
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Rizal</h1>
+      <div class="" id="donut-chart-engage-rizal"></div>
+    </div>
+
+    <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Quezon</h1>
+      <div class="" id="donut-chart-engage-quezon"></div>
+    </div>
+  </div>
+
+  <div class="flex-col mb-8">
+    <!--jskkdk-->
+    <div class="text-xl font-bold text-black mb-6">
+      <p>OJT Trainees</p>
+    </div>
+    <!--      OJT Trainees      -->
+    <div class="grid grid-cols-5 gap-4 mb-4">
+      <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Cavite</h1>
+        <div class="" id="donut-chart-ojt-cavite"></div>
+      </div>
+
+      <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Laguna</h1>
+        <div class="" id="donut-chart-ojt-laguna"></div>
+      </div>
+
+      <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Batangas</h1>
+        <div class="" id="donut-chart-ojt-batangas"></div>
+      </div>
+
+      <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Rizal</h1>
+        <div class="" id="donut-chart-ojt-rizal"></div>
+      </div>
+
+      <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Quezon</h1>
+        <div class="" id="donut-chart-ojt-quezon"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex-col">
+  <!--jskkdk-->
+  <div
+    class="flex-col p-6 mt-6 bg-white border border-gray-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+  >
+    <div class="text-xl font-bold text-black mb-6">
+      <p>Trainings and Webinars</p>
+    </div>
+    <!--      Trainings and Webinars     -->
+    <div class="grid grid-cols-5 gap-4 mb-4">
+      <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Cavite</h1>
+        <div class="" id="donut-chart-tmd-cavite"></div>
+      </div>
+
+      <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Laguna</h1>
+        <div class="" id="donut-chart-tmd-laguna"></div>
+      </div>
+
+      <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Batangas</h1>
+        <div class="" id="donut-chart-tmd-batangas"></div>
+      </div>
+
+      <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Rizal</h1>
+        <div class="" id="donut-chart-tmd-rizal"></div>
+      </div>
+
+      <div class="flex-col h-auto rounded bg-gray-50 dark:bg-gray-800">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Quezon</h1>
+        <div class="" id="donut-chart-tmd-quezon"></div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+
+  {% endblock content %} 
+  
+  
+  {% block mainjs %}
+  <!--    Start of Exam Script           -->
+
+  <script>
+    // Exam Cavite
+    const getChartOptionsExamCavite = (caviteValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - caviteValue;
+
+      return {
+        series: [caviteValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (caviteValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["No. of Examinees", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-exam-cavite") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const caviteValue = {{ cavite_count_exam }};
+      const targetValue = {{ exam_cavite_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-exam-cavite"), getChartOptionsExamCavite(caviteValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+    // Exam Laguna
+    const getChartOptionsExamLaguna = (lagunaValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - lagunaValue;
+
+      return {
+        series: [lagunaValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (lagunaValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["No. of Examinees", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-exam-laguna") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const lagunaValue = {{ laguna_count_exam }};
+      const targetValue = {{ exam_laguna_limit }};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-exam-laguna"), getChartOptionsExamLaguna(lagunaValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+    // Exam Batangas
+    const getChartOptionsExamBatangas = (batangasValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - batangasValue;
+
+      return {
+        series: [batangasValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (batangasValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["No. of Examinees", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-exam-batangas") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const batangasValue = {{ batangas_count_exam }};
+      const targetValue = {{exam_batangas_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-exam-batangas"), getChartOptionsExamBatangas(batangasValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+    // Exam Rizal
+    const getChartOptionsExamRizal = (rizalValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - rizalValue;
+
+      return {
+        series: [rizalValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (rizalValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["No. of Examinees", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-exam-rizal") && typeof ApexCharts !== 'undefined') {
+      // Set the rizal value and the target value
+      const rizalValue = {{ rizal_count_exam }};
+      const targetValue = {{exam_rizal_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-exam-rizal"), getChartOptionsExamRizal(rizalValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+     // Exam Quezon
+     const getChartOptionsExamQuezon = (quezonValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - quezonValue;
+
+      return {
+        series: [quezonValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the quezoValue compared to the targetValue
+                    const percentage = (quezonValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["No. of Examinees", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-exam-quezon") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const quezonValue = {{ quezon_count_exam }};
+      const targetValue = {{exam_quezon_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-exam-quezon"), getChartOptionsExamQuezon(quezonValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <!--    End of exam Script        -->
+
+  <!--    Start of Ojt Script           -->
+  <script>
+    // Ojt Cavite
+    const getChartOptionsOjtCavite = (caviteValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - caviteValue;
+
+      return {
+        series: [caviteValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (caviteValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["OJT", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-ojt-cavite") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const caviteValue = {{ cavite_count_ojt }};
+      const targetValue = {{ojt_cavite_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-ojt-cavite"), getChartOptionsOjtCavite(caviteValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+    // Ojt Laguna
+    const getChartOptionsOjtLaguna = (lagunaValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - lagunaValue;
+
+      return {
+        series: [lagunaValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (lagunaValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["OJT", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-ojt-laguna") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const lagunaValue = {{ laguna_count_ojt }};
+      const targetValue = {{ojt_laguna_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-ojt-laguna"), getChartOptionsOjtLaguna(lagunaValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+    // Ojt Batangas
+    const getChartOptionsOjtBatangas = (batangasValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - batangasValue;
+
+      return {
+        series: [batangasValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (batangasValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["OJT", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-ojt-batangas") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const batangasValue = {{ batangas_count_ojt }};
+      const targetValue = {{ojt_batangas_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-ojt-batangas"), getChartOptionsOjtLaguna(batangasValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+    // Ojt Rizal
+    const getChartOptionsOjtRizal = (rizalValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - rizalValue;
+
+      return {
+        series: [rizalValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (rizalValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["OJT", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-ojt-rizal") && typeof ApexCharts !== 'undefined') {
+      // Set the rizal value and the target value
+      const rizalValue = {{ rizal_count_ojt }};
+      const targetValue = {{ojt_rizal_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-ojt-rizal"), getChartOptionsOjtRizal(rizalValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+     // Ojt Quezon
+     const getChartOptionsOjtQuezon = (quezonValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - quezonValue;
+
+      return {
+        series: [quezonValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the quezoValue compared to the targetValue
+                    const percentage = (quezonValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["OJT", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-ojt-quezon") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const quezonValue = {{ quezon_count_ojt }};
+      const targetValue = {{ojt_quezon_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-ojt-quezon"), getChartOptionsOjtQuezon(quezonValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <!--    End of Ojt Script           -->
+
+  <!-- Start of Trainings and Webinars -->
+  <script>
+    // TMD Cavite
+    const getChartOptionsTmdCavite = (caviteValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - caviteValue;
+
+      return {
+        series: [caviteValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (caviteValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["Available", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-tmd-cavite") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const caviteValue = {{ cavite_count_tmd }};
+      const targetValue = {{tmd_cavite_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-tmd-cavite"), getChartOptionsTmdCavite(caviteValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+    // TMD Laguna
+    const getChartOptionsTmdLaguna = (lagunaValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - lagunaValue;
+
+      return {
+        series: [lagunaValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (lagunaValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["Available", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-tmd-laguna") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const lagunaValue = {{ laguna_count_tmd }};
+      const targetValue = {{tmd_laguna_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-tmd-laguna"), getChartOptionsTmdLaguna(lagunaValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+    // TMD Batangas
+    const getChartOptionsTmdBatangas = (batangasValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - batangasValue;
+
+      return {
+        series: [batangasValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (batangasValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["Available", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-tmd-batangas") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const batangasValue = {{ batangas_count_tmd }};
+      const targetValue = {{tmd_batangas_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-tmd-batangas"), getChartOptionsTmdLaguna(batangasValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+    // TMD Rizal
+    const getChartOptionsTmdRizal = (rizalValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - rizalValue;
+
+      return {
+        series: [rizalValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (rizalValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["Available", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-tmd-rizal") && typeof ApexCharts !== 'undefined') {
+      // Set the rizal value and the target value
+      const rizalValue = {{ rizal_count_tmd }};
+      const targetValue = {{tmd_rizal_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-tmd-rizal"), getChartOptionsTmdRizal(rizalValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+     // TMD Quezon
+     const getChartOptionsTmdQuezon = (quezonValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - quezonValue;
+
+      return {
+        series: [quezonValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the quezoValue compared to the targetValue
+                    const percentage = (quezonValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["Available", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-tmd-quezon") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const quezonValue = {{ quezon_count_tmd }};
+      const targetValue = {{tmd_quezon_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-tmd-quezon"), getChartOptionsTmdQuezon(quezonValue, targetValue));
+      chart.render();
+    }
+  </script>
+  <!-- End of Trainings and Webinars -->
+
+  <!--Start of Engage Script-->
+  <script>
+    // Engage Cavite
+    const getChartOptionsEngageCavite = (caviteValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - caviteValue;
+
+      return {
+        series: [caviteValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (caviteValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["No. of Partners", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-engage-cavite") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const caviteValue = {{ cavite_count_engage }};
+      const targetValue = {{engage_cavite_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-engage-cavite"), getChartOptionsEngageCavite(caviteValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+    // Ojt Laguna
+    const getChartOptionsEngageLaguna = (lagunaValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - lagunaValue;
+
+      return {
+        series: [lagunaValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (lagunaValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["No. of Partners", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-engage-laguna") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const lagunaValue = {{ laguna_count_engage }};
+      const targetValue = {{engage_laguna_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-engage-laguna"), getChartOptionsEngageLaguna(lagunaValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+    // Engage Batangas
+    const getChartOptionsEngageBatangas = (batangasValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - batangasValue;
+
+      return {
+        series: [batangasValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (batangasValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["No. of Partners", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-engage-batangas") && typeof ApexCharts !== 'undefined') {
+      // Set the laguna value and the target value
+      const batangasValue = {{ batangas_count_engage }};
+      const targetValue = {{engage_batangas_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-engage-batangas"), getChartOptionsEngageBatangas(batangasValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+    // Engage Rizal
+    const getChartOptionsEngageRizal = (rizalValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - rizalValue;
+
+      return {
+        series: [rizalValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the caviteValue compared to the targetValue
+                    const percentage = (rizalValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["No. of Partners", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-engage-rizal") && typeof ApexCharts !== 'undefined') {
+      // Set the rizal value and the target value
+      const rizalValue = {{ rizal_count_engage }};
+      const targetValue = {{engage_rizal_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-engage-rizal"), getChartOptionsEngageRizal(rizalValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <script>
+     // Engage Quezon
+     const getChartOptionsEngageQuezon = (quezonValue, targetValue) => {
+      // Calculate the remaining value to reach the target
+      const remainingValue = targetValue - quezonValue;
+
+      return {
+        series: [quezonValue, remainingValue],
+        colors: ["#1C64F2", "#E5E7EB"],
+        chart: {
+          height: 200,
+          width: "100%",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: false, // Set to false to hide the label
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: -2,
+                },
+                total: {
+                  showAlways: true,
+                  show: true,
+                  label: "",
+                  fontFamily: "Inter, sans-serif",
+                  formatter: function (w) {
+                    // Calculate the percentage of the quezoValue compared to the targetValue
+                    const percentage = (quezonValue / targetValue) * 100;
+                    return `${percentage.toFixed(0)}%`;
+                  },
+                },
+                value: {
+                  show: true,
+                  fontFamily: "Inter, sans-serif",
+                  offsetY: 12,
+                  formatter: function (value) {
+                    return value.toString();
+                  },
+                },
+              },
+              size: "70%",
+            },
+          },
+        },
+        grid: {
+          padding: {
+            top: -2,
+          },
+        },
+        labels: ["No. of Partners", "Remaining"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+      };
+    };
+
+    if (document.getElementById("donut-chart-engage-quezon") && typeof ApexCharts !== 'undefined') {
+      // Set the quezon value and the target value
+      const quezonValue = {{ quezon_count_engage }};
+      const targetValue = {{engage_quezon_limit}};
+
+      // Create the chart with the updated options
+      const chart = new ApexCharts(document.getElementById("donut-chart-engage-quezon"), getChartOptionsEngageQuezon(quezonValue, targetValue));
+      chart.render();
+    }
+  </script>
+
+  <!--    End of Ojt Script           -->
+  <!--End of Engage Script-->
+  {% endblock mainjs %}
+</div>
