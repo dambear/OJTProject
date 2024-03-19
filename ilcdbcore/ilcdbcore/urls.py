@@ -14,6 +14,7 @@ from .views.util.download import download_file_attendance_sheet, download_file_p
 
 from .views.util.generate import export_intern_table_to_excel, export_exam_table_to_excel, export_engage_partners_table_to_excel, export_trainings_and_webinars_table_to_excel
 
+from .views.util.cloudinary import  upload_attendance_sheet_file
 from .views.limit.limit_view import limit
 from .views.auth.auth import login_page, logout_page
 
@@ -86,7 +87,11 @@ urlpatterns = [
     
     
     path('limit/', limit, name='limit'),
-
+    
+    
+    
+   path('upload_attendance_sheet_file/<int:tmd_id>/', upload_attendance_sheet_file, name='upload_attendance_sheet_file'),
+    
    
     
     

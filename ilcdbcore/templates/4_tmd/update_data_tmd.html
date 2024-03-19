@@ -786,6 +786,7 @@
         Other Fields
       </h4>
       <div class="grid grid-cols-3 gap-4 mb-4">
+        
         <div class="relative">
           <label
             for="attendance_sheet"
@@ -793,14 +794,17 @@
             >Attendance Sheet</label
           >
           <div class="relative">
-            <input
-              class="block w-full text-sm text-gray-800 border border-gray-800 rounded-lg cursor-pointer bg-white-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-              id="attendance_sheet"
-              name="attendance_sheet"
-              type="file"
-            />
+            
+            <!-- Modal toggle -->
+            <button data-modal-target="attendance-sheet-modal" data-modal-toggle="attendance-sheet-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+              View
+            </button>
+
           </div>
         </div>
+        
+
+        <!-- certificates issued modal button-->
         <div class="relative">
           <label
             for="certificates_issued"
@@ -808,59 +812,74 @@
             >Certificates Issued</label
           >
           <div class="relative">
-            <input
-              class="block w-full text-sm text-gray-900 border border-gray-800 rounded-lg cursor-pointer bg-white-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-              id="certificates_issued"
-              name="certificates_issued"
-              type="file"
-            />
+            
+            <!-- Modal toggle -->
+            <button data-modal-target="certificates-issued-modal" data-modal-toggle="certificates-issued-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+              View
+            </button>
+
           </div>
+        
         </div>
+        
+
+        <!-- parrticipant list modal button-->
         <div class="relative">
           <label
             for="participants_list"
-            class="block mb-2 text-sm font-medium text-gray-800 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Participants List</label
           >
           <div class="relative">
-            <input
-              class="block w-full text-sm text-gray-900 border border-gray-800 rounded-lg cursor-pointer bg-white-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-              id="participants_list"
-              name="participants_list"
-              type="file"
-            />
+            
+            <!-- Modal toggle -->
+            <button data-modal-target="participants-list-modal" data-modal-toggle="participants-list-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+              View
+            </button>
+
           </div>
+        
         </div>
+
+        <!-- group-photo modal button-->
         <div class="relative">
           <label
-            for="group_photo"
+            for="group-photo"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Photo Group</label
+            >Group Photo</label
           >
           <div class="relative">
-            <input
-              class="block w-full text-sm text-gray-900 border border-gray-800 rounded-lg cursor-pointer bg-white-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-              id="group_photo"
-              name="group_photo"
-              type="file"
-            />
+            
+            <!-- Modal toggle -->
+            <button data-modal-target="group-photo-modal" data-modal-toggle="group-photo-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+              View
+            </button>
+
           </div>
+        
         </div>
+
+
+
+        <!-- resource_person_cv modal button-->
         <div class="relative">
           <label
-            for="resource_persons_cv"
+            for="resource-persons-cv-modal"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Resource Person CV</label
           >
           <div class="relative">
-            <input
-              class="block w-full text-sm text-gray-900 border border-gray-900 rounded-lg cursor-pointer bg-white-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-              id="resource_persons_cv"
-              name="resource_persons_cv"
-              type="file"
-            />
+            
+            <!-- Modal toggle -->
+            <button data-modal-target="resource-persons-cv-modal" data-modal-toggle="resource-persons-cv-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+              View
+            </button>
+
           </div>
+        
         </div>
+        
+
       </div>
 
       <!--    ________________________________________________________    -->
@@ -891,4 +910,259 @@
   </form>
 </div>
 
+
+
+
+<!-- Attendance Sheet modal -->
+<div id="attendance-sheet-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between px-4 py-4 border-b rounded-t dark:border-gray-600">
+                <p class="text-2xl"> Attendance Sheet </p>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="attendance-sheet-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="flex-col justify-center px-4">
+                <div class="flex justify-between mb-2"> 
+
+                    <div class="mt-2">
+
+                      
+                      <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                          <input type="file" id="attendance_sheet_upload" class="hidden" onchange="upload_attendance_sheet()" />
+                          <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                              <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                          </svg>
+                          Upload
+                      </label>
+                    </div>
+                  
+                  
+                </div>
+
+                <embed id="attendance_sheet_embed" src="{{ tmd.attendance_sheet.url }}" type="application/pdf" width="100%" height="500px">
+                
+            </div>
+            <!-- Modal footer -->
+            <div class="flex justify-end items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600"></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Certificates Issued modal -->
+<div id="certificates-issued-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between px-4 py-4 border-b rounded-t dark:border-gray-600">
+                <p class="text-2xl"> Certificates Issued </p>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="certificates-issued-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="flex-col justify-center px-4">
+                <div class="flex justify-between mb-2"> 
+
+                    <div class="mt-2">
+
+                      <a href="{{ tmd.certificates_issued.url }}" target="_blank">
+                        <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                          <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                           <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                          </svg>
+                          View
+                        </button>
+                      </a>
+                    </div>
+                  
+                  
+                </div>
+
+                <embed src="{{ tmd.certificates_issued.url }}" type="application/pdf" width="100%" height="500px">
+                
+            </div>
+            <!-- Modal footer -->
+            <div class="flex justify-end items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600"></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Participants List modal -->
+<div id="participants-list-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between px-4 py-4 border-b rounded-t dark:border-gray-600">
+                <p class="text-2xl"> Participants List </p>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="participants-list-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="flex-col justify-center px-4">
+                <div class="flex justify-between mb-2"> 
+
+                    <div class="mt-2">
+
+                      <a href="{{ tmd.participants_list.url }}" target="_blank">
+                        <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                          <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                           <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                          </svg>
+                          View
+                        </button>
+                      </a>
+                    </div>
+                  
+                  
+                </div>
+
+                <embed src="{{ tmd.participants_list.url }}" type="application/pdf" width="100%" height="500px">
+                
+            </div>
+            <!-- Modal footer -->
+            <div class="flex justify-end items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Group Photo modal -->
+<div id="group-photo-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between px-4 py-4 border-b rounded-t dark:border-gray-600">
+                <p class="text-2xl"> Group Photo </p>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="group-photo-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="flex-col justify-center px-4">
+                <div class="flex justify-between mb-2"> 
+
+                    <div class="mt-2">
+
+                      <a href="{{ tmd.group_photo.url }}" target="_blank">
+                        <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                          <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                           <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                          </svg>
+                          View
+                        </button>
+                      </a>
+                    </div>
+                  
+                  
+                </div>
+
+                <embed src="{{ tmd.group_photo.url }}" type="application/pdf" width="100%" height="500px">
+                
+            </div>
+            <!-- Modal footer -->
+            <div class="flex justify-end items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Resource-Person-CV modal -->
+<div id="resource-persons-cv-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between px-4 py-4 border-b rounded-t dark:border-gray-600">
+                <p class="text-2xl"> Resume/CV </p>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="resource-persons-cv-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="flex-col justify-center px-4">
+                <div class="flex justify-between mb-2"> 
+
+                    <div class="mt-2">
+
+                      <a href="{{ tmd.resource_persons_cv.url }}" target="_blank">
+                        <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                          <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                           <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                          </svg>
+                          View
+                        </button>
+                      </a>
+                    </div>
+                  
+                  
+                </div>
+
+                <embed src="{{ tmd.resource_persons_cv.url }}" type="application/pdf" width="100%" height="500px">
+                
+            </div>
+            <!-- Modal footer -->
+            <div class="flex justify-end items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600"></div>
+        </div>
+    </div>
+</div>
+
 {% endblock content %}
+
+
+{% block mainjs %}
+
+<script>
+function upload_attendance_sheet() {
+    const fileInput = document.getElementById('attendance_sheet_upload');
+    const file = fileInput.files[0];
+    if (file) {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        fetch('/upload_attendance_sheet_file/' + {{ tmd.id }} + '/', { // Include the id in the URL
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Update the src attribute of the embed element with the new URL
+            const embedElement = document.getElementById('attendance_sheet_embed');
+            if (embedElement && data.tmdupdatedattendanceurl) {
+                embedElement.src = data.tmdupdatedattendanceurl;
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+}
+</script>
+
+{% endblock mainjs %}
