@@ -3,16 +3,13 @@
 {% extends "_base.html" %} {% block content %}
 
 <div
-  class="p-8 items-center justify-center h-auto rounded-xl bg-white dark:bg-gray-800"
+  class="p-8 items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-800 mt-4"
 >
-  <div class="pl-8 text-2xl font-bold">Limit</div>
-
   <form method="post" action="{% url 'limit' %}">
     {% csrf_token %}
 
-    <div class="relative shadow-md px-8 py-4">
-      <h4 class="mt-4 mb-4 text-xl font-semibold text-blue-500">
-        Examinee Profile (Exam)
+        <h4 class="mt-4 mb-4 text-xl font-bold text-blue-500">
+        Exam
       </h4>
 
         <div class="grid grid-cols-5 gap-4 mb-4">
@@ -44,7 +41,7 @@
                     type="number"
                     id="exam_cavite_limit"
                     name="exam_cavite_limit"
-                    class="bg-white-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 shadow-xl shadow-white"
+                    class="bg-white-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
                     value="{{ limit.exam_cavite_limit }}"
                     />
@@ -196,8 +193,8 @@
         <!--End of Exam Limit-->
 
         <!--Start of Engaged Partners Limit-->
-        <h4 class="mt-6 mb-4 text-xl font-semibold text-blue-500">
-            Limit (Engaged Partners)
+        <h4 class="mt-6 mb-4 text-xl font-bold text-blue-500">
+            Engaged Partners
           </h4>
         <div class="grid grid-cols-5 gap-4 mb-4">
             <div class="relative">
@@ -381,8 +378,8 @@
         <!--End of Engaged Partners Limit-->
 
         <!--Start of OJT Trainees Limit-->
-        <h4 class="mt-6 mb-4 text-xl font-semibold text-blue-500">
-            Limit (OJT Trainees)
+        <h4 class="mt-6 mb-4 text-xl font-bold text-blue-500">
+            OJT Trainees
           </h4>
         <div class="grid grid-cols-5 gap-4 mb-4">
             <div class="relative">
@@ -566,8 +563,8 @@
         <!--End of OJT Trainees Limit-->
 
         <!--Start of Trainings and Webinars Limit-->
-        <h4 class="mt-6 mb-4 text-xl font-semibold text-blue-500">
-            Limit (Trainings and Webinars)
+        <h4 class="mt-6 mb-4 text-xl font-bold text-blue-500">
+            Trainings and Webinars
           </h4>
         <div class="grid grid-cols-5 gap-4 mb-4">
             <div class="relative">
@@ -753,7 +750,7 @@
             <button type="submit" class="btnSub btn-primary btn-lg text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-base px-8 py-2  .5 text-center">Submit</button>
         </div>
       <!-- fdsf ___________________________________________________ -->
-    </div>
+    
   </form>
 </div>
 

@@ -24,11 +24,10 @@
 
 {% endblock mainjs %}
 
-<div
-class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-800">
+<div class="items-center justify-center h-auto rounded-xl bg-gray-200">
 
 <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
-  <div class="pl-8 pt-4 text-4xl">C3D2 Table</div>
+  <div class="pl-8 pt-4 text-4xl">C3D2</div>
   <div class="shadow-md px-8 py-4 overflow-x-auto mx-2">
     <table id="dataTable" class="">
       <thead class="uppercase text-center">
@@ -70,7 +69,7 @@ class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-80
                <a href="{% url 'view_data_c3d2' c3d2.id %}">
                 <button
                   type="button"
-                  class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-gray-600 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-gray-600 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none"
                 >
                   <svg
                     class="w-3 h-3 text-white me-2"
@@ -92,7 +91,7 @@ class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-80
               <a href="{% url 'update_data_c3d2' c3d2.id %}">
                 <button
                   type="button"
-                  class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   <svg
                     class="w-3 h-3 text-white me-2"
@@ -116,7 +115,7 @@ class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-80
                 {% csrf_token %}
                 <button
                   type="submit"
-                  class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   <svg
                     class="w-3 h-3 text-white me-2"
@@ -155,7 +154,7 @@ class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-80
       type="button"
       data-tooltip-target="tooltip-print"
       data-tooltip-placement="left"
-      class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400"
+      class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 focus:ring-4 focus:ring-gray-300 focus:outline-none"
     >
       <svg
         class="w-5 h-5"
@@ -174,7 +173,7 @@ class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-80
     <div
       id="tooltip-print"
       role="tooltip"
-      class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+      class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip"
     >
       Excel
       <div class="tooltip-arrow" data-popper-arrow></div>
@@ -185,7 +184,7 @@ class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-80
         type="button"
         data-tooltip-target="tooltip-copy"
         data-tooltip-placement="left"
-        class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 dark:hover:text-white shadow-sm dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400"
+        class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 focus:outline-none"
       >
         <svg
           class="w-5 h-5"
@@ -208,7 +207,7 @@ class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-80
     <div
       id="tooltip-copy"
       role="tooltip"
-      class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+      class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip"
     >
       AddNewData
       <div class="tooltip-arrow" data-popper-arrow></div>
@@ -219,7 +218,7 @@ class="items-center justify-center h-auto rounded-xl bg-gray-200 dark:bg-gray-80
     data-dial-toggle="speed-dial-menu-default"
     aria-controls="speed-dial-menu-default"
     aria-expanded="false"
-    class="flex items-center justify-center text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800"
+    class="flex items-center justify-center text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none"
   >
     <svg
       class="w-5 h-5 transition-transform group-hover:rotate-45"
