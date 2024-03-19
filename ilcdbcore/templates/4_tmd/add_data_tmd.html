@@ -3,7 +3,7 @@
 {% extends "_base.html" %} {% block content %}
 
 <div
-  class="p-8 items-center justify-center h-auto rounded-xl bg-white dark:bg-gray-800"
+  class="p-8 items-center justify-center h-auto rounded-xl bg-white"
 >
   <div class="pl-8 text-2xl font-bold">Trainings and webinars</div>
   <form
@@ -14,14 +14,14 @@
     {% csrf_token %}
 
     <div class="relative shadow-md px-8 py-4">
-      <h4 class="mb-8 text-lg font-semibold text-blue-800">
+      <h4 class="mb-8 text-lg font-semibold text-blue-500">
         Student Information
       </h4>
       <div class="grid grid-cols-3 gap-4 mb-4">
         <div class="relative">
           <label
             for="course_name"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Course Name</label
           >
           <div class="relative">
@@ -29,7 +29,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -46,7 +46,7 @@
               type="text"
               id="course_name"
               name="course_name"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder="Juan S. Dela Cruz"
             />
           </div>
@@ -54,7 +54,7 @@
         <div class="relative">
           <label
             for="training_track"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Training Track</label
           >
           <div class="relative">
@@ -62,7 +62,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -79,7 +79,7 @@
               type="text"
               id="training_track"
               name="training_track"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder="Training Track"
             />
           </div>
@@ -87,15 +87,15 @@
         <div class="relative">
           <label
             for="province"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Province</label
           >
           <div class="flex">
             <label
-              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-white-100 border border-gray-800 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-gray-50 border border-gray-200 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100"
             >
               <svg
-                class="w-4 h-4 text-blue-800 dark:text-gray-400"
+                class="w-4 h-4 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -111,7 +111,7 @@
             <select
               id="province"
               name="province"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-e-lg border-s-gray-100 w-full p-2.5"
             >
               <option value="" disabled selected>Select Province</option>
               <option value="Cavite">Cavite</option>
@@ -125,7 +125,7 @@
         <div class="relative">
           <label
             for="resource_persons"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Resource Person</label
           >
           <div class="relative">
@@ -133,7 +133,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -150,7 +150,7 @@
               type="text"
               id="resource_persons"
               name="resource_persons"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder="Juan S. Dela Cruz"
             />
           </div>
@@ -158,7 +158,7 @@
         <div class="relative">
           <label
             for="course_officers"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Course Officer</label
           >
           <div class="relative">
@@ -166,7 +166,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -183,7 +183,7 @@
               type="text"
               id="course_officers"
               name="course_officers"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder="Juan S. Dela Cruz"
             />
           </div>
@@ -191,7 +191,7 @@
         <div class="relative">
           <label
             for="course_officers_email"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Course Officer Email</label
           >
           <div class="relative">
@@ -199,7 +199,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -216,7 +216,7 @@
               type="email"
               id="course_officers_email"
               name="course_officers_email"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder="Juan S. Dela Cruz"
             />
           </div>
@@ -224,7 +224,7 @@
         <div class="relative">
           <label
             for="time"
-            class="block mb-2 text-sm font-medium text-gray-800 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-800"
             >Time</label
           >
           <div class="relative">
@@ -232,7 +232,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-5 text-blue-800 dark:text-gray-400"
+                class="w-5 h-5 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -249,7 +249,7 @@
               type="time"
               id="time"
               name="time"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -257,7 +257,7 @@
         <div class="relative">
           <label
             for="start_date"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Start Date</label
           >
           <div class="relative max-w-sm">
@@ -265,7 +265,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
             >
               <svg
-                class="w-4 h-4 text-blue-800 dark:text-gray-400"
+                class="w-4 h-4 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -281,7 +281,7 @@
               datepicker-autohide
               name="start_date"
               type="text"
-              class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
               placeholder="Select date"
             />
           </div>
@@ -289,7 +289,7 @@
         <div class="relative">
           <label
             for="end_date"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >End Date</label
           >
           <div class="relative max-w-sm">
@@ -297,7 +297,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
             >
               <svg
-                class="w-4 h-4 text-blue-800 dark:text-gray-400"
+                class="w-4 h-4 text-blue-800"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -313,7 +313,7 @@
               datepicker-autohide
               name="end_date"
               type="text"
-              class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
               placeholder="Select date"
             />
           </div>
@@ -322,7 +322,7 @@
         <div class="relative">
           <label
             for="implementation_mode"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Implementation Mode</label
           >
           <div class="relative">
@@ -330,7 +330,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -347,7 +347,7 @@
               type="text"
               id="implementation_mode"
               name="implementation_mode"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -356,7 +356,7 @@
         <div class="relative">
           <label
             for="total_num_hours"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Total Number of Hours</label
           >
           <div class="relative">
@@ -364,7 +364,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -381,21 +381,21 @@
               type="text"
               id="total_num_hours"
               name="total_num_hours"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
         </div>
       </div>
 
-      <h4 class="mt-8 mb-8 text-lg font-semibold text-blue-800">
+      <h4 class="mt-8 mb-8 text-lg font-semibold text-blue-500">
         Numbers of Male and Female
       </h4>
       <div class="grid grid-cols-5 gap-4 mb-4">
         <div class="relative">
           <label
             for="nga_m"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >NGA Male</label
           >
           <div class="relative">
@@ -403,7 +403,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -420,7 +420,7 @@
               type="number"
               id="nga_m"
               name="nga_m"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -428,7 +428,7 @@
         <div class="relative">
           <label
             for="suc_m"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >SUC Male</label
           >
           <div class="relative">
@@ -436,7 +436,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -453,7 +453,7 @@
               type="number"
               id="suc_m"
               name="suc_m"
-              class="bg-white-50 border border-grey-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -461,7 +461,7 @@
         <div class="relative">
           <label
             for="lgu_m"
-            class="block mb-2 text-sm font-medium text-gray-800 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-800"
             >LGU Male</label
           >
           <div class="relative">
@@ -469,7 +469,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -486,7 +486,7 @@
               type="number"
               id="lgu_m"
               name="lgu_m"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -494,7 +494,7 @@
         <div class="relative">
           <label
             for="others_m"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Others Male</label
           >
           <div class="relative">
@@ -502,7 +502,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -519,7 +519,7 @@
               type="number"
               id="others_m"
               name="others_m"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -528,7 +528,7 @@
         <div class="relative">
           <label
             for="total_m"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Total Male</label
           >
           <div class="relative">
@@ -536,7 +536,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -553,7 +553,7 @@
               type="number"
               id="total_m"
               name="total_m"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -561,7 +561,7 @@
         <div class="relative">
           <label
             for="nga_f"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >NGA Female</label
           >
           <div class="relative">
@@ -569,7 +569,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -586,7 +586,7 @@
               type="number"
               id="nga_f"
               name="nga_f"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -594,7 +594,7 @@
         <div class="relative">
           <label
             for="suc_f"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >SUC Female</label
           >
           <div class="relative">
@@ -602,7 +602,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -619,7 +619,7 @@
               type="number"
               id="suc_f"
               name="suc_f"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -627,7 +627,7 @@
         <div class="relative">
           <label
             for="lgu_f"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >LGU Female</label
           >
           <div class="relative">
@@ -635,7 +635,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -652,7 +652,7 @@
               type="number"
               id="lgu_f"
               name="lgu_f"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -661,7 +661,7 @@
         <div class="relative">
           <label
             for="others_f"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Others Female</label
           >
           <div class="relative">
@@ -669,7 +669,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -686,7 +686,7 @@
               type="number"
               id="others_f"
               name="others_f"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -695,7 +695,7 @@
         <div class="relative">
           <label
             for="total_f"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Total Female</label
           >
           <div class="relative">
@@ -703,7 +703,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -720,7 +720,7 @@
               type="number"
               id="total_f"
               name="total_f"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -728,7 +728,7 @@
         <div class="relative">
           <label
             for="total_participants"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Total Participants</label
           >
           <div class="relative">
@@ -736,7 +736,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -753,7 +753,7 @@
               type="number"
               id="total_participants"
               name="total_participants"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
             />
           </div>
@@ -764,19 +764,19 @@
 
       <!-- fdsf ___________________________________________________ -->
 
-      <h4 class="text-lg font-semibold mt-8 mb-8 text-blue-800">
+      <h4 class="text-lg font-semibold mt-8 mb-8 text-blue-500">
         Other Fields
       </h4>
       <div class="grid grid-cols-3 gap-4 mb-4">
         <div class="relative">
           <label
             for="attendance_sheet"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Attendance Sheet</label
           >
           <div class="relative">
             <input
-              class="block w-full text-sm text-gray-800 border border-gray-800 rounded-lg cursor-pointer bg-white-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+              class="block w-full text-sm text-gray-800 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
               id="attendance_sheet"
               name="attendance_sheet"
               type="file"
@@ -791,15 +791,15 @@
         <div class="relative">
           <label
             for="certificates_issued"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Certificates Issued</label
           >
           <div class="relative">
             <input
-              class="block w-full text-sm text-gray-900 border border-gray-800 rounded-lg cursor-pointer bg-white-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
               id="certificates_issued"
               name="certificates_issued"
-              type="file"
+              type="file" 
               accept="image/*,.pdf,.doc,.docx,.xls,.xlsx"
               onchange="validateFileSize(this)"
             />
@@ -811,12 +811,12 @@
         <div class="relative">
           <label
             for="participants_list"
-            class="block mb-2 text-sm font-medium text-gray-800 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-800"
             >Participants List</label
           >
           <div class="relative">
             <input
-              class="block w-full text-sm text-gray-900 border border-gray-800 rounded-lg cursor-pointer bg-white-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
               id="participants_list"
               name="participants_list"
               type="file"
@@ -831,12 +831,12 @@
         <div class="relative">
           <label
             for="group_photo"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Photo Group</label
           >
           <div class="relative">
             <input
-              class="block w-full text-sm text-gray-900 border border-gray-800 rounded-lg cursor-pointer bg-white-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
               id="group_photo"
               name="group_photo"
               type="file"
@@ -851,12 +851,12 @@
         <div class="relative">
           <label
             for="resource_persons_cv"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Resource Person CV</label
           >
           <div class="relative">
             <input
-              class="block w-full text-sm text-gray-900 border border-gray-900 rounded-lg cursor-pointer bg-white-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
               id="resource_persons_cv"
               name="resource_persons_cv"
               type="file"
@@ -876,7 +876,7 @@
         <div class="relative">
           <label
             for="remarks"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-gray-900"
             >Remarks</label
           >
           <div class="relative">
@@ -884,15 +884,15 @@
               id="remarks"
               name="remarks"
               rows="4"
-              class="block p-2.5 w-full text-sm text-gray-900 bg-white-50 rounded-lg border border-gray-800 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="block p-2.5 w-full text-sm text-gray-200 bg-white-50 rounded-lg border border-gray-200  focus:ring-blue-500 focus:border-blue-500"
               placeholder="Write your thoughts here..."
             ></textarea>
           </div>
         </div>
       </div>
-    </div>
-    <div class="my-4 d-flex justify-content-end">
-      <button type="submit" class="btnSub btn-primary btn-lg">Submit</button>
+      <div class="flex-col flex items-center mt-6 ">
+        <button type="submit" class="btnSub btn-primary btn-lg text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-base px-8 py-2  .5 text-center">Submit</button>
+      </div>
     </div>
   </form>
 </div>

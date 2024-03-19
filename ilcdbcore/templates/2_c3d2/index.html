@@ -1,12 +1,17 @@
 <!-- templates/index.html -->
 
-{% extends "_base.html" %} {% block content %} {% block maincss %}
+
+{% extends "_base.html" %} 
+
+{% block maincss %}
 
 <!-- Include DataTables CSS -->
 <link
   rel="stylesheet"
   href="https://cdn.datatables.net/2.0.0/css/dataTables.tailwindcss.css"
 />
+
+
 
 {% endblock maincss %} {% block mainjs %}
 
@@ -22,222 +27,227 @@
   new DataTable("#dataTable");
 </script>
 
-{% endblock mainjs %}
+{% endblock mainjs %} {% block content %}
+
+
+
 
 <div class="items-center justify-center h-auto rounded-xl bg-gray-200">
-
-<main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
-  <div class="pl-8 pt-4 text-4xl">C3D2</div>
-  <div class="shadow-md px-8 py-4 overflow-x-auto mx-2">
-    <table id="dataTable" class="">
-      <thead class="uppercase text-center">
-        <tr>
-          <th scope="col" class="text-center bg-main-color text-white">
-            Id
-           </th>
-          <th scope="col" class="text-center bg-main-color text-white">
-           Name Examinee
-          </th>
-          <th scope="col" class="text-center bg-main-color text-white">
-            Gender
-          </th>
-          <th scope="col" class="text-center bg-main-color text-white">
-            Province
-          </th>
-          <th scope="col" class="text-center bg-main-color text-white">
-            School
-          </th>
-          <th scope="col" class="text-center bg-main-color text-white">
-            Status
-          </th>
-          <th scope="col" class="text-center bg-main-color text-white">
-            Action
-          </th>
-        </tr>
-      </thead>
-      <tbody class="uppercase text-center">
-        {% for c3d2 in c3d2s %}
-        <tr>
+  <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
+    <div class="pl-8 pt-4 text-4xl">C3D2</div>
+    <div class="shadow-md px-8 py-4 overflow-x-auto mx-2">
+      <table id="dataTable" class="mx-auto w-full">
+        <thead class="uppercase text-center">
+          <tr>
+            <th scope="col" class="text-center bg-blue-500 text-white">Id</th>
+            <th scope="col" class="text-center bg-blue-500 text-white">
+              Name Examinee
+            </th>
+            <th scope="col" class="text-center bg-blue-500 text-white">
+              Gender
+            </th>
+            <th scope="col" class="text-center bg-blue-500 text-white">
+              Province
+            </th>
+            <th scope="col" class="text-center bg-blue-500 text-white">
+              School
+            </th>
+            <th scope="col" class="text-center bg-blue-500 text-white">
+              Status
+            </th>
+            
+            <th scope="col" class="text-center bg-blue-500  text-white">
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody class="uppercase text-center">
+          {% for c3d2 in c3d2s %}
+          <tr>
             <td>{{ c3d2.id }}</td>
             <td>{{ c3d2.name_of_examinee }}</td>
             <td>{{ c3d2.gender }}</td>
             <td>{{ c3d2.province }}</td>
             <td>{{ c3d2.venue_or_school }}</td>
             <td>{{ c3d2.status }}</td>
-          <td data-label="Actions" class="flex justify-between">
-            <div class="action-buttons">
-               <a href="{% url 'view_data_c3d2' c3d2.id %}">
-                <button
-                  type="button"
-                  class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-gray-600 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none"
-                >
-                  <svg
-                    class="w-3 h-3 text-white me-2"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 16"
+            <td data-label="Actions" class="flex justify-between">
+              <div class="action-buttons">
+                <a href="{% url 'view_data_c3d2' c3d2.id %}">
+                  <button
+                    type="button"
+                    class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-gray-600 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none"
                   >
-                    <path
-                      d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
-                    />
-                    <path
-                      d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
-                    />
-                  </svg>
-                  V
-                </button>
-              </a>
-              <a href="{% url 'update_data_c3d2' c3d2.id %}">
-                <button
-                  type="button"
-                  class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
-                >
-                  <svg
-                    class="w-3 h-3 text-white me-2"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 16"
+                    <svg
+                      class="w-3 h-3 text-white me-2"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 16"
+                    >
+                      <path
+                        d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+                      />
+                      <path
+                        d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+                      />
+                    </svg>
+                    View
+                  </button>
+                </a>
+                <a href="{% url 'update_data_c3d2' c3d2.id %}">
+                  <button
+                    type="button"
+                    class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
-                    <path
-                      d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
-                    />
-                    <path
-                      d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
-                    />
-                  </svg>
-                  Up
-                </button>
-              </a>
+                    <svg
+                      class="w-3 h-3 text-white me-2"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 16"
+                    >
+                      <path
+                        d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+                      />
+                      <path
+                        d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+                      />
+                    </svg>
+                    Update
+                  </button>
+                </a>
 
-              <form method="post" action="{% url 'delete_data_c3d2' c3d2.id %}" style="display:inline-block;">
-                {% csrf_token %}
-                <button
-                  type="submit"
-                  class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                <form
+                  method="post"
+                  action="{% url 'delete_data_c3d2' c3d2.id %}"
+                  style="display: inline-block"
                 >
-                  <svg
-                    class="w-3 h-3 text-white me-2"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 16"
+                  {% csrf_token %}
+                  <button
+                    type="submit"
+                    class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
-                    <path
-                      d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
-                    />
-                    <path
-                      d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
-                    />
-                  </svg>
-                  De
-                </button>
-              </form>
-            </div>
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<!--Speed Dial-->
-
-<div data-dial-init class="fixed end-6 bottom-6 group">
-  <div
-    id="speed-dial-menu-default"
-    class="flex flex-col items-center hidden mb-4 space-y-2"
-  >
-    <button
-      type="button"
-      data-tooltip-target="tooltip-print"
-      data-tooltip-placement="left"
-      class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 focus:ring-4 focus:ring-gray-300 focus:outline-none"
-    >
-      <svg
-        class="w-5 h-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-      >
-        <path d="M5 20h10a1 1 0 0 0 1-1v-5H4v5a1 1 0 0 0 1 1Z" />
-        <path
-          d="M18 7H2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2v-3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Zm-1-2V2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3h14Z"
-        />
-      </svg>
-      <span class="sr-only">Excel</span>
-    </button>
-    <div
-      id="tooltip-print"
-      role="tooltip"
-      class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip"
-    >
-      Excel
-      <div class="tooltip-arrow" data-popper-arrow></div>
+                    <svg
+                      class="w-3 h-3 text-white me-2"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 16"
+                    >
+                      <path
+                        d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+                      />
+                      <path
+                        d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+                      />
+                    </svg>
+                    Delete
+                  </button>
+                </form>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
+  </main>
 
-    <a href="add_data_c3d2">
+  <!--Speed Dial-->
+
+  <div data-dial-init class="fixed end-6 bottom-6 group">
+    <div
+      id="speed-dial-menu-default"
+      class="flex flex-col items-center hidden mb-4 space-y-2"
+    >
       <button
         type="button"
-        data-tooltip-target="tooltip-copy"
+        data-tooltip-target="tooltip-print"
         data-tooltip-placement="left"
-        class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 focus:outline-none"
+        class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 focus:ring-4 focus:ring-gray-300 focus:outline-none"
       >
         <svg
           class="w-5 h-5"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
-          viewBox="0 0 18 20"
+          viewBox="0 0 20 20"
         >
+          <path d="M5 20h10a1 1 0 0 0 1-1v-5H4v5a1 1 0 0 0 1 1Z" />
           <path
-            d="M5 9V4.13a2.96 2.96 0 0 0-1.293.749L.879 7.707A2.96 2.96 0 0 0 .13 9H5Zm11.066-9H9.829a2.98 2.98 0 0 0-2.122.879L7 1.584A.987.987 0 0 0 6.766 2h4.3A3.972 3.972 0 0 1 15 6v10h1.066A1.97 1.97 0 0 0 18 14V2a1.97 1.97 0 0 0-1.934-2Z"
-          />
-          <path
-            d="M11.066 4H7v5a2 2 0 0 1-2 2H0v7a1.969 1.969 0 0 0 1.933 2h9.133A1.97 1.97 0 0 0 13 18V6a1.97 1.97 0 0 0-1.934-2Z"
+            d="M18 7H2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2v-3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Zm-1-2V2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3h14Z"
           />
         </svg>
-
-        <span class="sr-only">AddNewData</span>
+        <span class="sr-only">Excel</span>
       </button>
-    </a>
-    <div
-      id="tooltip-copy"
-      role="tooltip"
-      class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip"
-    >
-      AddNewData
-      <div class="tooltip-arrow" data-popper-arrow></div>
-    </div>
-  </div>
-  <button
-    type="button"
-    data-dial-toggle="speed-dial-menu-default"
-    aria-controls="speed-dial-menu-default"
-    aria-expanded="false"
-    class="flex items-center justify-center text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none"
-  >
-    <svg
-      class="w-5 h-5 transition-transform group-hover:rotate-45"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 18 18"
-    >
-      <path
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M9 1v16M1 9h16"
-      />
-    </svg>
-    <span class="sr-only">Open actions menu</span>
-  </button>
-</main>
-</div>
+      <div
+        id="tooltip-print"
+        role="tooltip"
+        class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip"
+      >
+        Excel
+        <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
 
-{% endblock content %}
+      <a href="add_data_c3d2">
+        <button
+          type="button"
+          data-tooltip-target="tooltip-copy"
+          data-tooltip-placement="left"
+          class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 focus:outline-none"
+        >
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 18 20"
+          >
+            <path
+              d="M5 9V4.13a2.96 2.96 0 0 0-1.293.749L.879 7.707A2.96 2.96 0 0 0 .13 9H5Zm11.066-9H9.829a2.98 2.98 0 0 0-2.122.879L7 1.584A.987.987 0 0 0 6.766 2h4.3A3.972 3.972 0 0 1 15 6v10h1.066A1.97 1.97 0 0 0 18 14V2a1.97 1.97 0 0 0-1.934-2Z"
+            />
+            <path
+              d="M11.066 4H7v5a2 2 0 0 1-2 2H0v7a1.969 1.969 0 0 0 1.933 2h9.133A1.97 1.97 0 0 0 13 18V6a1.97 1.97 0 0 0-1.934-2Z"
+            />
+          </svg>
+
+          <span class="sr-only">AddNewData</span>
+        </button>
+      </a>
+      <div
+        id="tooltip-copy"
+        role="tooltip"
+        class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip"
+      >
+        AddNewData
+        <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
+    </div>
+    <button
+      type="button"
+      data-dial-toggle="speed-dial-menu-default"
+      aria-controls="speed-dial-menu-default"
+      aria-expanded="false"
+      class="flex items-center justify-center text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none"
+    >
+      <svg
+        class="w-5 h-5 transition-transform group-hover:rotate-45"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 18 18"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 1v16M1 9h16"
+        />
+      </svg>
+      <span class="sr-only">Open actions menu</span>
+    </button>
+  </div>
+
+  {% endblock content %}
+</div>
