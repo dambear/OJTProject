@@ -75,11 +75,14 @@ def update_data_tmd(request, tmd_id):
         course_officers_email = request.POST.get("course_officers_email")
         remarks = request.POST.get("remarks")
         
-        participants_list = request.FILES['participants_list']
-        attendance_sheet = request.POST.get['attendance_sheet']
-        group_photo = request.FILES['group_photo']
-        certificates_issued = request.FILES['certificates_issued']
-        resource_persons_cv = request.FILES['resource_persons_cv']
+        participants_list = request.POST.get('participants_list')
+        attendance_sheet = request.POST.get('attendance_sheet')
+        group_photo = request.POST.get('group_photo')
+        certificates_issued = request.POST.get('certificates_issued')
+        resource_persons_cv = request.POST.get('resource_persons_cv')
+        
+        start_date_obj = datetime.strptime(start_date, "%m/%d/%Y").strftime("%Y-%m-%d")
+        end_date_obj = datetime.strptime(end_date, "%m/%d/%Y").strftime("%Y-%m-%d")
         
         
        
@@ -87,8 +90,8 @@ def update_data_tmd(request, tmd_id):
         tmd.province = province
         tmd.course_name = course_name 
         tmd.training_track = training_track
-        tmd.start_date = start_date   
-        tmd.end_date = end_date  
+        tmd.start_date = start_date_obj   
+        tmd.end_date = end_date_obj  
         tmd.time = time
         tmd.total_num_hours = total_num_hours 
         tmd.nga_m = nga_m
@@ -159,11 +162,11 @@ def add_data_tmd(request):
         remarks = request.POST.get("remarks")
         
         
-        participants_list = request.FILES['participants_list']
-        attendance_sheet = request.FILES['attendance_sheet']
-        group_photo = request.FILES['group_photo']
-        certificates_issued = request.FILES['certificates_issued']
-        resource_persons_cv = request.FILES['resource_persons_cv']
+        participants_list = request.FILES('participants_list')
+        attendance_sheet = request.FILES('attendance_sheet')
+        group_photo = request.FILES('group_photo')
+        certificates_issued = request.FILES('certificates_issued')
+        resource_persons_cv = request.FILES('resource_persons_cv')
         
         
         

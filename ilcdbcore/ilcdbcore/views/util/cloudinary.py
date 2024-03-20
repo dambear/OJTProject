@@ -1,7 +1,5 @@
 import cloudinary.uploader
-from django.conf import settings
-from main.models import Training_Webinars_Table
-from django.shortcuts import get_object_or_404
+
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
@@ -31,21 +29,89 @@ def delete_file_from_cloudinary(url):
         
 
 @csrf_exempt
-def upload_attendance_sheet_file(request, tmd_id):
-    tmd = get_object_or_404(Training_Webinars_Table, id=tmd_id)
+def upload_attendance_sheet_file(request):
+
     
     if request.method == 'POST':
-        file = request.FILES['file']
+        attendance_sheet_file = request.FILES['attendance_sheet_file']
         
         
-        tmd.attendance_sheet = file
+      
 
         
-        tmdupdatedattendanceurl = upload_file_to_cloudinary(file)
+        tmdupdatedattendanceurl = upload_file_to_cloudinary(attendance_sheet_file)
         
         return JsonResponse({
             'message': 'File uploaded successfully',
             'tmdupdatedattendanceurl': tmdupdatedattendanceurl # Include the URL in the response
+        })
+    
+    else:
+        return JsonResponse({'error': 'Invalid request method'})
+
+
+@csrf_exempt
+def upload_certificates_issued_file(request):
+    
+    if request.method == 'POST':
+        certificates_issued_file = request.FILES['certificates_issued_file']
+        
+        tmdupdatedcertificatesurl = upload_file_to_cloudinary(certificates_issued_file)
+        
+        return JsonResponse({
+            'message': 'File uploaded successfully',
+            'tmdupdatedcertificatesurl': tmdupdatedcertificatesurl # Include the URL in the response
+        })
+    
+    else:
+        return JsonResponse({'error': 'Invalid request method'})
+
+@csrf_exempt
+def upload_participants_list_file(request):
+
+    if request.method == 'POST':
+        participants_list_file = request.FILES['participants_list_file']
+        
+        tmdupdatedparticipantsurl = upload_file_to_cloudinary(participants_list_file)
+        
+        return JsonResponse({
+            'message': 'File uploaded successfully',
+            'tmdupdatedparticipantsurl': tmdupdatedparticipantsurl # Include the URL in the response
+        })
+    
+    else:
+        return JsonResponse({'error': 'Invalid request method'})
+
+@csrf_exempt
+def upload_group_photo_file(request):
+
+    if request.method == 'POST':
+        group_photo_file = request.FILES['group_photo_file']
+        
+        tmdupdatedgroupphotourl = upload_file_to_cloudinary(group_photo_file)
+        
+        return JsonResponse({
+            'message': 'File uploaded successfully',
+            'tmdupdatedgroupphotourl': tmdupdatedgroupphotourl # Include the URL in the response
+        })
+    
+    else:
+        return JsonResponse({'error': 'Invalid request method'})
+
+
+@csrf_exempt
+def upload_resource_persons_cv_file(request):
+  
+    
+    if request.method == 'POST':
+        resource_persons_cv_file = request.FILES['resource_persons_cv_file']
+        
+        
+        tmdupdatedresourcepersonscvurl = upload_file_to_cloudinary(resource_persons_cv_file)
+        
+        return JsonResponse({
+            'message': 'File uploaded successfully',
+            'tmdupdatedresourcepersonscvurl': tmdupdatedresourcepersonscvurl # Include the URL in the response
         })
     
     else:

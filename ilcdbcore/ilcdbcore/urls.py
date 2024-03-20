@@ -14,7 +14,7 @@ from .views.util.download import download_file_attendance_sheet, download_file_p
 
 from .views.util.generate import export_intern_table_to_excel, export_exam_table_to_excel, export_engage_partners_table_to_excel, export_trainings_and_webinars_table_to_excel
 
-from .views.util.cloudinary import  upload_attendance_sheet_file
+from .views.util.cloudinary import  upload_attendance_sheet_file, upload_certificates_issued_file, upload_participants_list_file, upload_group_photo_file, upload_resource_persons_cv_file
 from .views.limit.limit_view import limit
 from .views.auth.auth import login_page, logout_page
 
@@ -90,8 +90,11 @@ urlpatterns = [
     
     
     
-   path('upload_attendance_sheet_file/<int:tmd_id>/', upload_attendance_sheet_file, name='upload_attendance_sheet_file'),
-    
+    path('upload_attendance_sheet_file/', upload_attendance_sheet_file, name='upload_attendance_sheet_file'),
+    path('upload_certificates_issued_file/', upload_certificates_issued_file, name='upload_certificates_issued_file'),
+    path('upload_participants_list_file/', upload_participants_list_file, name='upload_participants_list_file'),
+    path('upload_group_photo_file/', upload_group_photo_file, name='upload_group_photo_file'),
+    path('upload_resource_persons_cv_file/', upload_resource_persons_cv_file, name='upload_resource_persons_cv_file'),
    
     
     
