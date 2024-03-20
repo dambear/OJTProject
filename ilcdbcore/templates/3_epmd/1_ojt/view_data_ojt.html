@@ -3,7 +3,7 @@
 {% extends "_base.html" %} {% block content %}
 
 <div
-  class="p-8 items-center justify-center h-auto rounded-xl bg-white dark:bg-gray-800"
+  class="p-8 items-center justify-center h-auto rounded-xl bg-gray-200"
 >
   <div class="pl-8 text-2xl font-bold">OJT Trainees</div>
 
@@ -40,7 +40,7 @@
               type="text"
               id="student_name"
               name="student_name"
-              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               value="{{ojt.student_name}}"
               readonly
             />
@@ -54,7 +54,7 @@
           >
           <div class="flex">
             <label
-              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-white-100 border border-gray-900 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-gray-50 border border-gray-200 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
             >
               <svg
                 class="w-5 h-6 text-blue-500 dark:text-gray-400"
@@ -129,7 +129,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -163,7 +163,7 @@
               class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-4 h-4 text-blue-800 dark:text-gray-400"
+                class="w-4 h-4 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -196,7 +196,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-5 text-blue-800 dark:text-gray-400"
+                class="w-5 h-5 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -227,10 +227,10 @@
           >
           <div class="flex">
             <label
-              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-white-100 border border-gray-900 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-gray-50 border border-gray-200 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
             >
               <svg
-                class="w-4 h-4 text-blue-800 dark:text-gray-400"
+                class="w-4 h-4 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -263,7 +263,7 @@
 
       <!-- fdsf ___________________________________________________ -->
 
-      <h4 class="text-2xl font-semibold mt-8 mb-8 text-blue-800">
+      <h4 class="text-2xl font-semibold mt-8 mb-8 text-blue-500">
         OJT Information
       </h4>
       <div class="grid grid-cols-3 gap-4 mb-4">
@@ -278,7 +278,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-5 text-blue-800 dark:text-gray-400"
+                class="w-5 h-5 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -301,77 +301,10 @@
               >
           </div>
         </div>
-<div class="relative">
-          <label
-            for="start_date"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Start Date</label
-          >
-          <div class="relative">
-            <div
-              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
-            >
-              <svg
-                class="w-5 h-5 text-blue-800 dark:text-gray-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="2 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm11-4a1 1 0 1 0-2 0v4c0 .3.1.5.3.7l3 3a1 1 0 0 0 1.4-1.4L13 11.6V8Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-            <input
-              type="date"
-              id="start_date"
-              name="start_date"
-              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="{{ojt.start_date | date:'Y-m-d'}}"
-              readonly
-            />
-          </div>
-        </div>
-        <div class="relative">
-          <label
-            for="end_date"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Start Date</label
-          >
-          <div class="relative">
-            <div
-              class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
-            >
-              <svg
-                class="w-5 h-5 text-blue-800 dark:text-gray-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="2 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm11-4a1 1 0 1 0-2 0v4c0 .3.1.5.3.7l3 3a1 1 0 0 0 1.4-1.4L13 11.6V8Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-            <input
-              type="date"
-              id="end_date"
-              name="end_date"
-              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="{{ojt.end_date | date:'Y-m-d'}}"
-              readonly
-            />
-          </div>
-        </div>
 
 
-        {% comment %} <div class="relative">
+
+         <div class="relative">
           <label
             for="start_date"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -382,7 +315,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
             >
               <svg
-                class="w-4 h-4 text-blue-800 dark:text-gray-400"
+                class="w-4 h-4 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -399,8 +332,9 @@
               id="start_date"
               name="start_date"
               type="text"
-              class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="{{ojt.start_date | date:'Y-m-d'}}"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              value="{{ojt.start_date | date:'m-d-Y'}}"
+              disabled
             />
           </div>
         </div>
@@ -415,7 +349,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
             >
               <svg
-                class="w-4 h-4 text-blue-800 dark:text-gray-400"
+                class="w-4 h-4 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -431,11 +365,13 @@
               datepicker-autohide
               name="end_date"
               type="text"
-              class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="{{ojt.end_date | date:'Y-m-d' }}"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              value="{{ojt.end_date | date:'m-d-Y'}}"
+              disabled
             />
           </div>
-        </div> {% endcomment %}
+        </div> 
+
         <div class="relative">
           <label
             for="mode"
@@ -444,10 +380,10 @@
           >
           <div class="flex">
             <label
-              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-white-100 border border-gray-900 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-gray-50 border border-gray-200 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -470,7 +406,7 @@
             <select
               id="proe"
               name="mode"
-              class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               disabled
               >
               <option value="" disabled selected>Select Mode</option>
@@ -485,7 +421,7 @@
 
       <!--    ________________________________________________________    -->
 
-      <h4 class="text-2xl font-semibold mt-8 mb-8 text-blue-800">
+      <h4 class="text-2xl font-semibold mt-8 mb-8 text-blue-500">
         Requirements
       </h4>
       <div class="grid grid-cols-3 gap-4 mb-4">
@@ -496,7 +432,7 @@
               type="checkbox"
             
               name="recommendation_letter"
-              class="w-4 h-4 text-blue-800 bg-gray-white border-gray-900 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.recommendation_letter %}checked{% endif %} 
               value="True"
               disabled
@@ -504,7 +440,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -532,7 +468,7 @@
               type="checkbox"
               value=""
               name="application_form"
-              class="w-4 h-4 text-blue-800 bg-gray-white border-gray-900 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.application_form %}checked{% endif %} 
               value="True"
               disabled
@@ -540,7 +476,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -568,7 +504,7 @@
               type="checkbox"
               value=""
               name="cv_resume"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-900 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.cv_resume %}checked{% endif %} 
               value="True"
               disabled
@@ -576,7 +512,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -605,7 +541,7 @@
               type="checkbox"
               value=""
               name="medical_certificate"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-900 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.medical_certificate %}checked{% endif %} 
               value="True"
               disabled
@@ -613,7 +549,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -641,7 +577,7 @@
               type="checkbox"
               value=""
               name="workplan_form"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-900 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.workplan_form %}checked{% endif %} 
               value="True"
               disabled
@@ -649,7 +585,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -676,7 +612,7 @@
               id="bordered-checkbox-interviewform"
               type="checkbox"
               name="interview_form"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-900 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.interview_form %}checked{% endif %} 
               value="True"
               disabled
@@ -684,7 +620,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -711,7 +647,7 @@
               id="bordered-checkbox-acceptanceletter"
               type="checkbox"
               name="acceptance_letter"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-900 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.acceptance_letter %}checked{% endif %} 
               value="True"
               disabled
@@ -719,7 +655,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -746,7 +682,7 @@
               id="bordered-checkbox-wfharrangement"
               type="checkbox"
               name="wfh_arrangement"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-900 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.wfh_arrangement %}checked{% endif %} 
               value="True"
               disabled
@@ -754,7 +690,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -782,7 +718,7 @@
               type="checkbox"
      
               name="nda"
-              class="w-4 h-4 text-blue-600 bg-white-100 border-gray-900 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.nda %}checked{% endif %} 
               value="True"
               disabled
@@ -790,7 +726,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -818,7 +754,7 @@
               type="checkbox"
               value=""
               name="work_assignment_form"
-              class="w-4 h-4 text-blue-800 bg-white-100 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.work_assignment_form %}checked{% endif %} 
               value="True"
               disabled
@@ -826,7 +762,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -853,7 +789,7 @@
               id="bordered-checkbox-war"
               type="checkbox"
               name="war"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-900 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.war %}checked{% endif %} 
               value="True"
               disabled
@@ -861,7 +797,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -890,7 +826,7 @@
               type="checkbox"
 
               name="timesheet"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-900 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.timesheet %}checked{% endif %} 
               value="True"
               disabled
@@ -898,7 +834,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -926,7 +862,7 @@
               type="checkbox"
    
               name="coc"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-900 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-200 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               {% if ojt.coc %}checked{% endif %} 
               value="True"
               disabled
@@ -934,7 +870,7 @@
 
             <div class="pl-8 pr-2">
               <svg
-                class="w-6 h-6 text-blue-800 dark:text-white"
+                class="w-6 h-6 text-blue-500 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -969,7 +905,7 @@
               id="remarks"
               name="remarks"
               rows="4"
-              class="block p-2.5 w-full text-sm text-gray-900 bg-white-50 rounded-lg border border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               cols="50" readonly
             >{{ ojt.remarks }}</textarea>
           </div>

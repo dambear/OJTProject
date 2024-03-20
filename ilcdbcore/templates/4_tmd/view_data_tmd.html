@@ -6,7 +6,7 @@
 {% block content %}
 
 <div
-  class="p-8 items-center justify-center h-auto rounded-xl bg-white dark:bg-gray-800"
+  class="p-8 items-center justify-center h-auto rounded-xl bg-gray-200"
 >
   <div class="pl-8 text-2xl font-bold">Trainings and webinars</div>
   <form method="post" action="{% url 'add_data_tmd' %}" enctype="multipart/form-data">
@@ -28,7 +28,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -45,7 +45,7 @@
               type="text"
               id="course_name"
               name="course_name"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Juan S. Dela Cruz"
               value="{{tmd.course_name}}"
               readonly
@@ -63,7 +63,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -80,7 +80,7 @@
               type="text"
               id="training_track"
               name="training_track"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Training Track"
               value="{{tmd.training_track}}"
               readonly
@@ -95,7 +95,7 @@
           >
           <div class="flex">
             <label
-              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-white-100 border border-gray-800 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-white-100 bg-white-50  border-gray-500 border rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
             >
               <svg
                 class="w-4 h-4 text-blue-800 dark:text-gray-400"
@@ -114,7 +114,7 @@
             <select
               id="province"
               name="province"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-white-50 border border-gray-200 text-gray-900 text-sm rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               disabled
               >
               <option value="" disabled selected>Select Province</option>
@@ -138,7 +138,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -155,7 +155,7 @@
               type="text"
               id="resource_persons"
               name="resource_persons"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Juan S. Dela Cruz"
               value="{{tmd.resource_persons}}"
               readonly
@@ -173,7 +173,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -190,7 +190,7 @@
               type="text"
               id="course_officers"
               name="course_officers"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Juan S. Dela Cruz"
               value="{{tmd.course_officers}}"
               readonly
@@ -208,7 +208,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -225,7 +225,7 @@
               type="email"
               id="course_officers_email"
               name="course_officers_email"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Juan S. Dela Cruz"
               value="{{tmd.course_officers_email}}"
               readonly
@@ -243,7 +243,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-5 text-blue-800 dark:text-gray-400"
+                class="w-5 h-5 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -260,7 +260,7 @@
               type="time"
               id="time"
               name="time"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               {% if tmd.time %}checked{% endif %} 
               value="True"
             />
@@ -277,7 +277,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
             >
               <svg
-                class="w-4 h-4 text-blue-800 dark:text-gray-400"
+                class="w-4 h-4 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -293,7 +293,7 @@
               datepicker-autohide
               name="start_date"
               type="text"
-              class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Select date"
               value="{{tmd.start_date | date:'m-d-Y'}}"
               disabled
@@ -311,7 +311,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
             >
               <svg
-                class="w-4 h-4 text-blue-800 dark:text-gray-400"
+                class="w-4 h-4 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -327,7 +327,7 @@
               datepicker-autohide
               name="end_date"
               type="text"
-              class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Select date"
               value="{{tmd.end_date | date:'m-d-Y'}}"
               disabled
@@ -346,7 +346,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -363,7 +363,7 @@
               type="text"
               id="implementation_mode"
               name="implementation_mode"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.implementation_mode}}"
               readonly
@@ -382,7 +382,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -399,7 +399,7 @@
               type="text"
               id="total_num_hours"
               name="total_num_hours"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.total_num_hours}}"
               readonly
@@ -423,7 +423,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -440,7 +440,7 @@
               type="number"
               id="nga_m"
               name="nga_m"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.nga_m}}"
               readonly
@@ -458,7 +458,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -475,7 +475,7 @@
               type="number"
               id="suc_m"
               name="suc_m"
-              class="bg-white-50 border border-grey-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.suc_m}}"
               readonly
@@ -493,7 +493,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -510,7 +510,7 @@
               type="number"
               id="lgu_m"
               name="lgu_m"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.lgu_m}}"
               readonly
@@ -528,7 +528,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -545,7 +545,7 @@
               type="number"
               id="others_m"
               name="others_m"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.others_m}}"
               readonly
@@ -564,7 +564,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -581,7 +581,7 @@
               type="number"
               id="total_m"
               name="total_m"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.total_m}}"
               readonly
@@ -599,7 +599,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -616,7 +616,7 @@
               type="number"
               id="nga_f"
               name="nga_f"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.nga_f}}"
               readonly
@@ -634,7 +634,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -651,7 +651,7 @@
               type="number"
               id="suc_f"
               name="suc_f"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.suc_f}}"
               readonly
@@ -669,7 +669,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -686,7 +686,7 @@
               type="number"
               id="lgu_f"
               name="lgu_f"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.lgu_f}}"
               readonly
@@ -705,7 +705,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -722,7 +722,7 @@
               type="number"
               id="others_f"
               name="others_f"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.others_f}}"
               readonly
@@ -741,7 +741,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -758,7 +758,7 @@
               type="number"
               id="total_f"
               name="total_f"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.total_f}}"
               readonly
@@ -776,7 +776,7 @@
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
               <svg
-                class="w-5 h-6 text-blue-800 dark:text-gray-400"
+                class="w-5 h-6 text-blue-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -793,7 +793,7 @@
               type="number"
               id="total_participants"
               name="total_participants"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.total_participants}}"
               readonly

@@ -3,7 +3,7 @@
 {% extends "_base.html" %} {% block content %}
 
 <div
-  class="p-8 items-center justify-center h-auto rounded-xl bg-white dark:bg-gray-800"
+  class="p-8 items-center justify-center h-auto rounded-xl bg-gray-200"
 >
   <div class="pl-8 mb-6 text-2xl font-bold">Engaged Partners</div>
 
@@ -20,7 +20,7 @@
             class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
           >
             <svg
-              class="w-5 h-6 text-blue-800 dark:text-gray-400"
+              class="w-5 h-6 text-blue-500 dark:text-gray-400"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -37,7 +37,7 @@
             type="text"
             id="name_of_partner_or_office"
             name="name_of_partner_or_office"
-            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value="{{engage.name_of_partner_or_office}}"
             readonly
           />
@@ -54,7 +54,7 @@
             class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
           >
             <svg
-              class="w-5 h-6 text-blue-800 dark:text-gray-400"
+              class="w-5 h-6 text-blue-500 dark:text-gray-400"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -71,7 +71,7 @@
             type="text"
             id="address"
             name="address"
-            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value="{{engage.address}}"
             readonly     
             />
@@ -80,7 +80,7 @@
       <div class="relative">
         <label
           for="date_engaged"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          class="block mb-2 text-sm font-medium text-gray-900"
           >Date of Engagement</label
         >
         <div class="relative">
@@ -88,7 +88,7 @@
             class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
           >
           <svg 
-          class="w-5 h-6 text-blue-800 dark:text-gray-400"
+          class="w-5 h-6 text-blue-500  dark:text-gray-400"
           aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
           fill="currentColor" viewBox="0 0 24 24">
           <path fill-rule="evenodd" d="M5 5c.6 0 1-.4 1-1a1 1 0 1 1 2 0c0 .6.4 1 1 1h1c.6 0 1-.4 1-1a1 1 0 1 1 2 0c0 .6.4 1 1 1h1c.6 0 1-.4 1-1a1 1 0 1 1 2 0c0 .6.4 1 1 1a2 2 0 0 1 2 2v1c0 .6-.4 1-1 1H4a1 1 0 0 1-1-1V7c0-1.1.9-2 2-2ZM3 19v-7c0-.6.4-1 1-1h16c.6 0 1 .4 1 1v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm6-6c0-.6-.4-1-1-1a1 1 0 1 0 0 2c.6 0 1-.4 1-1Zm2 0a1 1 0 1 1 2 0c0 .6-.4 1-1 1a1 1 0 0 1-1-1Zm6 0c0-.6-.4-1-1-1a1 1 0 1 0 0 2c.6 0 1-.4 1-1ZM7 17a1 1 0 1 1 2 0c0 .6-.4 1-1 1a1 1 0 0 1-1-1Zm6 0c0-.6-.4-1-1-1a1 1 0 1 0 0 2c.6 0 1-.4 1-1Zm2 0a1 1 0 1 1 2 0c0 .6-.4 1-1 1a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
@@ -99,7 +99,7 @@
             type="date"
             id="date_engaged"
             name="date_engaged"
-            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value="{{engage.date_engaged | date:'Y-m-d' }}"
             readonly
           />
@@ -116,7 +116,7 @@
             class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
           >
           <svg
-          class="w-5 h-6 text-blue-800 dark:text-gray-400"
+          class="w-5 h-6 text-blue-500  dark:text-gray-400"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -133,7 +133,7 @@
             type="text"
             id="contact_person"
             name="contact_person"
-            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value="{{engage.contact_person}}"
             readonly
           />
@@ -150,7 +150,7 @@
             class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
           >
           <svg
-          class="w-4 h-4 text-blue-800 dark:text-gray-400"
+          class="w-4 h-4 text-blue-500  dark:text-gray-400"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -165,7 +165,7 @@
             type="text"
             id="contact_number"
             name="contact_number"
-            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value="{{engage.contact_number}}"
             readonly
           />
@@ -182,7 +182,7 @@
             class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
           >
             <svg
-              class="w-5 h-5 text-blue-800 dark:text-gray-400"
+              class="w-5 h-5 text-blue-500  dark:text-gray-400"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -199,7 +199,7 @@
             type="email"
             id="email"
             name="email"
-            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value="{{engage.email}}"
             readonly
           />
@@ -216,7 +216,7 @@
             class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
           >
           <svg
-          class="w-5 h-6 text-blue-800 dark:text-gray-400"
+          class="w-5 h-6 text-blue-500 dark:text-gray-400"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -238,7 +238,7 @@
             type="text"
             id="engagement_mode"
             name="engagement_mode"
-            class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value="{{engage.engagement_mode}}"
             readonly
           />
@@ -246,7 +246,7 @@
       </div>
       <div class="relative">
         <label
-          for="province"
+          for="category"
           class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white"
           >Category</label
         >
@@ -255,7 +255,7 @@
             class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-white-100 border border-gray-900 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
           >
           <svg 
-          class="w-5 h-6 text-blue-800 dark:text-gray-400"
+          class="w-5 h-6 text-blue-500 dark:text-gray-400"
           aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
           fill="none" viewBox="0 0 24 24">
           <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
@@ -266,8 +266,8 @@
           <select
             id="category"
             name="category"
-            class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            value="{{ engage.province }}"
+            class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value="{{engage.category}}"
             disabled
             >
             <option value="" disabled selected>Select Category</option>
@@ -288,7 +288,7 @@
             class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
           >
           <svg 
-          class="w-5 h-6 text-blue-800 dark:text-gray-400"
+          class="w-5 h-6 text-blue-500  dark:text-gray-400"
           aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
           fill="none" viewBox="0 0 24 24">
           <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m3.5 5.5 7.9 6c.4.3.8.3 1.2 0l7.9-6M4 19h16c.6 0 1-.4 1-1V6c0-.6-.4-1-1-1H4a1 1 0 0 0-1 1v12c0 .6.4 1 1 1Z"/>
@@ -298,7 +298,7 @@
             type="text"
             id="loi"
             name="loi"
-            class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value="{{engage.loi}}"
             readonly
           />
@@ -315,7 +315,7 @@
             class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-white-100 border border-gray-800 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
           >
             <svg
-              class="w-4 h-4 text-blue-800 dark:text-gray-400"
+              class="w-4 h-4 text-blue-500 dark:text-gray-400"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -331,7 +331,7 @@
           <select
             id="province"
             name="province"
-            class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value="{{ engage.province }}" 
             disabled
             >
@@ -360,7 +360,7 @@
           <textarea
             id="remarks"
             rows="4"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-white-50 rounded-lg border border-gray-800 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             cols="50" disabled> {{ engage.remarks }}
           </textarea>
         </div>

@@ -5,6 +5,17 @@ from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
+import cloudinary.uploader
+
+
+def upload_file_to_cloudinary(file, folder='pdfs/'):
+    # Upload the file to Cloudinary
+    response = cloudinary.uploader.upload(file, folder=folder)
+    
+    
+    return response['url']
+
+
 def delete_file_from_cloudinary(url):
     # Extract the public ID from the URL
     public_id = url.split('/')[-1].split('.')[0]
@@ -26,10 +37,11 @@ def upload_attendance_sheet_file(request, tmd_id):
     if request.method == 'POST':
         file = request.FILES['file']
         
-        tmd.attendance_sheet = file
-        tmd.save()
         
-        tmdupdatedattendanceurl = tmd.attendance_sheet.url # Assuming attendance_sheet is a FileField or ImageField
+        tmd.attendance_sheet = file
+
+        
+        tmdupdatedattendanceurl = upload_file_to_cloudinary(file)
         
         return JsonResponse({
             'message': 'File uploaded successfully',
