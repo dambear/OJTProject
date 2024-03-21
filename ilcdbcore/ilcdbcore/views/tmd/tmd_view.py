@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from main.models import Training_Webinars_Table
+from main.models import Training_Webinars_Table, UploadCache_Table
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
 
-import cloudinary.uploader
 
 @login_required(login_url="/login")
 def tmd(request):
@@ -45,7 +44,24 @@ def view_data_tmd(request, tmd_id):
 
 @login_required(login_url="/login")
 def update_data_tmd(request, tmd_id):
+    
     tmd = get_object_or_404(Training_Webinars_Table, id=tmd_id)
+    
+    if not UploadCache_Table.objects.filter(id=tmd.id).exists():
+        
+        new_upload_cache = UploadCache_Table(
+            id = tmd.id,
+            participants_list = tmd.participants_list,
+            attendance_sheet = tmd.attendance_sheet,
+            group_photo = tmd.group_photo,
+            certificates_issued = tmd.certificates_issued,
+            resource_persons_cv = tmd.resource_persons_cv,
+                    
+                    
+            )
+        
+        new_upload_cache.save()
+    
 
     if request.method == "POST":
         province = request.POST.get("province")
@@ -75,14 +91,11 @@ def update_data_tmd(request, tmd_id):
         course_officers_email = request.POST.get("course_officers_email")
         remarks = request.POST.get("remarks")
         
-        participants_list = request.POST.get('participants_list')
-        attendance_sheet = request.POST.get('attendance_sheet')
-        group_photo = request.POST.get('group_photo')
-        certificates_issued = request.POST.get('certificates_issued')
-        resource_persons_cv = request.POST.get('resource_persons_cv')
         
         start_date_obj = datetime.strptime(start_date, "%m/%d/%Y").strftime("%Y-%m-%d")
         end_date_obj = datetime.strptime(end_date, "%m/%d/%Y").strftime("%Y-%m-%d")
+        
+        
         
         
        
@@ -109,13 +122,20 @@ def update_data_tmd(request, tmd_id):
         tmd.resource_persons = resource_persons
         tmd.course_officers = course_officers   
         tmd.course_officers_email = course_officers_email   
-        tmd.remarks = remarks   
-        tmd.participants_list = participants_list
-        tmd.attendance_sheet = attendance_sheet  
-         
-        tmd.group_photo = group_photo
-        tmd.certificates_issued = certificates_issued  
-        tmd.resource_persons_cv = resource_persons_cv
+        tmd.remarks = remarks 
+        
+        
+        # Save the updated application object to the database
+        tmd.save()
+        
+        upload = get_object_or_404(UploadCache_Table, id=tmd_id)
+        
+          
+        tmd.participants_list = upload.participants_list
+        tmd.attendance_sheet = upload.attendance_sheet  
+        tmd.group_photo = upload.group_photo
+        tmd.certificates_issued = upload.certificates_issued  
+        tmd.resource_persons_cv = upload.resource_persons_cv
         
         # Save the updated application object to the database
         tmd.save()
@@ -162,12 +182,11 @@ def add_data_tmd(request):
         remarks = request.POST.get("remarks")
         
         
-        participants_list = request.FILES('participants_list')
-        attendance_sheet = request.FILES('attendance_sheet')
-        group_photo = request.FILES('group_photo')
-        certificates_issued = request.FILES('certificates_issued')
-        resource_persons_cv = request.FILES('resource_persons_cv')
-        
+        participants_list = request.FILES['participants_list']
+        attendance_sheet = request.FILES['attendance_sheet']
+        group_photo = request.FILES['group_photo']
+        certificates_issued = request.FILES['certificates_issued']
+        resource_persons_cv = request.FILES['resource_persons_cv']
         
         
         start_date_obj = datetime.strptime(start_date, "%m/%d/%Y").strftime("%Y-%m-%d")
@@ -213,6 +232,9 @@ def add_data_tmd(request):
 
         # Save the new instance
         new_training_webinars.save()
+        
+        
+        
 
         # Redirect to a specific page
         return redirect("tmd")

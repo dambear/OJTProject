@@ -235,6 +235,8 @@ class Exam_Table(models.Model):
     
     class Meta:
         db_table = "Exam_Table"
+        
+        
 
 class Limit_Table(models.Model):
     id = models.IntegerField(primary_key=True, default=1)
@@ -264,3 +266,35 @@ class Limit_Table(models.Model):
 
     class Meta:
         db_table = "Limit_Table"
+        
+        
+
+
+class UploadCache_Table(models.Model):
+    
+    id = models.CharField(max_length=255, primary_key=True)
+    
+    #for tmd
+    participants_list = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    attendance_sheet = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    group_photo = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    certificates_issued = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    resource_persons_cv = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    
+    #for ojt
+    recommendation_letter = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    application_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    cv_resume = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    medical_certificate = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    workplan_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    interview_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    acceptance_letter = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    wfh_arrangement = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    nda = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    work_assignment_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    war = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    timesheet = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    coc = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    
+    class Meta:
+        db_table = "UploadCache_Table"

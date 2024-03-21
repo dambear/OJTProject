@@ -1,17 +1,16 @@
 import cloudinary.uploader
-
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from main.models import UploadCache_Table
+from django.shortcuts import get_object_or_404
 
-import cloudinary.uploader
 
-
-def upload_file_to_cloudinary(file, folder='pdfs/'):
-    # Upload the file to Cloudinary
-    response = cloudinary.uploader.upload(file, folder=folder)
+# def upload_file_to_cloudinary(file, folder='pdfs/'):
+#     # Upload the file to Cloudinary
+#     response = cloudinary.uploader.upload(file, folder=folder)
     
     
-    return response['url']
+#     return response['url']
 
 
 def delete_file_from_cloudinary(url):
@@ -29,17 +28,17 @@ def delete_file_from_cloudinary(url):
         
 
 @csrf_exempt
-def upload_attendance_sheet_file(request):
-
+def upload_attendance_sheet_file(request, tmd_id):
+    
+    upload = get_object_or_404(UploadCache_Table, id=tmd_id)
     
     if request.method == 'POST':
         attendance_sheet_file = request.FILES['attendance_sheet_file']
         
+        upload.attendance_sheet = attendance_sheet_file
+        upload.save()
         
-      
-
-        
-        tmdupdatedattendanceurl = upload_file_to_cloudinary(attendance_sheet_file)
+        tmdupdatedattendanceurl = upload.attendance_sheet.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
@@ -51,12 +50,18 @@ def upload_attendance_sheet_file(request):
 
 
 @csrf_exempt
-def upload_certificates_issued_file(request):
+def upload_certificates_issued_file(request, tmd_id):
+    
+    upload = get_object_or_404(UploadCache_Table, id=tmd_id)
     
     if request.method == 'POST':
         certificates_issued_file = request.FILES['certificates_issued_file']
         
-        tmdupdatedcertificatesurl = upload_file_to_cloudinary(certificates_issued_file)
+        upload.certificates_issued = certificates_issued_file
+        upload.save()
+        
+        
+        tmdupdatedcertificatesurl = upload.certificates_issued.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
@@ -67,12 +72,16 @@ def upload_certificates_issued_file(request):
         return JsonResponse({'error': 'Invalid request method'})
 
 @csrf_exempt
-def upload_participants_list_file(request):
+def upload_participants_list_file(request, tmd_id):
 
+    upload = get_object_or_404(UploadCache_Table, id=tmd_id)
     if request.method == 'POST':
         participants_list_file = request.FILES['participants_list_file']
         
-        tmdupdatedparticipantsurl = upload_file_to_cloudinary(participants_list_file)
+        upload.participants_list = participants_list_file
+        upload.save()
+        
+        tmdupdatedparticipantsurl = upload.participants_list.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
@@ -83,12 +92,16 @@ def upload_participants_list_file(request):
         return JsonResponse({'error': 'Invalid request method'})
 
 @csrf_exempt
-def upload_group_photo_file(request):
-
+def upload_group_photo_file(request, tmd_id):
+    upload = get_object_or_404(UploadCache_Table, id=tmd_id)
     if request.method == 'POST':
         group_photo_file = request.FILES['group_photo_file']
         
-        tmdupdatedgroupphotourl = upload_file_to_cloudinary(group_photo_file)
+        
+        upload.group_photo = group_photo_file
+        upload.save()
+        
+        tmdupdatedgroupphotourl = upload.group_photo.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
@@ -100,14 +113,16 @@ def upload_group_photo_file(request):
 
 
 @csrf_exempt
-def upload_resource_persons_cv_file(request):
+def upload_resource_persons_cv_file(request, tmd_id):
   
-    
+    upload = get_object_or_404(UploadCache_Table, id=tmd_id)
     if request.method == 'POST':
         resource_persons_cv_file = request.FILES['resource_persons_cv_file']
         
+        upload.resource_persons_cv = resource_persons_cv_file
+        upload.save()
         
-        tmdupdatedresourcepersonscvurl = upload_file_to_cloudinary(resource_persons_cv_file)
+        tmdupdatedresourcepersonscvurl = upload.resource_persons_cv.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',

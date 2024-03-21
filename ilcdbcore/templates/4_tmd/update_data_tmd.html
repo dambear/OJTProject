@@ -944,12 +944,6 @@
                       </label>
                     </div>
                   
-          
-
-                    <input type="hidden" id="attendance_sheet" value="{{ tmd.attendance_sheet.url }}">
-                           
-                    
-                  
                 </div>
 
                 <embed id="attendance_sheet_embed" src="{{ tmd.attendance_sheet.url }}" type="application/pdf" width="100%" height="500px">
@@ -993,11 +987,6 @@
                       </label>
                     </div>
                   
-          
-
-                    <input type="hidden" id="certificates_issued" value="{{ tmd.certificates_issued.url }}">
-                           
-                    
                   
                 </div>
 
@@ -1042,11 +1031,6 @@
                       </label>
                     </div>
                   
-          
-
-                    <input type="hidden" id="participants_list" value="{{ tmd.participants_list.url }}"> 
-                           
-                    
                   
                 </div>
 
@@ -1090,11 +1074,6 @@
                       </label>
                     </div>
                   
-          
-
-                    <input type="hidden" id="group_photo" value="{{ tmd.group_photo.url }}">
-                           
-                    
                   
                 </div>
 
@@ -1142,10 +1121,6 @@
                   
           
 
-                    <input type="hidden" id="resource_persons_cv" value="{{ tmd.resource_persons_cv.url }}">
-                           
-                    
-                  
                 </div>
 
                 <embed id="resource_persons_cv_embed" src="{{ tmd.resource_persons_cv.url }}" type="application/pdf" width="100%" height="500px">
@@ -1170,7 +1145,7 @@ function upload_attendance_sheet() {
         const formData = new FormData();
         formData.append('attendance_sheet_file', attendance_sheet_file);
 
-        fetch('/upload_attendance_sheet_file/' ,{ // Include the id in the URL
+        fetch('/upload_attendance_sheet_file/' + {{ tmd.id }} + '/', { // Include the id in the URL
             method: 'POST',
             body: formData
         })
@@ -1183,11 +1158,7 @@ function upload_attendance_sheet() {
                 embedElement.src = data.tmdupdatedattendanceurl;
             }
 
-            // Update the input field with the tmdupdatedattendanceurl
-            const attendance_sheet = document.getElementById('attendance_sheet');
-            if (attendance_sheet && data.tmdupdatedattendanceurl) {
-                attendance_sheet.value = data.tmdupdatedattendanceurl;
-            }
+ 
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -1206,7 +1177,7 @@ function upload_certificates_issued() {
       const formData = new FormData();
       formData.append('certificates_issued_file', certificates_issued_file);
 
-      fetch('/upload_certificates_issued_file/', { // Include the id in the URL
+      fetch('/upload_certificates_issued_file/'+ {{ tmd.id }} + '/', { // Include the id in the URL
           method: 'POST',
           body: formData
       })
@@ -1219,11 +1190,7 @@ function upload_certificates_issued() {
               embedElement.src = data.tmdupdatedcertificatesurl;
           }
 
-          // Update the input field with the tmdupdatedcertificatesurl
-          const certificates_issued = document.getElementById('certificates_issued');
-          if (certificates_issued && data.tmdupdatedcertificatesurl) {
-            certificates_issued.value = data.tmdupdatedcertificatesurl;
-          }
+         
       })
       .catch((error) => {
           console.error('Error:', error);
@@ -1242,7 +1209,7 @@ function upload_participants_list() {
       const formData = new FormData();
       formData.append('participants_list_file', participants_list_file);
 
-      fetch('/upload_participants_list_file/', { // Include the id in the URL
+      fetch('/upload_participants_list_file/'+ {{ tmd.id }} + '/', { // Include the id in the URL
           method: 'POST',
           body: formData
       })
@@ -1255,11 +1222,7 @@ function upload_participants_list() {
               embedElement.src = data.tmdupdatedparticipantsurl;
           }
 
-          // Update the input field with the tmdupdatedcertificatesurl
-          const participants_list = document.getElementById('participants_list');
-          if (participants_list && data.tmdupdatedparticipantsurl) {
-            participants_list.value = data.tmdupdatedparticipantsurl;
-          }
+         
       })
       .catch((error) => {
           console.error('Error:', error);
@@ -1277,7 +1240,7 @@ function upload_participants_list() {
       const formData = new FormData();
       formData.append('group_photo_file', group_photo_file);
 
-      fetch('/upload_group_photo_file/', { // Include the id in the URL
+      fetch('/upload_group_photo_file/'+ {{ tmd.id }} + '/', { // Include the id in the URL
           method: 'POST',
           body: formData
       })
@@ -1290,11 +1253,7 @@ function upload_participants_list() {
               embedElement.src = data.tmdupdatedgroupphotourl;
           }
 
-          // Update the input field with the tmdupdatedcertificatesurl
-          const group_photo = document.getElementById('group_photo');
-          if (group_photo && data.tmdupdatedgroupphotourl) {
-            group_photo.value = data.tmdupdatedgroupphotourl;
-          }
+         
       })
       .catch((error) => {
           console.error('Error:', error);
@@ -1313,7 +1272,7 @@ function upload_resource_persons_cv() {
       const formData = new FormData();
       formData.append('resource_persons_cv_file', resource_persons_cv_file);
 
-      fetch('/upload_resource_persons_cv_file/', { // Include the id in the URL
+      fetch('/upload_resource_persons_cv_file/'+ {{ tmd.id }} + '/', { // Include the id in the URL
           method: 'POST',
           body: formData
       })
@@ -1326,11 +1285,6 @@ function upload_resource_persons_cv() {
               embedElement.src = data.tmdupdatedresourcepersonscvurl;
           }
 
-          // Update the input field with the tmdupdatedcertificatesurl
-          const resource_persons_cv = document.getElementById('group_photo');
-          if (resource_persons_cv && data.tmdupdatedresourcepersonscvurl) {
-            resource_persons_cv.value = data.tmdupdatedresourcepersonscvurl;
-          }
       })
       .catch((error) => {
           console.error('Error:', error);

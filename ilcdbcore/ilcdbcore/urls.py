@@ -90,11 +90,11 @@ urlpatterns = [
     
     
     
-    path('upload_attendance_sheet_file/', upload_attendance_sheet_file, name='upload_attendance_sheet_file'),
-    path('upload_certificates_issued_file/', upload_certificates_issued_file, name='upload_certificates_issued_file'),
-    path('upload_participants_list_file/', upload_participants_list_file, name='upload_participants_list_file'),
-    path('upload_group_photo_file/', upload_group_photo_file, name='upload_group_photo_file'),
-    path('upload_resource_persons_cv_file/', upload_resource_persons_cv_file, name='upload_resource_persons_cv_file'),
+    path('upload_attendance_sheet_file/<int:tmd_id>/', upload_attendance_sheet_file, name='upload_attendance_sheet_file'),
+    path('upload_certificates_issued_file/<int:tmd_id>/', upload_certificates_issued_file, name='upload_certificates_issued_file'),
+    path('upload_participants_list_file/<int:tmd_id>/', upload_participants_list_file, name='upload_participants_list_file'),
+    path('upload_group_photo_file/<int:tmd_id>/', upload_group_photo_file, name='upload_group_photo_file'),
+    path('upload_resource_persons_cv_file/<int:tmd_id>/', upload_resource_persons_cv_file, name='upload_resource_persons_cv_file'),
    
     
     
