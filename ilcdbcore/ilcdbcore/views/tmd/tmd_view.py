@@ -171,12 +171,8 @@ def add_data_tmd(request):
         total_m = request.POST.get("total_m")
         total_f = request.POST.get("total_f")
         total_participants = request.POST.get("total_participants")
-       
-        
         implementation_mode = request.POST.get("implementation_mode")
-        
         resource_persons = request.POST.get("resource_persons")
-        
         course_officers = request.POST.get("course_officers")
         course_officers_email = request.POST.get("course_officers_email")
         remarks = request.POST.get("remarks")

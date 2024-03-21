@@ -3,7 +3,7 @@ from datetime import datetime
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
-from main.models import Intern_Table
+from main.models import Intern_Table, UploadCache_Table
 
 # Create your views here.
 
@@ -58,20 +58,24 @@ def add_data_ojt(request):
         start_date = request.POST.get("start_date")
         end_date = request.POST.get("end_date")
         mode = request.POST.get("mode")
-        recommendation_letter = request.POST.get("recommendation_letter") == "True"
-        application_form = request.POST.get("application_form") == "True"
-        cv_resume = request.POST.get("cv_resume") == "True"
-        medical_certificate = request.POST.get("medical_certificate") == "True"
-        workplan_form = request.POST.get("workplan_form") == "True"
-        interview_form = request.POST.get("interview_form") == "True"
-        acceptance_letter = request.POST.get("acceptance_letter") == "True"
-        wfh_arrangement = request.POST.get("wfh_arrangement") == "True"
-        nda = request.POST.get("nda") == "True"
-        work_assignment_form = request.POST.get("work_assignment_form") == "True"
-        war = request.POST.get("war") == "True"
-        timesheet = request.POST.get("timesheet") == "True"
-        coc = request.POST.get("coc") == "True"
         remarks = request.POST.get("remarks")
+        
+        #files
+        recommendation_letter = request.FILES['recommendation_letter']
+        application_form = request.FILES['application_form']
+        cv_resume = request.FILES['cv_resume']
+        medical_certificate = request.FILES['medical_certificate']
+        workplan_form = request.FILES['workplan_form']
+        interview_form = request.FILES['interview_form']
+        acceptance_letter = request.FILES['acceptance_letter']
+        wfh_arrangement = request.FILES['wfh_arrangement']
+        nda = request.FILES['nda']
+        work_assignment_form = request.FILES['work_assignment_form']
+        war = request.FILES['war']
+        timesheet = request.FILES['timesheet']
+        coc = request.FILES['coc']
+        
+        
         
         start_date_obj = datetime.strptime(start_date, "%m/%d/%Y").strftime("%Y-%m-%d")
         end_date_obj = datetime.strptime(end_date, "%m/%d/%Y").strftime("%Y-%m-%d")
@@ -89,6 +93,9 @@ def add_data_ojt(request):
             start_date=start_date_obj,
             end_date=end_date_obj,
             mode=mode,
+            remarks=remarks,
+            
+            
             recommendation_letter=recommendation_letter,
             application_form=application_form,
             cv_resume=cv_resume,
@@ -102,7 +109,7 @@ def add_data_ojt(request):
             war=war,
             timesheet=timesheet,
             coc=coc,
-            remarks=remarks,
+            
         )
 
         # Save the new Intern_Table instance
@@ -118,6 +125,30 @@ def add_data_ojt(request):
 def update_data_ojt(request, ojt_id):
 
     ojt = get_object_or_404(Intern_Table, id=ojt_id)
+    
+    if not UploadCache_Table.objects.filter(id=ojt.id).exists():
+        
+        new_upload_cache = UploadCache_Table(
+            id = ojt.id,
+
+            recommendation_letter = ojt.recommendation_letter,
+            application_form = ojt.application_form,
+            cv_resume = ojt.cv_resume,
+            medical_certificate = ojt.medical_certificate,
+            workplan_form = ojt.workplan_form,
+            interview_form = ojt.interview_form,
+            acceptance_letter = ojt.acceptance_letter,
+            wfh_arrangement = ojt.wfh_arrangement,
+            nda = ojt.nda,
+            work_assignment_form = ojt.work_assignment_form,
+            war = ojt.war,
+            timesheet = ojt.timesheet,
+            coc = ojt.coc,
+            
+                    
+            )
+        
+        new_upload_cache.save()
 
     if request.method == "POST":
         # Handle form submission to update data
@@ -133,20 +164,9 @@ def update_data_ojt(request, ojt_id):
         start_date = request.POST.get("start_date")
         end_date = request.POST.get("end_date")
         mode = request.POST.get("mode")
-        recommendation_letter = request.POST.get("recommendation_letter") == "True"
-        application_form = request.POST.get("application_form") == "True"
-        cv_resume = request.POST.get("cv_resume") == "True"
-        medical_certificate = request.POST.get("medical_certificate") == "True"
-        workplan_form = request.POST.get("workplan_form") == "True"
-        interview_form = request.POST.get("interview_form") == "True"
-        acceptance_letter = request.POST.get("acceptance_letter") == "True"
-        wfh_arrangement = request.POST.get("wfh_arrangement") == "True"
-        nda = request.POST.get("nda") == "True"
-        work_assignment_form = request.POST.get("work_assignment_form") == "True"
-        war = request.POST.get("war") == "True"
-        timesheet = request.POST.get("timesheet") == "True"
-        coc = request.POST.get("coc") == "True"
         remarks = request.POST.get("remarks")
+        
+        
         
         
         
@@ -166,22 +186,29 @@ def update_data_ojt(request, ojt_id):
         ojt.start_date = start_date_obj
         ojt.end_date = end_date_obj
         ojt.mode = mode
-        ojt.recommendation_letter = recommendation_letter
-        ojt.application_form = application_form
-        ojt.cv_resume = cv_resume
-        ojt.medical_certificate = medical_certificate
-        ojt.workplan_form = workplan_form
-        ojt.interview_form = interview_form
-        ojt.acceptance_letter = acceptance_letter
-        ojt.wfh_arrangement = wfh_arrangement
-        ojt.nda = nda
-        ojt.work_assignment_form = work_assignment_form
-        ojt.war = war
-        ojt.timesheet = timesheet
-        ojt.coc = coc
         ojt.remarks = remarks
+        
 
         # Save the updated application object to the database
+        ojt.save()
+        
+        upload = get_object_or_404(UploadCache_Table, id=ojt_id)
+        
+        ojt.recommendation_letter = upload.recommendation_letter
+        ojt.application_form = upload.application_form  
+        ojt.cv_resume = upload.cv_resume
+        ojt.medical_certificate = upload.medical_certificate  
+        ojt.workplan_form = upload.workplan_form
+        ojt.interview_form = upload.interview_form  
+        ojt.acceptance_letter = upload.acceptance_letter
+        ojt.wfh_arrangement = upload.wfh_arrangement  
+        ojt.nda = upload.nda
+        ojt.work_assignment_form = upload.work_assignment_form  
+        ojt.war = upload.war
+        ojt.timesheet = upload.timesheet
+        ojt.coc = upload.coc
+        
+        
         ojt.save()
 
         # Redirect to a success page or any other page

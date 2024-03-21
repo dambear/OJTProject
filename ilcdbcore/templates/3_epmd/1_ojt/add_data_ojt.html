@@ -2,18 +2,19 @@
 
 {% extends "_base.html" %} {% block content %}
 
-<div
-  class="p-8 items-center justify-center h-auto rounded-xl bg-white"
->
+<div class="p-8 items-center justify-center h-auto rounded-xl bg-white">
   <div class="pl-8 text-2xl font-bold">OJT Trainees</div>
-  
+
   <div class="relative shadow-md px-8 py-4">
     <h4 class="mb-4 text-2xl font-semibold text-blue-500">
       Student Information
     </h4>
-   
 
-    <form method="post" action="{% url 'add_data_ojt' %}">
+    <form
+      method="post"
+      action="{% url 'add_data_ojt' %}"
+      enctype="multipart/form-data"
+    >
       {% csrf_token %}
       <div class="grid grid-cols-3 gap-4 mb-4">
         <div class="relative">
@@ -365,9 +366,7 @@
         </div>
 
         <div class="relative">
-          <label
-            for="mode"
-            class="block mb-2 text-sm font-medium text-gray-900"
+          <label for="mode" class="block mb-2 text-sm font-medium text-gray-900"
             >Mode</label
           >
           <div class="flex">
@@ -414,440 +413,274 @@
       <h4 class="text-2xl font-semibold mt-8 mb-8 text-blue-500">
         Requirements
       </h4>
+
       <div class="grid grid-cols-3 gap-4 mb-4">
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="attendance_sheet"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Recommendation Letter"</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-recommendation"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-500 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="recommendation_letter"
               name="recommendation_letter"
-              class="w-4 h-4 text-blue-800 bg-gray-white border-gray-500 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-recommendation"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >Recommendation Letter</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="application_form"
+            class="block mb-2 text-sm font-medium text-gray-900"
+          >
+            Application Form</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-application"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="application_form"
               name="application_form"
-              class="w-4 h-4 text-blue-800 bg-gray-white border-gray-500 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-application"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >Application Form</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="participants_list"
+            class="block mb-2 text-sm font-medium text-gray-800"
+          >
+            CV Resume</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-cvresume"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="cv_resume"
               name="cv_resume"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-900 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-cvresume"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >CV/Resume</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
-
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="group_photo"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Medical Certificate</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-medcertificate"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="medical_certificate"
               name="medical_certificate"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-500 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-medcertificate"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >Medical Certificate</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="resource_persons_cv"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Workplan Form</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-workplanform"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="workplan_form"
               name="workplan_form"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-500 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-workplanform"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >Workplan Form</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="resource_persons_cv"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Interview Form</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-interviewform"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="interview_form"
               name="interview_form"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-500 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-interviewform"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >Interview Form</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="resource_persons_cv"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Acceptance Letter</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-acceptanceletter"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="acceptance_letter"
               name="acceptance_letter"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-500 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-acceptanceletter"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >Acceptance Letter</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="resource_persons_cv"
+            class="block mb-2 text-sm font-medium text-gray-900"
+          >
+            WFH Arrangement</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-wfharrangement"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="wfh_arrangement"
               name="wfh_arrangement"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-500 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-wfharrangement"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >WFH Arrangement</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="resource_persons_cv"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >NDA</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-nda"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="nda"
               name="nda"
-              class="w-4 h-4 text-blue-600 bg-white-100 border-gray-500 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-nda"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >NDA</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="resource_persons_cv"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Work Assignment Form</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-workassignmentform"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="work_assignment_form"
               name="work_assignment_form"
-              class="w-4 h-4 text-blue-800 bg-white-100 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-workassignmentform"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >Work Assignment Form</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="resource_persons_cv"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >WAR</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-war"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="war"
               name="war"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-500 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-war"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >WAR</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
-
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="resource_persons_cv"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Timesheet</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-timesheet"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="timesheet"
               name="timesheet"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-500 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-timesheet"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >Timesheet</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
         <div class="relative">
-          <div class="flex items-center ps-4 rounded">
+          <label
+            for="resource_persons_cv"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >COC</label
+          >
+          <div class="relative">
             <input
-              id="bordered-checkbox-coc"
-              type="checkbox"
-              value=""
+              class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
+              id="coc"
               name="coc"
-              class="w-4 h-4 text-blue-800 bg-white-100 border-gray-500 rounded focus:ring-blue-500"
+              type="file"
+              accept="application/pdf"
+              onchange="validateFileSize(this)"
             />
-
-            <div class="pl-8 pr-2">
-              <svg
-                class="w-6 h-6 text-blue-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2c.6 0 1-.4 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <label
-              for="bordered-checkbox-coc"
-              class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
-              >COC</label
-            >
+            <p id="fileSizeError" style="color: red; display: none">
+              File size must be less than 2MB
+            </p>
           </div>
         </div>
       </div>
 
+      <!--    ________________________________________________________    -->
       <div class="grid grid-cols-2 gap-4 mb-4">
         <div class="relative">
           <label
@@ -866,11 +699,34 @@
           </div>
         </div>
       </div>
-      <div class="flex-col flex items-center mt-6 ">
-        <button type="submit" class="btnSub btn-primary btn-lg text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-base px-8 py-2  .5 text-center">Submit</button>
-        </div>
+      <div class="flex-col flex items-center mt-6">
+        <button
+          type="submit"
+          class="btnSub btn-primary btn-lg text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-base px-8 py-2 .5 text-center"
+        >
+          Submit
+        </button>
+      </div>
     </form>
   </div>
-</div>
+  <!--    __________________end______________________________________    -->
 
-{% endblock content %}
+  {% endblock content %} {% block mainjs %}
+
+  <script>
+    function validateFileSize(input) {
+      const fileSize = input.files[0].size / 1024 / 1024; // size in MB
+      const maxSize = 2; // max file size in MB
+      const fileSizeError = document.getElementById("fileSizeError");
+
+      if (fileSize > maxSize) {
+        fileSizeError.style.display = "block";
+        input.value = ""; // Clear the input
+      } else {
+        fileSizeError.style.display = "none";
+      }
+    }
+  </script>
+
+  {% endblock mainjs %}
+</div>

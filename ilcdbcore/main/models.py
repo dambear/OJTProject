@@ -96,20 +96,24 @@ class Intern_Table(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     mode = models.CharField(max_length=20)
-    recommendation_letter = models.BooleanField(default=False)
-    application_form = models.BooleanField(default=False)
-    cv_resume = models.BooleanField(default=False)
-    medical_certificate = models.BooleanField(default=False)
-    workplan_form = models.BooleanField(default=False)
-    interview_form = models.BooleanField(default=False)
-    acceptance_letter = models.BooleanField(default=False)
-    wfh_arrangement = models.BooleanField(default=False)
-    nda = models.BooleanField(default=False)
-    work_assignment_form = models.BooleanField(default=False)
-    war = models.BooleanField(default=False)
-    timesheet = models.BooleanField(default=False)
-    coc = models.BooleanField(default=False)
     remarks = models.TextField()
+    
+    #files
+    recommendation_letter = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    application_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    cv_resume = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    medical_certificate = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    workplan_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    interview_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    acceptance_letter = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    wfh_arrangement = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    nda = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    work_assignment_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    war = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    timesheet = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    coc = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    
+    
 
     class Meta:
         db_table = "Intern_Table"
