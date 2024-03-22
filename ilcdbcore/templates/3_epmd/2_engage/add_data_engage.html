@@ -2,9 +2,7 @@
 
 {% extends "_base.html" %} {% block content %}
 
-<div
-  class="p-8 items-center justify-center h-auto rounded-xl bg-gray-200"
->
+<div class="p-8 items-center justify-center h-auto rounded-xl bg-gray-200">
   <div class="pl-8 mb-6 text-2xl font-bold">Engaged Partners</div>
 
   <form method="post" action="{% url 'add_data_engage' %}">
@@ -203,7 +201,7 @@
               type="email"
               id="email"
               name="email"
-              class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
               placeholder="Enter the Email Address"
             />
           </div>
@@ -241,7 +239,7 @@
               type="text"
               id="engagement_mode"
               name="engagement_mode"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
               placeholder="Enter the Engagement Mode"
             />
           </div>
@@ -276,7 +274,7 @@
             <select
               id="category"
               name="category"
-              class="bg-white-50 border border-gray-800 text-gray-900 text-sm rounded-e-lg border-s-gray-100 block w-full p-2.5"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-e-lg border-s-gray-100 block w-full p-2.5"
             >
               <option value="" disabled selected>Select Category</option>
               <option value="ftf">Face-to-Face</option>
@@ -286,9 +284,7 @@
           </div>
         </div>
         <div class="relative">
-          <label
-            for="loi"
-            class="block mb-2 text-sm font-medium text-gray-900"
+          <label for="loi" class="block mb-2 text-sm font-medium text-gray-900"
             >Letter of Intent</label
           >
           <div class="relative">
@@ -314,7 +310,7 @@
               type="text"
               id="loi"
               name="loi"
-              class="bg-white-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+              class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
               placeholder="Letter of Intent"
             />
           </div>
@@ -380,8 +376,13 @@
         </div>
       </div>
     </div>
-    <div class="flex-col flex items-center mt-6 ">
-      <button type="submit" class="btnSub btn-primary btn-lg text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-base px-8 py-2  .5 text-center">Submit</button>
+    <div class="flex-col flex items-center mt-6">
+      <button
+        type="submit"
+        class="btnSub btn-primary btn-lg text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-base px-8 py-2 .5 text-center"
+      >
+        Submit
+      </button>
     </div>
   </form>
 </div>

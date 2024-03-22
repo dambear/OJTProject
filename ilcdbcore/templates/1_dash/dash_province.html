@@ -6,53 +6,61 @@
   class="p-4 border-2 border-gray-200 border-solid rounded-lg dark:border-gray-700 "
 > -->
 
-<div class="flex-col p-10 rounded-lg h-screen shadow bg-white">
+<div class="flex-col rounded-lg h-screen shadow bg-gray-100">
   <!--jskkdk-->
-  <div class="text-2xl font-bold my-6 text-center text-blue-500">
+  <div class="text-2xl font-bold pt-4 my-6 text-center text-blue-500">
     <p>Cavite</p>
   </div>
   <!--Start of Count (Div's)-->
-  <div class="grid grid-cols-4 gap-4 mb-4 h-36">
-    <div class="flex-col  rounded bg-gray-50 font-medium shadow-xl">
+  <div class="grid grid-cols-4 px-8 gap-4 mb-4 h-36">
+    <div class="flex-col rounded bg-white font-medium shadow-xl">
       <h1 class="pt-2 pl-3 text-lg text-left">Exam</h1>
-      <div class="text-5xl text-center pt-4">{{ cavite_count_exam }}</div>
+      <div class="text-blue-900 font-semibold text-5xl text-center pt-4">
+        {{ cavite_count_exam }}
+      </div>
     </div>
 
-    <div class="flex-col  rounded bg-gray-50 shadow-xl">
+    <div class="flex-col rounded bg-white shadow-xl">
       <h1 class="pt-2 pl-3 text-lg font-medium text-left">OJT Trainees</h1>
-      <div class="text-5xl text-center pt-4">{{ cavite_count_ojt }}</div>
+      <div class="text-blue-800 font-semibold text-5xl text-center pt-4">
+        {{ cavite_count_ojt }}
+      </div>
     </div>
 
-    <div class="flex-col  rounded bg-gray-50 shadow-xl">
+    <div class="flex-col rounded bg-white shadow-xl">
       <h1 class="pt-2 pl-3 text-lg font-medium text-left">Engaged Partners</h1>
-      <div class="text-5xl text-center pt-4">{{ cavite_count_engage }}</div>
+      <div class="text-blue-600 font-semibold text-5xl text-center pt-4">
+        {{ cavite_count_engage }}
+      </div>
     </div>
 
-    <div class="flex-col  rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Trainings and Webinars</h1>
-      <div class="text-5xl text-center pt-4">{{ cavite_count_tmd }}</div>
+    <div class="flex-col rounded bg-white shadow-xl">
+      <h1 class="pt-2 pl-3 text-lg font-medium text-left">
+        Trainings and Webinars
+      </h1>
+      <div class="text-blue-500 font-semibold text-5xl text-center pt-4">{{ cavite_count_tmd }}</div>
     </div>
   </div>
 
   <!--End of Count (Div's)-->
   <!--      Exam      -->
   <div class="grid grid-cols-2 gap-4 p-8">
-    <div class="h-52 rounded-xl gray-100 p-2 shadow-xl">
+    <div class="h-52 rounded-xl bg-white p-2 shadow-xl">
       <h1 class="pt-2 text-lg font-medium text-center">Exam</h1>
       <div class="" id="donut-chart-exam-cavite"></div>
     </div>
 
-    <div class="h-52 rounded-xl gray-100 p-2 shadow-xl">
+    <div class="h-52 rounded-xl bg-white p-2 shadow-xl">
       <h1 class="pt-2 text-lg font-medium text-center">OJT Trainees</h1>
       <div class="" id="donut-chart-ojt-cavite"></div>
     </div>
 
-    <div class="h-52 rounded-xl gray-100 p-2 shadow-xl">
+    <div class="h-52 rounded-xl bg-white p-2 shadow-xl">
       <h1 class="pt-2 text-lg font-medium text-center">Engaged Partners</h1>
       <div class="" id="donut-chart-engage-cavite"></div>
     </div>
 
-    <div class="h-52 rounded-xl gray-100 p-2 shadow-xl">
+    <div class="h-52 rounded-xl bg-white p-2 shadow-xl">
       <h1 class="pt-2 text-lg font-medium text-center">Trainings/Webinars</h1>
       <div class="" id="donut-chart-tmd-cavite"></div>
     </div>
@@ -71,7 +79,7 @@
 
     return {
       series: [caviteValue, remainingValue],
-      colors: ["#1C64F2", "#E5E7EB"],
+      colors: ["#1e40af", "#E5E7EB"],
       chart: {
         height: 180,
         width: "100%",
@@ -146,7 +154,7 @@
 
     return {
       series: [caviteValue, remainingValue],
-      colors: ["#1C64F2", "#E5E7EB"],
+      colors: ["#2563eb", "#E5E7EB"],
       chart: {
         height: 180,
         width: "100%",
@@ -221,7 +229,7 @@
 
     return {
       series: [caviteValue, remainingValue],
-      colors: ["#1C64F2", "#E5E7EB"],
+      colors: ["#1e40af", "#E5E7EB"],
       chart: {
         height: 180,
         width: "100%",
@@ -296,7 +304,7 @@
 
     return {
       series: [caviteValue, remainingValue],
-      colors: ["#1C64F2", "#E5E7EB"],
+      colors: ["#3b82f6", "#E5E7EB"],
       chart: {
         height: 180,
         width: "100%",
