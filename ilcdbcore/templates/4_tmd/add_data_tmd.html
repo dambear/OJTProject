@@ -2,10 +2,8 @@
 
 {% extends "_base.html" %} {% block content %}
 
-<div
-  class="p-8 items-center justify-center h-auto rounded-xl bg-gray-100"
->
-  <div class="pl-8 text-2xl font-bold">Trainings and webinars</div>
+<div class="p-8 items-center justify-center h-auto rounded-xl bg-gray-100">
+  <div class="pl-8 text-2xl font-bold">Trainings and Webinars</div>
   <form
     method="post"
     action="{% url 'add_data_tmd' %}"
@@ -48,6 +46,7 @@
               name="course_name"
               class="bg-gray-50 border border-gray-200 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
               placeholder="Juan S. Dela Cruz"
+              required
             />
           </div>
         </div>
@@ -81,6 +80,7 @@
               name="training_track"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder="Training Track"
+              required
             />
           </div>
         </div>
@@ -152,6 +152,7 @@
               name="resource_persons"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder="Juan S. Dela Cruz"
+              required
             />
           </div>
         </div>
@@ -185,6 +186,7 @@
               name="course_officers"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder="Juan S. Dela Cruz"
+              required
             />
           </div>
         </div>
@@ -218,13 +220,12 @@
               name="course_officers_email"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder="Juan S. Dela Cruz"
+              required
             />
           </div>
         </div>
         <div class="relative">
-          <label
-            for="time"
-            class="block mb-2 text-sm font-medium text-gray-800"
+          <label for="time" class="block mb-2 text-sm font-medium text-gray-800"
             >Time</label
           >
           <div class="relative">
@@ -251,6 +252,7 @@
               name="time"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -283,6 +285,7 @@
               type="text"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
               placeholder="Select date"
+              required
             />
           </div>
         </div>
@@ -315,6 +318,7 @@
               type="text"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
               placeholder="Select date"
+              required
             />
           </div>
         </div>
@@ -349,6 +353,7 @@
               name="implementation_mode"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -383,6 +388,7 @@
               name="total_num_hours"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -422,6 +428,7 @@
               name="nga_m"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -455,6 +462,7 @@
               name="suc_m"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -488,6 +496,7 @@
               name="lgu_m"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -521,6 +530,7 @@
               name="others_m"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -555,6 +565,7 @@
               name="total_m"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -588,6 +599,7 @@
               name="nga_f"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -621,6 +633,7 @@
               name="suc_f"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -654,6 +667,7 @@
               name="lgu_f"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -688,6 +702,7 @@
               name="others_f"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -722,6 +737,7 @@
               name="total_f"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -755,6 +771,7 @@
               name="total_participants"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
+              required
             />
           </div>
         </div>
@@ -782,6 +799,7 @@
               type="file"
               accept="image/*,.pdf,.doc,.docx,.xls,.xlsx"
               onchange="validateFileSize(this)"
+              required
             />
             <p id="fileSizeError" style="color: red; display: none">
               File size must be less than 2MB
@@ -799,9 +817,10 @@
               class="block w-full text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-white-50 focus:outline-none"
               id="certificates_issued"
               name="certificates_issued"
-              type="file" 
+              type="file"
               accept="image/*,.pdf,.doc,.docx,.xls,.xlsx"
               onchange="validateFileSize(this)"
+              required
             />
             <p id="fileSizeError" style="color: red; display: none">
               File size must be less than 2MB
@@ -822,6 +841,7 @@
               type="file"
               accept="image/*,.pdf,.doc,.docx,.xls,.xlsx"
               onchange="validateFileSize(this)"
+              required
             />
             <p id="fileSizeError" style="color: red; display: none">
               File size must be less than 2MB
@@ -842,6 +862,7 @@
               type="file"
               accept="image/*"
               onchange="validateFileSize(this)"
+              required
             />
             <p id="fileSizeError" style="color: red; display: none">
               File size must be less than 2MB
@@ -862,6 +883,7 @@
               type="file"
               accept="image/*,.pdf,.doc,.docx,.xls,.xlsx"
               onchange="validateFileSize(this)"
+              required
             />
             <p id="fileSizeError" style="color: red; display: none">
               File size must be less than 2MB
@@ -874,9 +896,7 @@
 
       <div class="grid grid-cols-2 gap-4 mb-4">
         <div class="relative">
-          <label
-            for="remarks"
-            class="block mb-2 text-sm font-medium text-black"
+          <label for="remarks" class="block mb-2 text-sm font-medium text-black"
             >Remarks</label
           >
           <div class="relative">
@@ -884,34 +904,39 @@
               id="remarks"
               name="remarks"
               rows="4"
-              class="block p-2.5 w-full text-sm text-black bg-white-50 rounded-lg border border-gray-200  focus:ring-blue-500 focus:border-blue-500"
+              class="block p-2.5 w-full text-sm text-black bg-white-50 rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Write your thoughts here..."
             ></textarea>
           </div>
         </div>
       </div>
-      <div class="flex-col flex items-center mt-6 ">
-        <button type="submit" class="btnSub btn-primary btn-lg text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-base px-8 py-2  .5 text-center">Submit</button>
+      <div class="flex-col flex items-center mt-6">
+        <button
+          type="submit"
+          class="btnSub btn-primary btn-lg text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-base px-8 py-2 .5 text-center"
+        >
+          Submit
+        </button>
       </div>
     </div>
   </form>
 </div>
 
-  {% endblock content %} {% block mainjs %}
+{% endblock content %} {% block mainjs %}
 
-  <script>
-    function validateFileSize(input) {
-      const fileSize = input.files[0].size / 1024 / 1024; // size in MB
-      const maxSize = 2; // max file size in MB
-      const fileSizeError = document.getElementById("fileSizeError");
+<script>
+  function validateFileSize(input) {
+    const fileSize = input.files[0].size / 1024 / 1024; // size in MB
+    const maxSize = 2; // max file size in MB
+    const fileSizeError = document.getElementById("fileSizeError");
 
-      if (fileSize > maxSize) {
-        fileSizeError.style.display = "block";
-        input.value = ""; // Clear the input
-      } else {
-        fileSizeError.style.display = "none";
-      }
+    if (fileSize > maxSize) {
+      fileSizeError.style.display = "block";
+      input.value = ""; // Clear the input
+    } else {
+      fileSizeError.style.display = "none";
     }
-  </script>
+  }
+</script>
 
-  {% endblock mainjs %}
+{% endblock mainjs %}
