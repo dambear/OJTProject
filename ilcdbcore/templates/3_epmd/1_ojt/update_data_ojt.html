@@ -715,13 +715,15 @@
                           </svg>
                           Upload
                       </label>
-                    </div>
+
+                    </div> 
+           
                   
           
 
                 </div>
 
-                <embed id="recommendation_letter_file_embed" src="{{ ojt.recommendation_letter.url }}" type="application/pdf" width="100%" height="500px">
+                <embed id="recommendation_letter_embed" src="{{ ojt.recommendation_letter.url }}" type="application/pdf" width="100%" height="500px">
                 
             </div>
           <!-- Modal footer -->
@@ -756,22 +758,20 @@
 
                       
                       <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                          <input type="file" id="application_form" class="hidden" onchange="upload_application_form()" /> 
+                          <input type="file" id="application_form_upload" class="hidden" onchange="upload_application_form()" /> 
                           <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
                               <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
                           </svg>
                           Upload
                       </label>
-                    </div>
+
+                      </div> 
+                
                   
                 </div>
               
                 <embed id="application_form_embed" src="{{ ojt.application_form.url }}" type="application/pdf" width="100%" height="500px">
               
-            </div>
-
-            
-            
         </div>
         <!-- Modal footer -->
         <div class="flex justify-end items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600"></div>
@@ -800,22 +800,21 @@
 
                 <div class="mt-2">
 
-                  <a href="{{ ojt.resource_persons_cv.url }}" target="_blank">
-                    <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
-                       <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
-                      </svg>
-                      View
-                    </button>
-                  </a>
-                </div>
-              
-              
+                  <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <input type="file" id="cv_resume_upload" class="hidden" onchange="upload_cv_resume()" /> 
+                    <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                        <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                    </svg>
+                    Upload
+                 </label>
+
+                </div> 
+
+               
             </div>
 
-            <embed src="{{ ojt.cv_resume.url }}" type="application/pdf" width="100%" height="500px">
-            
-        </div>
+              <embed id="cv_resume_embed" src="{{ ojt.cv_resume.url }}" type="application/pdf" width="100%" height="500px">
+            </div>
         <!-- Modal footer -->
         <div class="flex justify-end items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600"></div>
     </div>
@@ -843,20 +842,19 @@
 
                 <div class="mt-2">
 
-                  <a href="{{ ojt.resource_persons_cv.url }}" target="_blank">
-                    <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
-                       <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
-                      </svg>
-                      View
-                    </button>
-                  </a>
+                  <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <input type="file" id="medical_certificate_upload" class="hidden" onchange="upload_medical_certificate()" /> 
+                    <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                        <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                    </svg>
+                    Upload
+                 </label>
+                </div> 
+                
+                  
                 </div>
-              
-              
-            </div>
 
-            <embed src="{{ ojt.medical_certificate.url }}" type="application/pdf" width="100%" height="500px">
+            <embed id="medical_certificate_embed" src="{{ ojt.medical_certificate.url }}" type="application/pdf" width="100%" height="500px">
             
         </div>
         <!-- Modal footer -->
@@ -887,20 +885,19 @@
 
                 <div class="mt-2">
 
-                  <a href="{{ ojt.workplan_form.url }}" target="_blank">
-                    <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
-                       <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
-                      </svg>
-                      View
-                    </button>
-                  </a>
+                  <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <input type="file" id="workplan_form_upload" class="hidden" onchange="upload_workplan_form()" /> 
+                    <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                        <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                    </svg>
+                    Upload
+                 </label>
                 </div>
               
               
             </div>
 
-            <embed src="{{ ojt.workplan_form.url }}" type="application/pdf" width="100%" height="500px">
+            <embed id="workplan_form_embed" src="{{ ojt.workplan_form.url }}" type="application/pdf" width="100%" height="500px">
             
         </div>
         <!-- Modal footer -->
@@ -930,20 +927,19 @@
 
                 <div class="mt-2">
 
-                  <a href="{{ ojt.interview_form.url }}" target="_blank">
-                    <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
-                       <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
-                      </svg>
-                      View
-                    </button>
-                  </a>
+                  <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <input type="file" id="interview_form_upload" class="hidden" onchange="upload_interview_form()" /> 
+                    <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                        <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                    </svg>
+                    Upload
+                 </label>
                 </div>
               
               
             </div>
 
-            <embed src="{{ ojt.interview_form.url }}" type="application/pdf" width="100%" height="500px">
+            <embed id="interview_form_embed" src="{{ ojt.interview_form.url }}" type="application/pdf" width="100%" height="500px">
             
         </div>
         <!-- Modal footer -->
@@ -973,20 +969,19 @@
 
                 <div class="mt-2">
 
-                  <a href="{{ ojt.acceptance_letter.url }}" target="_blank">
-                    <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
-                       <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
-                      </svg>
-                      View
-                    </button>
-                  </a>
+                  <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <input type="file" id="acceptance_letter_upload" class="hidden" onchange="upload_acceptance_letter()" /> 
+                    <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                        <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                    </svg>
+                    Upload
+                 </label>
                 </div>
               
               
             </div>
 
-            <embed src="{{ ojt.acceptance_letter.url }}" type="application/pdf" width="100%" height="500px">
+            <embed id="acceptance_letter_embed" src="{{ ojt.acceptance_letter.url }}" type="application/pdf" width="100%" height="500px">
             
         </div>
         <!-- Modal footer -->
@@ -1016,20 +1011,19 @@
 
                 <div class="mt-2">
 
-                  <a href="{{ ojt.wfh_arrangement.url }}" target="_blank">
-                    <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
-                       <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
-                      </svg>
-                      View
-                    </button>
-                  </a>
+                  <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <input type="file" id="wfh_arrangement_upload" class="hidden" onchange="upload_wfh_arrangement()" /> 
+                    <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                        <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                    </svg>
+                    Upload
+                 </label>
                 </div>
               
               
             </div>
 
-            <embed src="{{ ojt.wfh_arrangement.url }}" type="application/pdf" width="100%" height="500px">
+            <embed id="wfh_arrangement_embed" src="{{ ojt.wfh_arrangement.url }}" type="application/pdf" width="100%" height="500px">
             
         </div>
         <!-- Modal footer -->
@@ -1059,20 +1053,19 @@
 
                 <div class="mt-2">
 
-                  <a href="{{ ojt.nda.url }}" target="_blank">
-                    <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
-                       <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
-                      </svg>
-                      View
-                    </button>
-                  </a>
+                  <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <input type="file" id="nda_upload" class="hidden" onchange="upload_nda()" /> 
+                    <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                        <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                    </svg>
+                    Upload
+                 </label>
                 </div>
               
               
             </div>
 
-            <embed src="{{ ojt.nda.url }}" type="application/pdf" width="100%" height="500px">
+            <embed id="nda_embed" src="{{ ojt.nda.url }}" type="application/pdf" width="100%" height="500px">
             
         </div>
         <!-- Modal footer -->
@@ -1102,20 +1095,19 @@
 
                 <div class="mt-2">
 
-                  <a href="{{ ojt.work_assignment_form.url }}" target="_blank">
-                    <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
-                       <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
-                      </svg>
-                      View
-                    </button>
-                  </a>
+                   <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <input type="file" id="work_assignment_form_upload" class="hidden" onchange="upload_work_assignment_form()" /> 
+                    <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                        <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                    </svg>
+                    Upload
+                  </label>
                 </div>
               
               
             </div>
 
-            <embed src="{{ ojt.work_assignment_form.url }}" type="application/pdf" width="100%" height="500px">
+            <embed id="work_assignment_form_embed" src="{{ ojt.work_assignment_form.url }}" type="application/pdf" width="100%" height="500px">
             
         </div>
         <!-- Modal footer -->
@@ -1145,20 +1137,19 @@
 
                 <div class="mt-2">
 
-                  <a href="{{ ojt.war.url }}" target="_blank">
-                    <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
-                       <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
-                      </svg>
-                      View
-                    </button>
-                  </a>
+                  <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <input type="file" id="war_upload" class="hidden" onchange="upload_war()" /> 
+                    <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                        <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                    </svg>
+                    Upload
+                 </label>
                 </div>
               
               
             </div>
 
-            <embed src="{{ ojt.war.url }}" type="application/pdf" width="100%" height="500px">
+            <embed id="war_embed" src="{{ ojt.war.url }}" type="application/pdf" width="100%" height="500px">
             
         </div>
         <!-- Modal footer -->
@@ -1188,20 +1179,19 @@
 
                 <div class="mt-2">
 
-                  <a href="{{ ojt.timesheet.url }}" target="_blank">
-                    <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
-                       <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
-                      </svg>
-                      View
-                    </button>
-                  </a>
+                  <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <input type="file" id="timesheet_upload" class="hidden" onchange="upload_timesheet()" /> 
+                    <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                        <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                    </svg>
+                    Upload
+                 </label>
                 </div>
               
               
             </div>
 
-            <embed src="{{ ojt.timesheet.url }}" type="application/pdf" width="100%" height="500px">
+             <embed id="timesheet_embed" src="{{ ojt.timesheet.url }}" type="application/pdf" width="100%" height="500px">
             
         </div>
         <!-- Modal footer -->
@@ -1231,20 +1221,19 @@
 
                 <div class="mt-2">
 
-                  <a href="{{ ojt.coc.url }}" target="_blank">
-                    <button type="button" class=" px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
-                       <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
-                      </svg>
-                      View
-                    </button>
-                  </a>
+                  <label class="px-4 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <input type="file" id="coc_upload" class="hidden" onchange="upload_coc()" /> 
+                    <svg class="w-4 h-4 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 4 28 16">
+                        <path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z" clip-rule="evenodd"/>
+                    </svg>
+                    Upload
+                 </label>
                 </div>
               
               
             </div>
 
-            <embed src="{{ ojt.coc.url }}" type="application/pdf" width="100%" height="500px">
+            <embed id="coc_embed" src="{{ ojt.coc.url }}" type="application/pdf" width="100%" height="500px">
             
         </div>
         <!-- Modal footer -->
@@ -1276,7 +1265,7 @@ function upload_recommendation_letter() {
         .then(data => {
             console.log('Success:', data);
             // Update the src attribute of the embed element with the new URL
-            const embedElement = document.getElementById('recommendation_letter_file_embed');
+            const embedElement = document.getElementById('recommendation_letter_embed');
             if (embedElement && data.ojtupdatedrecommendationletterurl) {
                 embedElement.src = data.ojtupdatedrecommendationletterurl;
             }
@@ -1291,7 +1280,404 @@ function upload_recommendation_letter() {
     
 }
 
+// application form
 
+
+function upload_application_form() {
+  const fileInput = document.getElementById('application_form_upload');
+  const application_form_file = fileInput.files[0];
+  if (application_form_file) {
+      const formData = new FormData();
+      formData.append('application_form_file', application_form_file);
+
+      fetch('/upload_application_form_file/' + {{ ojt.id }} + '/', { // Include the id in the URL
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Update the src attribute of the embed element with the new URL
+          const embedElement = document.getElementById('application_form_embed');
+          if (embedElement && data.ojtupdatedapplicationformurl) {
+              embedElement.src = data.ojtupdatedapplicationformurl;
+          }
+
+
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+  }
+
+  
+}
+
+// upload_cv_resume_file
+
+
+function upload_cv_resume() {
+  const fileInput = document.getElementById('cv_resume_upload');
+  const cv_resume_file = fileInput.files[0];
+  if (cv_resume_file) {
+      const formData = new FormData();
+      formData.append('cv_resume_file', cv_resume_file);
+
+      fetch('/upload_cv_resume_file/' + {{ ojt.id }} + '/', { // Include the id in the URL
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Update the src attribute of the embed element with the new URL
+          const embedElement = document.getElementById('cv_resume_embed');
+          if (embedElement && data.ojtupdatedcvresumeurl) {
+              embedElement.src = data.ojtupdatedcvresumeurl;
+          }
+
+
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+  }
+
+  
+}
+
+// upload_medical_certificate_file
+
+
+function upload_medical_certificate() {
+  const fileInput = document.getElementById('medical_certificate_upload');
+  const medical_certificate_file = fileInput.files[0];
+  if (medical_certificate_file) {
+      const formData = new FormData();
+      formData.append('medical_certificate_file', medical_certificate_file);
+
+      fetch('/upload_medical_certificate_file/' + {{ ojt.id }} + '/', { // Include the id in the URL
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Update the src attribute of the embed element with the new URL
+          const embedElement = document.getElementById('medical_certificate_embed');
+          if (embedElement && data.ojtupdatedmedicalcertificateurl) {
+              embedElement.src = data.ojtupdatedmedicalcertificateurl;
+          }
+
+
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+  }
+
+  
+}
+
+
+// workplan_form
+
+
+function upload_workplan_form() {
+  const fileInput = document.getElementById('workplan_form_upload');
+  const workplan_form_file = fileInput.files[0];
+  if (workplan_form_file) {
+      const formData = new FormData();
+      formData.append('workplan_form_file', workplan_form_file);
+
+      fetch('/upload_workplan_form_file/' + {{ ojt.id }} + '/', { // Include the id in the URL
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Update the src attribute of the embed element with the new URL
+          const embedElement = document.getElementById('workplan_form_embed');
+          if (embedElement && data.ojtupdatedworkplanformurl) {
+              embedElement.src = data.ojtupdatedworkplanformurl;
+          }
+
+
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+  }
+
+  
+}
+
+// upload_interview_form_file
+
+function upload_interview_form() {
+  const fileInput = document.getElementById('interview_form_upload');
+  const interview_form_file = fileInput.files[0];
+  if (interview_form_file) {
+      const formData = new FormData();
+      formData.append('interview_form_file',interview_form_file);
+
+      fetch('/upload_interview_form_file/' + {{ ojt.id }} + '/', { // Include the id in the URL
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Update the src attribute of the embed element with the new URL
+          const embedElement = document.getElementById('interview_form_embed');
+          if (embedElement && data.ojtupdatedinterviewformurl) {
+              embedElement.src = data.ojtupdatedinterviewformurl;
+          }
+
+
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+  }
+
+  
+}
+
+// upload_acceptance_letter
+
+function upload_acceptance_letter() {
+  const fileInput = document.getElementById('acceptance_letter_upload');
+  const acceptance_letter_file = fileInput.files[0];
+  if (acceptance_letter_file) {
+      const formData = new FormData();
+      formData.append('acceptance_letter_file',acceptance_letter_file);
+
+      fetch('/upload_acceptance_letter_file/' + {{ ojt.id }} + '/', { // Include the id in the URL
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Update the src attribute of the embed element with the new URL
+          const embedElement = document.getElementById('acceptance_letter_embed');
+          if (embedElement && data.ojtupdatedacceptanceletterurl) {
+            embedElement.src = data.ojtupdatedacceptanceletterurl;
+        }
+
+
+
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+  }
+
+  
+}
+
+
+// upload_wfh_arrangement_file
+
+function upload_wfh_arrangement() {
+  const fileInput = document.getElementById('wfh_arrangement_upload');
+  const wfh_arrangement_file = fileInput.files[0];
+  if (wfh_arrangement_file) {
+      const formData = new FormData();
+      formData.append('wfh_arrangement_file',wfh_arrangement_file);
+
+      fetch('/upload_wfh_arrangement_file/' + {{ ojt.id }} + '/', { // Include the id in the URL
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Update the src attribute of the embed element with the new URL
+          const embedElement = document.getElementById('wfh_arrangement_embed');
+          if (embedElement && data.ojtupdatedwfharrangementurl) {
+            embedElement.src = data.ojtupdatedwfharrangementurl;
+        }
+
+
+
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+  }
+
+  
+}
+
+
+
+// upload_nda_file
+
+function upload_nda() {
+  const fileInput = document.getElementById('nda_upload');
+  const nda_file = fileInput.files[0];
+  if (nda_file) {
+      const formData = new FormData();
+      formData.append('nda_file',nda_file);
+
+      fetch('/upload_nda_file/' + {{ ojt.id }} + '/', { // Include the id in the URL
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Update the src attribute of the embed element with the new URL
+          const embedElement = document.getElementById('nda_embed');
+          if (embedElement && data.ojtupdatedndaurl) {
+            embedElement.src = data.ojtupdatedndaurl;
+        }
+
+
+
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+  }
+
+  
+}
+
+// upload_work_assignment_form_file
+
+function upload_work_assignment_form() {
+  const fileInput = document.getElementById('work_assignment_form_upload');
+  const work_assignment_form_file = fileInput.files[0];
+  if (work_assignment_form_file) {
+      const formData = new FormData();
+      formData.append('work_assignment_form_file',work_assignment_form_file);
+
+      fetch('/upload_work_assignment_form_file/' + {{ ojt.id }} + '/', { // Include the id in the URL
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Update the src attribute of the embed element with the new URL
+          const embedElement = document.getElementById('work_assignment_form_embed');
+          if (embedElement && data.ojtupdatedworkassignmentformurl) {
+            embedElement.src = data.ojtupdatedworkassignmentformurl;
+        }
+
+
+
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+  }
+
+  
+}
+
+// upload_war_file
+
+function upload_war() {
+  const fileInput = document.getElementById('war_upload');
+  const war_file = fileInput.files[0];
+  if (war_file) {
+      const formData = new FormData();
+      formData.append('war_file',war_file);
+
+      fetch('/upload_war_file/' + {{ ojt.id }} + '/', { // Include the id in the URL
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Update the src attribute of the embed element with the new URL
+          const embedElement = document.getElementById('war_embed');
+          if (embedElement && data.ojtupdatedwarurl) {
+            embedElement.src = data.ojtupdatedwarurl;
+        }
+
+
+
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+  }
+
+  
+}
+
+// upload_timesheet_file
+
+function upload_timesheet() {
+  const fileInput = document.getElementById('timesheet_upload');
+  const timesheet_file = fileInput.files[0];
+  if (timesheet_file) {
+      const formData = new FormData();
+      formData.append('timesheet_file',timesheet_file);
+
+      fetch('/upload_timesheet_file/' + {{ ojt.id }} + '/', { // Include the id in the URL
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Update the src attribute of the embed element with the new URL
+          const embedElement = document.getElementById('timesheet_embed');
+          if (embedElement && data.ojtupdatedtimesheeturl) {
+            embedElement.src = data.ojtupdatedtimesheeturl;
+        }
+
+
+
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+  }
+
+  
+}
+
+// upload_coc_file
+
+function upload_coc() {
+  const fileInput = document.getElementById('coc_upload');
+  const coc_file = fileInput.files[0];
+  if (coc_file) {
+      const formData = new FormData();
+      formData.append('coc_file',coc_file);
+
+      fetch('/upload_coc_file/' + {{ ojt.id }} + '/', { // Include the id in the URL
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Update the src attribute of the embed element with the new URL
+          const embedElement = document.getElementById('coc_embed');
+          if (embedElement && data.ojtupdatedcocurl) {
+            embedElement.src = data.ojtupdatedcocurl;
+        }
+
+
+
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+  }
+
+  
+}
 
 </script>
 

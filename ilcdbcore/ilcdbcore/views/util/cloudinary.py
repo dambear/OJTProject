@@ -183,16 +183,16 @@ def upload_cv_resume_file(request, ojt_id):
   
     upload = get_object_or_404(UploadCache_Table, id=ojt_id)
     if request.method == 'POST':
-        cv_resume_file = request.FILES['cv_resume']
+        cv_resume_file = request.FILES['cv_resume_file']
         
         upload.cv_resume = cv_resume_file
         upload.save()
         
-        tmdupdatedcvresumeurl = upload.cv_resume.url
+        ojtupdatedcvresumeurl = upload.cv_resume.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
-            'tmdupdatedcvresumeurl': tmdupdatedcvresumeurl # Include the URL in the response
+            'ojtupdatedcvresumeurl': ojtupdatedcvresumeurl # Include the URL in the response
         })
     
     else:
@@ -203,16 +203,16 @@ def upload_medical_certificate_file(request, ojt_id):
   
     upload = get_object_or_404(UploadCache_Table, id=ojt_id)
     if request.method == 'POST':
-        medical_certificate_file = request.FILES['medical_certificate']
+        medical_certificate_file = request.FILES['medical_certificate_file']
         
         upload.medical_certificate = medical_certificate_file
         upload.save()
         
-        tmdupdatedmedicalcertificateurl = upload.medical_certificate.url
+        ojtupdatedmedicalcertificateurl = upload.medical_certificate.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
-            'tmdupdatedmedicalcertificateurl': tmdupdatedmedicalcertificateurl # Include the URL in the response
+            'ojtupdatedmedicalcertificateurl': ojtupdatedmedicalcertificateurl # Include the URL in the response
         })
     
     else:
@@ -223,16 +223,16 @@ def upload_workplan_form_file(request, ojt_id):
   
     upload = get_object_or_404(UploadCache_Table, id=ojt_id)
     if request.method == 'POST':
-        workplan_form_file = request.FILES['workplan_form']
+        workplan_form_file = request.FILES['workplan_form_file']
         
         upload.workplan_form = workplan_form_file
         upload.save()
         
-        tmdupdatedworkplanformurl = upload.workplan_form.url
+        ojtupdatedworkplanformurl = upload.workplan_form.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
-            'tmdupdatedworkplanformurl': tmdupdatedworkplanformurl # Include the URL in the response
+            'ojtupdatedworkplanformurl': ojtupdatedworkplanformurl # Include the URL in the response
         })
     
     else:
@@ -243,16 +243,16 @@ def upload_interview_form_file(request, ojt_id):
   
     upload = get_object_or_404(UploadCache_Table, id=ojt_id)
     if request.method == 'POST':
-        interview_form_file = request.FILES['interview_form']
+        interview_form_file = request.FILES['interview_form_file']
         
         upload.interview_form = interview_form_file
         upload.save()
         
-        tmdupdatedinterviewformurl = upload.interview_form.url
+        ojtupdatedinterviewformurl = upload.interview_form.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
-            'tmdupdatedinterviewformurl': tmdupdatedinterviewformurl # Include the URL in the response
+            'ojtupdatedinterviewformurl': ojtupdatedinterviewformurl # Include the URL in the response
         })
     
     else:
@@ -264,16 +264,16 @@ def upload_acceptance_letter_file(request, ojt_id):
   
     upload = get_object_or_404(UploadCache_Table, id=ojt_id)
     if request.method == 'POST':
-        acceptance_letter_file = request.FILES['acceptance_letter']
+        acceptance_letter_file = request.FILES['acceptance_letter_file']
         
         upload.acceptance_letter = acceptance_letter_file
         upload.save()
         
-        tmdupdatedacceptanceletterurl = upload.acceptance_letter.url
+        ojtupdatedacceptanceletterurl = upload.acceptance_letter.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
-            'tmdupdatedacceptanceletterurl': tmdupdatedacceptanceletterurl # Include the URL in the response
+            'ojtupdatedacceptanceletterurl': ojtupdatedacceptanceletterurl # Include the URL in the response
         })
     
     else:
@@ -285,16 +285,16 @@ def upload_wfh_arrangement_file(request, ojt_id):
   
     upload = get_object_or_404(UploadCache_Table, id=ojt_id)
     if request.method == 'POST':
-        wfh_arrangement_file = request.FILES['wfh_arrangement']
+        wfh_arrangement_file = request.FILES['wfh_arrangement_file']
         
         upload.wfh_arrangement = wfh_arrangement_file
         upload.save()
         
-        tmdupdatedwfharrangementurl = upload.wfh_arrangement.url
+        ojtupdatedwfharrangementurl = upload.wfh_arrangement.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
-            'tmdupdatedwfharrangementurl': tmdupdatedwfharrangementurl # Include the URL in the response
+            'ojtupdatedwfharrangementurl': ojtupdatedwfharrangementurl # Include the URL in the response
         })
     
     else:
@@ -305,16 +305,16 @@ def upload_nda_file(request, ojt_id):
   
     upload = get_object_or_404(UploadCache_Table, id=ojt_id)
     if request.method == 'POST':
-        nda_file = request.FILES['nda']
+        nda_file = request.FILES['nda_file']
         
         upload.nda = nda_file
         upload.save()
         
-        tmdupdatedndaurl = upload.nda.url
+        ojtupdatedndaurl = upload.nda.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
-            'tmdupdatedndaurl': tmdupdatedndaurl # Include the URL in the response
+            'ojtupdatedndaurl': ojtupdatedndaurl # Include the URL in the response
         })
     
     else:
@@ -325,16 +325,16 @@ def upload_work_assignment_form_file(request, ojt_id):
   
     upload = get_object_or_404(UploadCache_Table, id=ojt_id)
     if request.method == 'POST':
-        work_assignment_form_file = request.FILES['work_assignment_form']
+        work_assignment_form_file = request.FILES['work_assignment_form_file']
         
         upload.work_assignment_form = work_assignment_form_file
         upload.save()
         
-        tmdupdatedworkassignmentformurl = upload.work_assignment_form.url
+        ojtupdatedworkassignmentformurl = upload.work_assignment_form.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
-            'tmdupdatedworkassignmentformurl': tmdupdatedworkassignmentformurl # Include the URL in the response
+            'ojtupdatedworkassignmentformurl': ojtupdatedworkassignmentformurl # Include the URL in the response
         })
     
     else:
@@ -345,16 +345,16 @@ def upload_war_file(request, ojt_id):
   
     upload = get_object_or_404(UploadCache_Table, id=ojt_id)
     if request.method == 'POST':
-        war_file = request.FILES['war']
+        war_file = request.FILES['war_file']
         
         upload.war = war_file
         upload.save()
         
-        tmdupdatedwarurl = upload.war.url
+        ojtupdatedwarurl = upload.war.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
-            'tmdupdatedwarurl': tmdupdatedwarurl # Include the URL in the response
+            'ojtupdatedwarurl': ojtupdatedwarurl # Include the URL in the response
         })
     
     else:
@@ -365,16 +365,16 @@ def upload_timesheet_file(request, ojt_id):
   
     upload = get_object_or_404(UploadCache_Table, id=ojt_id)
     if request.method == 'POST':
-        timesheet_file = request.FILES['timesheet']
+        timesheet_file = request.FILES['timesheet_file']
         
         upload.timesheet = timesheet_file
         upload.save()
         
-        tmdupdatedtimesheeturl = upload.timesheet.url
+        ojtupdatedtimesheeturl = upload.timesheet.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
-            'tmdupdatedtimesheeturl': tmdupdatedtimesheeturl # Include the URL in the response
+            'ojtupdatedtimesheeturl': ojtupdatedtimesheeturl # Include the URL in the response
         })
     
     else:
@@ -385,16 +385,16 @@ def upload_coc_file(request, ojt_id):
   
     upload = get_object_or_404(UploadCache_Table, id=ojt_id)
     if request.method == 'POST':
-        coc_file = request.FILES['coc']
+        coc_file = request.FILES['coc_file']
         
         upload.coc = coc_file
         upload.save()
         
-        tmdupdatedcocurl = upload.coc.url
+        ojtupdatedcocurl = upload.coc.url
         
         return JsonResponse({
             'message': 'File uploaded successfully',
-            'tmdupdatedcocurl': tmdupdatedcocurl # Include the URL in the response
+            'ojtupdatedcocurl': ojtupdatedcocurl # Include the URL in the response
         })
     
     else:

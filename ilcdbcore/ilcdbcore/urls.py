@@ -14,7 +14,7 @@ from .views.util.download import download_file_attendance_sheet, download_file_p
 
 from .views.util.generate import export_intern_table_to_excel, export_exam_table_to_excel, export_engage_partners_table_to_excel, export_trainings_and_webinars_table_to_excel
 
-from .views.util.cloudinary import  upload_attendance_sheet_file, upload_certificates_issued_file, upload_participants_list_file, upload_group_photo_file, upload_resource_persons_cv_file, upload_recommendation_letter_file
+from .views.util.cloudinary import  upload_attendance_sheet_file, upload_certificates_issued_file, upload_participants_list_file, upload_group_photo_file, upload_resource_persons_cv_file, upload_recommendation_letter_file, upload_application_form_file, upload_acceptance_letter_file, upload_cv_resume_file, upload_coc_file, upload_interview_form_file, upload_medical_certificate_file, upload_nda_file, upload_timesheet_file, upload_war_file, upload_wfh_arrangement_file, upload_work_assignment_form_file, upload_workplan_form_file
 from .views.limit.limit_view import limit
 from .views.auth.auth import login_page, logout_page
 
@@ -97,8 +97,27 @@ urlpatterns = [
     path('upload_resource_persons_cv_file/<int:tmd_id>/', upload_resource_persons_cv_file, name='upload_resource_persons_cv_file'),
    
    
+   
     path('upload_recommendation_letter_file/<int:ojt_id>/', upload_recommendation_letter_file, name='upload_recommendation_letter_file'),
-    
-    
+    path('upload_application_form_file/<int:ojt_id>/', upload_application_form_file, name='upload_application_form_file'),
+    path('upload_cv_resume_file/<int:ojt_id>/', upload_cv_resume_file, name='upload_cv_resume_file'),
+    path('upload_medical_certificate_file/<int:ojt_id>/', upload_medical_certificate_file, name='upload_medical_certificate_file'),
+    path('upload_workplan_form_file/<int:ojt_id>/', upload_workplan_form_file, name='upload_workplan_form_file'),
+    path('upload_interview_form_file/<int:ojt_id>/', upload_interview_form_file, name='upload_interview_form_file'),
+    path('upload_acceptance_letter_file/<int:ojt_id>/', upload_acceptance_letter_file, name='upload_acceptance_letter_file'),
+    path('upload_wfh_arrangement_file/<int:ojt_id>/', upload_wfh_arrangement_file, name='upload_wfh_arrangement_file'),
+    path('upload_nda_file/<int:ojt_id>/', upload_nda_file, name='upload_nda_file'),
+    path('upload_work_assignment_form_file/<int:ojt_id>/', upload_work_assignment_form_file, name='upload_work_assignment_form_file'),
+    path('upload_war_file/<int:ojt_id>/', upload_war_file, name='upload_war_file'),
+    path('upload_timesheet_file/<int:ojt_id>/', upload_timesheet_file, name='upload_timesheet_file'),
+    path('upload_coc_file/<int:ojt_id>/', upload_coc_file, name='upload_coc_file'),
+   
+
+
+
+
+
+
+
 ]
 
