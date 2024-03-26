@@ -9,14 +9,15 @@ from .views.epmd.engage_view import epmd_engage, add_data_engage, update_data_en
 from .views.tmd.tmd_view import tmd, add_data_tmd, view_data_tmd, update_data_tmd, delete_data_tmd
 from .views.c3d2.c3d2_view import c3d2, add_data_c3d2, update_data_c3d2, delete_data_c3d2, view_data_c3d2
 
-from .views.util.download import download_file_attendance_sheet, download_file_participants_list, download_file_group_photo, download_file_certificates_issued, download_file_resource_persons_cv, pdf_view_participants_list
 
 
-from .views.util.generate import export_intern_table_to_excel, export_exam_table_to_excel, export_engage_partners_table_to_excel, export_trainings_and_webinars_table_to_excel
+from .views.util.generate import export_intern_table_to_excel, export_exam_table_to_excel, export_engage_partners_table_to_excel, export_trainings_and_webinars_table_to_excel, upload_csv_ojt, upload_csv_engage, upload_csv_exam, upload_csv_tmd
+
+
 
 from .views.util.cloudinary import  upload_attendance_sheet_file, upload_certificates_issued_file, upload_participants_list_file, upload_group_photo_file, upload_resource_persons_cv_file, upload_recommendation_letter_file, upload_application_form_file, upload_acceptance_letter_file, upload_cv_resume_file, upload_coc_file, upload_interview_form_file, upload_medical_certificate_file, upload_nda_file, upload_timesheet_file, upload_war_file, upload_wfh_arrangement_file, upload_work_assignment_form_file, upload_workplan_form_file
 from .views.limit.limit_view import limit
-from .views.auth.auth import login_page, logout_page
+from .views.auth.auth import login_page, logout_page, register_page
 
 from django.contrib.auth import views as auth_views
 
@@ -30,6 +31,11 @@ urlpatterns = [
     path("login", login_page, name="login_page"),
     path("login/", auth_views.LoginView.as_view(), name="login"),
     path("logout", logout_page, name="logout_page"),
+    
+    #
+    #
+    #
+    path("register", register_page, name="register"),
     #
     #
     #
@@ -37,6 +43,13 @@ urlpatterns = [
     path('export_exam_table_to_excel/', export_exam_table_to_excel, name='export_exam_table_to_excel'),
     path('export_engage_partners_table_to_excel/', export_engage_partners_table_to_excel, name='export_engage_partners_table_to_excel'),
     path('export_trainings_and_webinars_table_to_excel/', export_trainings_and_webinars_table_to_excel, name='export_trainings_and_webinars_table_to_excel'),
+    #
+    #
+    #
+    path('upload_csv_ojt/', upload_csv_ojt, name='upload_csv_ojt'),
+    path('upload_csv_exam/', upload_csv_exam, name='upload_csv_exam'),
+    path('upload_csv_engage/', upload_csv_engage, name='upload_csv_engage'),
+    path('upload_csv_tmd/', upload_csv_tmd, name='upload_csv_tmd'),
     #
     #
     #
@@ -68,13 +81,6 @@ urlpatterns = [
     path('tmd/view_data_tmd/<int:tmd_id>/',view_data_tmd, name='view_data_tmd'),
     path('tmd/delete_data_tmd/<int:tmd_id>/',delete_data_tmd, name='delete_data_tmd'),
     path('tmd/update_data_tmd/<int:tmd_id>/',update_data_tmd, name='update_data_tmd'),
-    path('tmd/download_file_participants_list/<int:tmd_id>/',download_file_participants_list, name='download_file_participants_list'),
-    path('tmd/download_file_attendance_sheet/<int:tmd_id>/',download_file_attendance_sheet, name='download_file_attendance_sheet'),
-    path('tmd/download_file_group_photo/<int:tmd_id>/',download_file_group_photo, name='download_file_group_photo'),
-    path('tmd/download_file_certificates_issued/<int:tmd_id>/',download_file_certificates_issued, name='download_file_certificates_issued'),
-    path('tmd/download_file_resource_persons_cv/<int:tmd_id>/',download_file_resource_persons_cv, name='download_file_resource_persons_cv'),
-    
-    path('tmd/pdf_view_participants_list/<int:tmd_id>/',pdf_view_participants_list, name='pdf_view_participants_list'),
 
 
     #
@@ -111,13 +117,6 @@ urlpatterns = [
     path('upload_war_file/<int:ojt_id>/', upload_war_file, name='upload_war_file'),
     path('upload_timesheet_file/<int:ojt_id>/', upload_timesheet_file, name='upload_timesheet_file'),
     path('upload_coc_file/<int:ojt_id>/', upload_coc_file, name='upload_coc_file'),
-   
-
-
-
-
-
-
 
 ]
 

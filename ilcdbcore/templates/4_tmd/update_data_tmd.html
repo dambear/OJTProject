@@ -430,6 +430,7 @@
               class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.nga_m}}"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '');"
             />
           </div>
         </div>
@@ -464,6 +465,7 @@
               class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.suc_m}}"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '');"
             />
           </div>
         </div>
@@ -498,6 +500,7 @@
               class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.lgu_m}}"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '');"
             />
           </div>
         </div>
@@ -532,6 +535,7 @@
               class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.others_m}}"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '');"
             />
           </div>
         </div>
@@ -567,6 +571,7 @@
               class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.total_m}}"
+              disabled
             />
           </div>
         </div>
@@ -601,6 +606,7 @@
               class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.nga_f}}"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '');"
             />
           </div>
         </div>
@@ -635,6 +641,7 @@
               class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.suc_f}}"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '');"
             />
           </div>
         </div>
@@ -669,6 +676,7 @@
               class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.lgu_f}}"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '');"
             />
           </div>
         </div>
@@ -704,6 +712,7 @@
               class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.others_f}}"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '');"
             />
           </div>
         </div>
@@ -739,6 +748,7 @@
               class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.total_f}}"
+              disabled
             />
           </div>
         </div>
@@ -773,6 +783,7 @@
               class="bg-gray-50 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               value="{{tmd.total_participants}}"
+              disabled
             />
           </div>
         </div>
@@ -1294,7 +1305,91 @@ function upload_resource_persons_cv() {
   
 }
 
+</script>
+
+<!-- Script for calculating totals -->
+<script>
+  // Get all input fields for male categories
+  const ngaMaleInput = document.getElementById('nga_m');
+  const sucMaleInput = document.getElementById('suc_m');
+  const lguMaleInput = document.getElementById('lgu_m');
+  const othersMaleInput = document.getElementById('others_m');
+  // Get the Total Male input field
+  const totalMaleInput = document.getElementById('total_m');
+
+  // Get all input fields for female categories
+  const ngaFemaleInput = document.getElementById('nga_f');
+  const sucFemaleInput = document.getElementById('suc_f');
+  const lguFemaleInput = document.getElementById('lgu_f');
+  const othersFemaleInput = document.getElementById('others_f');
+  // Get the Total Female input field
+  const totalFemaleInput = document.getElementById('total_f');
+
+  // Get the Total Participants input field
+  const totalParticipantsInput = document.getElementById('total_participants');
+
+  // Function to calculate total male
+  function calculateTotalMale() {
+    // Get the values from each input field and parse them as integers
+    const ngaMaleCount = parseInt(ngaMaleInput.value.trim()) || 0;
+    const sucMaleCount = parseInt(sucMaleInput.value.trim()) || 0;
+    const lguMaleCount = parseInt(lguMaleInput.value.trim()) || 0;
+    const othersMaleCount = parseInt(othersMaleInput.value.trim()) || 0;
+
+    // Calculate the total male count
+    const totalMale = ngaMaleCount + sucMaleCount + lguMaleCount + othersMaleCount;
+
+    // Set the calculated total to the Total Male input field
+    totalMaleInput.value = totalMale;
+
+    // Calculate total participants
+    calculateTotalParticipants();
+  }
+
+  // Function to calculate total female
+  function calculateTotalFemale() {
+    // Get the values from each input field and parse them as integers
+    const ngaFemaleCount = parseInt(ngaFemaleInput.value.trim()) || 0;
+    const sucFemaleCount = parseInt(sucFemaleInput.value.trim()) || 0;
+    const lguFemaleCount = parseInt(lguFemaleInput.value.trim()) || 0;
+    const othersFemaleCount = parseInt(othersFemaleInput.value.trim()) || 0;
+
+    // Calculate the total female count
+    const totalFemale = ngaFemaleCount + sucFemaleCount + lguFemaleCount + othersFemaleCount;
+
+    // Set the calculated total to the Total Female input field
+    totalFemaleInput.value = totalFemale;
+
+    // Calculate total participants
+    calculateTotalParticipants();
+  }
+
+
+
+  // Function to calculate total participants
+  function calculateTotalParticipants() {
+    // Get the total male and total female counts
+    const totalMale = parseInt(totalMaleInput.value.trim()) || 0;
+    const totalFemale = parseInt(totalFemaleInput.value.trim()) || 0;
+
+    // Calculate total participants
+    const totalParticipants = totalMale + totalFemale;
+
+    // Set the calculated total to the Total Participants input field
+    totalParticipantsInput.value = totalParticipants;
+  }
+
+  // Add event listeners to input fields to recalculate total when values change
+  [ngaFemaleInput, sucFemaleInput, lguFemaleInput, othersFemaleInput].forEach(input => {
+    input.addEventListener('input', calculateTotalFemale);
+  });
+
+  // Add event listeners to input fields to recalculate total when values change
+  [ngaMaleInput, sucMaleInput, lguMaleInput, othersMaleInput].forEach(input => {
+    input.addEventListener('input', calculateTotalMale);
+  });
 
 </script>
+
 
 {% endblock mainjs %}

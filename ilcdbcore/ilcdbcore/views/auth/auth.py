@@ -25,3 +25,9 @@ def login_page(request):
 def logout_page(request):
     logout(request)
     return redirect("/login")
+
+
+def register_page(request):
+    
+
+    return render(request, "auth/_register.html", {})

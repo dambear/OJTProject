@@ -1,17 +1,12 @@
 <!-- templates/index.html -->
 
-
-{% extends "_base.html" %} 
-
-{% block maincss %}
+{% extends "_base.html" %} {% block maincss %}
 
 <!-- Include DataTables CSS -->
 <link
   rel="stylesheet"
   href="https://cdn.datatables.net/2.0.0/css/dataTables.tailwindcss.css"
 />
-
-
 
 {% endblock maincss %} {% block mainjs %}
 
@@ -59,14 +54,14 @@
         <tbody class="uppercase text-center">
           {% for engage in engage_partner %}
           <tr>
-              <td>{{ engage.id }}</td>
-              <td>{{ engage.province }}</td>
-              <td>{{ engage.category }}</td>
-              <td>{{ engage.name_of_partner_or_office }}</td>
-              <td>{{ engage.address }}</td>
+            <td>{{ engage.id }}</td>
+            <td>{{ engage.province }}</td>
+            <td>{{ engage.category }}</td>
+            <td>{{ engage.name_of_partner_or_office }}</td>
+            <td>{{ engage.address }}</td>
             <td data-label="Actions" class="flex justify-between">
               <div class="action-buttons">
-                 <a href="{% url 'view_data_engage' engage.id %}">
+                <a href="{% url 'view_data_engage' engage.id %}">
                   <button
                     type="button"
                     class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-gray-600 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
@@ -91,7 +86,7 @@
                 <a href="{% url 'update_data_engage' engage.id %}">
                   <button
                     type="button"
-                    class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300" 
+                    class="px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
                     <svg
                       class="w-3 h-3 text-white me-2"
@@ -110,8 +105,12 @@
                     Up
                   </button>
                 </a>
-  
-                <form method="post" action="{% url 'delete_data_engage' engage.id %}" style="display:inline-block;">
+
+                <form
+                  method="post"
+                  action="{% url 'delete_data_engage' engage.id %}"
+                  style="display: inline-block"
+                >
                   {% csrf_token %}
                   <button
                     type="submit"
@@ -150,26 +149,28 @@
       id="speed-dial-menu-default"
       class="flex flex-col items-center hidden mb-4 space-y-2"
     >
-      <button
-        type="button"
-        data-tooltip-target="tooltip-print"
-        data-tooltip-placement="left"
-        class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 focus:ring-4 focus:ring-gray-300 focus:outline-none"
-      >
-        <svg
-          class="w-5 h-5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 20 20"
+      <a href="/export_engage_partners_table_to_excel">
+        <button
+          type="button"
+          data-tooltip-target="tooltip-print"
+          data-tooltip-placement="left"
+          class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 focus:ring-4 focus:ring-gray-300 focus:outline-none"
         >
-          <path d="M5 20h10a1 1 0 0 0 1-1v-5H4v5a1 1 0 0 0 1 1Z" />
-          <path
-            d="M18 7H2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2v-3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Zm-1-2V2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3h14Z"
-          />
-        </svg>
-        <span class="sr-only">Excel</span>
-      </button>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path d="M5 20h10a1 1 0 0 0 1-1v-5H4v5a1 1 0 0 0 1 1Z" />
+            <path
+              d="M18 7H2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2v-3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Zm-1-2V2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3h14Z"
+            />
+          </svg>
+          <span class="sr-only">Excel</span>
+        </button>
+      </a>
       <div
         id="tooltip-print"
         role="tooltip"
@@ -203,7 +204,7 @@
 
           <span class="sr-only">AddNewData</span>
         </button>
-      </>
+      </a>
       <div
         id="tooltip-copy"
         role="tooltip"

@@ -1,9 +1,12 @@
 
-
+from django.shortcuts import render
 import pandas as pd
 from django.http import HttpResponse
 from django.db import connection
 from main.models import Intern_Table, Exam_Table, Engage_Partners_Table, Training_Webinars_Table
+from ilcdbcore.views.util.upload_excel import upload_csv_data_to_intern_table, upload_csv_data_to_engage_partners_table, upload_csv_data_to_exam_table, upload_csv_data_to_training_webinars_table
+from datetime import datetime
+
 
 import io
 
@@ -89,6 +92,7 @@ def export_exam_table_to_excel(request):
 
     return response
 
+
     
     
     
@@ -170,3 +174,52 @@ def export_trainings_and_webinars_table_to_excel(request):
     response['Content-Disposition'] = f'attachment; filename="{filename}"'
 
     return response
+
+
+# ------------------------------ Uploads -------------------------- --------------------
+
+def upload_csv_exam(request):
+    if request.method == 'POST':
+        csv_file = request.FILES['csv_file']
+        if csv_file.name.endswith('.csv'):
+            
+            upload_csv_data_to_intern_table(csv_file)
+            
+            c3d2s = Exam_Table.objects.all()
+            return render(request, "2_c3d2/index.html", {"c3d2s": c3d2s})
+
+        else:
+            return render('/error/') # Redirect to an error page
+    return render(request, 'upload.html')
+
+
+def upload_csv_ojt(request):
+    if request.method == 'POST':
+        csv_file = request.FILES['csv_file']
+        if csv_file.name.endswith('.csv'):
+            upload_csv_data_to_intern_table(csv_file)
+            return render(request, "3_epmd/1_ojt/index.html")
+        else:
+            return render('/error/') # Redirect to an error page
+    return render(request, 'upload.html')
+
+
+def upload_csv_engage(request):
+    if request.method == 'POST':
+        csv_file = request.FILES['csv_file']
+        if csv_file.name.endswith('.csv'):
+            upload_csv_data_to_engage_partners_table(csv_file)
+            return render('/success/') # Redirect to a success page
+        else:
+            return render('/error/') # Redirect to an error page
+    return render(request, 'upload.html')
+
+def upload_csv_tmd(request):
+    if request.method == 'POST':
+        csv_file = request.FILES['csv_file']
+        if csv_file.name.endswith('.csv'):
+            upload_csv_data_to_training_webinars_table(csv_file)
+            return render('/success/') # Redirect to a success page
+        else:
+            return render('/error/') # Redirect to an error page
+    return render(request, 'upload.html')
