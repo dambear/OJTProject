@@ -11,8 +11,7 @@ from .views.c3d2.c3d2_view import c3d2, add_data_c3d2, update_data_c3d2, delete_
 
 
 
-from .views.util.generate import export_intern_table_to_excel, export_exam_table_to_excel, export_engage_partners_table_to_excel, export_trainings_and_webinars_table_to_excel, upload_csv_ojt
-#upload_csv_engage, upload_csv_exam, upload_csv_tmd
+from .views.util.generate import export_intern_table_to_excel, export_exam_table_to_excel, export_engage_partners_table_to_excel, export_trainings_and_webinars_table_to_excel, upload_csv_ojt, upload_csv_engage, upload_csv_exam, upload_csv_tmd
 
 
 
@@ -48,9 +47,9 @@ urlpatterns = [
     #
     #
     path('upload_csv_ojt/', upload_csv_ojt, name='upload_csv_ojt'),
-    # path('upload_csv_exam/', upload_csv_exam, name='upload_csv_exam'),
-    # path('upload_csv_engage/', upload_csv_engage, name='upload_csv_engage'),
-    # path('upload_csv_tmd/', upload_csv_tmd, name='upload_csv_tmd'),
+    path('upload_csv_exam/', upload_csv_exam, name='upload_csv_exam'),
+    path('upload_csv_engage/', upload_csv_engage, name='upload_csv_engage'),
+    path('upload_csv_tmd/', upload_csv_tmd, name='upload_csv_tmd'),
     #
     #
     #

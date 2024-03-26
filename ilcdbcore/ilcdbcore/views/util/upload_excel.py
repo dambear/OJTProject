@@ -47,9 +47,12 @@ def upload_csv_data_to_exam_table(file_path):
             exam.name_of_examinee = row.get('name_of_examinee')
             exam.venue_or_school = row.get('venue_or_school')
             exam.gender = row.get('gender')
-            exam.time = timezone.datetime.strptime(row.get('time'), "%Y-%m-%d %H:%M:%S")
+            exam.time = timezone.datetime.strptime(row.get('time'), "%H:%M:%S").time()
             exam.status = row.get('status')
             exam.remark_or_grade = row.get('remark_or_grade')
+            exam.ilcdbcore_component = row.get('ilcdbcore_component')
+            exam.date_conducted = timezone.datetime.strptime(row.get('date_conducted'), "%Y-%m-%d").date()
+            exam.type = row.get('type')
             
             # Save the instance to the database
             exam.save()
@@ -118,6 +121,8 @@ def upload_csv_data_to_engage_partners_table(file_path):
             engage.email = row.get('email')
             engage.contact_number = row.get('contact_number')
             engage.date_engaged = timezone.datetime.strptime(row.get('date_engaged'), "%Y-%m-%d").date()
+            
+
             engage.engagement_mode = row.get('engagement_mode')
             engage.loi = row.get('loi')
             engage.remarks = row.get('remarks')

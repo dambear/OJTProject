@@ -4,8 +4,7 @@ import pandas as pd
 from django.http import HttpResponse
 from django.db import connection
 from main.models import Intern_Table, Exam_Table, Engage_Partners_Table, Training_Webinars_Table
-from ilcdbcore.views.util.upload_excel import upload_csv_data_to_intern_table
-import pandas as pd
+from ilcdbcore.views.util.upload_excel import upload_csv_data_to_intern_table, upload_csv_data_to_engage_partners_table, upload_csv_data_to_exam_table, upload_csv_data_to_training_webinars_table
 import tempfile
 
 
@@ -211,11 +210,73 @@ def upload_csv_ojt(request):
             upload_csv_data_to_intern_table(request.FILES['csv_file'])
             return redirect("epmd_ojt") 
         else:
-            return render(request, '/error/') # Redirect to an error page
+            return redirect("epmd_ojt")  # make this to go to an error page or functions
     return redirect("epmd_ojt") 
 
 
 
+
+def upload_csv_engage(request):
+    if request.method == 'POST':
+        xlsx_file = request.FILES.get('dropzone-file')
+        if xlsx_file and xlsx_file.name.endswith('.xlsx'):
+            # Convert .xlsx to .csv
+            csv_file_path = convert_xlsx_to_csv(xlsx_file)
+            # Process the .csv file
+            upload_csv_data_to_engage_partners_table(csv_file_path)
+            
+            return redirect("epmd_engage") 
+        
+        elif request.FILES.get('csv_file') and request.FILES['csv_file'].name.endswith('.csv'):
+            # Process the .csv file directly
+            upload_csv_data_to_engage_partners_table(request.FILES['csv_file'])
+            return redirect("epmd_engage") 
+        else:
+            return redirect("epmd_engage")   # make this to go to an error page or functions
+    return redirect("epmd_engage") 
+
+
+
+def upload_csv_exam(request):
+    if request.method == 'POST':
+        xlsx_file = request.FILES.get('dropzone-file')
+        if xlsx_file and xlsx_file.name.endswith('.xlsx'):
+            # Convert .xlsx to .csv
+            csv_file_path = convert_xlsx_to_csv(xlsx_file)
+            # Process the .csv file
+            upload_csv_data_to_exam_table(csv_file_path)
+            
+            return redirect("c3d2") 
+        
+        elif request.FILES.get('csv_file') and request.FILES['csv_file'].name.endswith('.csv'):
+            # Process the .csv file directly
+            upload_csv_data_to_exam_table(request.FILES['csv_file'])
+            return redirect("c3d2") 
+        else:
+            return redirect("c3d2")  # make this to go to an error page or functions
+    return redirect("c3d2") 
+
+
+
+
+def upload_csv_tmd(request):
+    if request.method == 'POST':
+        xlsx_file = request.FILES.get('dropzone-file')
+        if xlsx_file and xlsx_file.name.endswith('.xlsx'):
+            # Convert .xlsx to .csv
+            csv_file_path = convert_xlsx_to_csv(xlsx_file)
+            # Process the .csv file
+            upload_csv_data_to_training_webinars_table(csv_file_path)
+            
+            return redirect("tmd") 
+        
+        elif request.FILES.get('csv_file') and request.FILES['csv_file'].name.endswith('.csv'):
+            # Process the .csv file directly
+            upload_csv_data_to_training_webinars_table(request.FILES['csv_file'])
+            return redirect("tmd") 
+        else:
+            return redirect("tmd")  # make this to go to an error page or functions
+    return redirect("tmd") 
 
 
 

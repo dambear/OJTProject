@@ -82,8 +82,11 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 # until here ---------------------------------
 
+
+# default file paths if null value of a file is provided
 def get_default_file_path():
     return 'pdfs/368041643_261284816672387_1854896174469958040_n_msu8pn'
+
 
 class Intern_Table(models.Model):
     id = models.BigIntegerField(primary_key=True)
@@ -217,12 +220,11 @@ class Training_Webinars_Table(models.Model):
     course_officers_email = models.TextField()
     remarks = models.TextField()
     
-    participants_list = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage())
-    attendance_sheet = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage())
-    group_photo = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage())
-    certificates_issued = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage())
-    resource_persons_cv = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage())
-
+    participants_list = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    attendance_sheet = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    group_photo = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    certificates_issued = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    resource_persons_cv = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
     class Meta:
         db_table = "Training_Webinars_Table"
 
