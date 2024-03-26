@@ -82,6 +82,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 # until here ---------------------------------
 
+def get_default_file_path():
+    return 'pdfs/368041643_261284816672387_1854896174469958040_n_msu8pn'
 
 class Intern_Table(models.Model):
     id = models.BigIntegerField(primary_key=True)
@@ -99,19 +101,19 @@ class Intern_Table(models.Model):
     remarks = models.TextField()
     
     #files
-    recommendation_letter = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
-    application_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
-    cv_resume = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
-    medical_certificate = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
-    workplan_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
-    interview_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
-    acceptance_letter = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
-    wfh_arrangement = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
-    nda = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
-    work_assignment_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
-    war = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
-    timesheet = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
-    coc = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True)
+    recommendation_letter = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    application_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    cv_resume = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    medical_certificate = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    workplan_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    interview_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    acceptance_letter = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    wfh_arrangement = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    nda = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    work_assignment_form = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    war = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    timesheet = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
+    coc = models.FileField(upload_to='pdfs/', storage=MediaCloudinaryStorage(), null=True, default=get_default_file_path)
     
     
 
@@ -230,10 +232,10 @@ class Training_Webinars_Table(models.Model):
 class Exam_Table(models.Model):
     id = models.AutoField(primary_key=True)
     ilcdbcore_component = models.CharField(max_length=255)
-    province = models.CharField(max_length=100)
     name_of_examinee = models.CharField(max_length=255)
-    venue_or_school = models.CharField(max_length=255)
     gender = models.CharField(max_length=10)
+    province = models.CharField(max_length=100)
+    venue_or_school = models.CharField(max_length=255)
     date_conducted = models.DateField()
     time = models.TimeField()
     type = models.CharField(max_length=255)

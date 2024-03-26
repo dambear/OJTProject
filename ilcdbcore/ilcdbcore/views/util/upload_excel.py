@@ -12,8 +12,7 @@ def upload_csv_data_to_intern_table(file_path):
         
         # Iterate over each row in the CSV
         for row in reader:
-            # Create a new instance of the Exam_Table model
-            
+            # Create a new instance of the Intern_Table model
             intern = Intern_Table()
             # Set the fields with the data from the CSV
             intern.province = row.get('province')
@@ -125,4 +124,3 @@ def upload_csv_data_to_engage_partners_table(file_path):
             
             # Save the instance to the database
             engage.save()
-

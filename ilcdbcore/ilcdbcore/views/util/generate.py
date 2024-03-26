@@ -1,11 +1,12 @@
 
-from django.shortcuts import render
+from django.shortcuts import redirect
 import pandas as pd
 from django.http import HttpResponse
 from django.db import connection
 from main.models import Intern_Table, Exam_Table, Engage_Partners_Table, Training_Webinars_Table
-from ilcdbcore.views.util.upload_excel import upload_csv_data_to_intern_table, upload_csv_data_to_engage_partners_table, upload_csv_data_to_exam_table, upload_csv_data_to_training_webinars_table
-from datetime import datetime
+from ilcdbcore.views.util.upload_excel import upload_csv_data_to_intern_table
+import pandas as pd
+import tempfile
 
 
 import io
@@ -178,48 +179,44 @@ def export_trainings_and_webinars_table_to_excel(request):
 
 # ------------------------------ Uploads -------------------------- --------------------
 
-def upload_csv_exam(request):
-    if request.method == 'POST':
-        csv_file = request.FILES['csv_file']
-        if csv_file.name.endswith('.csv'):
-            
-            upload_csv_data_to_intern_table(csv_file)
-            
-            c3d2s = Exam_Table.objects.all()
-            return render(request, "2_c3d2/index.html", {"c3d2s": c3d2s})
+def convert_xlsx_to_csv(xlsx_file):
+    # Create a temporary file to store the converted .csv
+    temp_csv_file = tempfile.NamedTemporaryFile(delete=False, suffix='.csv')
+    temp_csv_file.close()
+    
+    # Load the .xlsx file into a pandas DataFrame
+    xlsx_data = pd.read_excel(xlsx_file)
+    
+    # Convert the DataFrame to .csv and save it to the temporary file
+    xlsx_data.to_csv(temp_csv_file.name, index=False)
+    
+    return temp_csv_file.name
 
-        else:
-            return render('/error/') # Redirect to an error page
-    return render(request, 'upload.html')
+
 
 
 def upload_csv_ojt(request):
     if request.method == 'POST':
-        csv_file = request.FILES['csv_file']
-        if csv_file.name.endswith('.csv'):
-            upload_csv_data_to_intern_table(csv_file)
-            return render(request, "3_epmd/1_ojt/index.html")
+        xlsx_file = request.FILES.get('dropzone-file')
+        if xlsx_file and xlsx_file.name.endswith('.xlsx'):
+            # Convert .xlsx to .csv
+            csv_file_path = convert_xlsx_to_csv(xlsx_file)
+            # Process the .csv file
+            upload_csv_data_to_intern_table(csv_file_path)
+            
+            return redirect("epmd_ojt") 
+        
+        elif request.FILES.get('csv_file') and request.FILES['csv_file'].name.endswith('.csv'):
+            # Process the .csv file directly
+            upload_csv_data_to_intern_table(request.FILES['csv_file'])
+            return redirect("epmd_ojt") 
         else:
-            return render('/error/') # Redirect to an error page
-    return render(request, 'upload.html')
+            return render(request, '/error/') # Redirect to an error page
+    return redirect("epmd_ojt") 
 
 
-def upload_csv_engage(request):
-    if request.method == 'POST':
-        csv_file = request.FILES['csv_file']
-        if csv_file.name.endswith('.csv'):
-            upload_csv_data_to_engage_partners_table(csv_file)
-            return render('/success/') # Redirect to a success page
-        else:
-            return render('/error/') # Redirect to an error page
-    return render(request, 'upload.html')
 
-def upload_csv_tmd(request):
-    if request.method == 'POST':
-        csv_file = request.FILES['csv_file']
-        if csv_file.name.endswith('.csv'):
-            upload_csv_data_to_training_webinars_table(csv_file)
-            return render('/success/') # Redirect to a success page
-        else:
-            return render('/error/') # Redirect to an error page
-    return render(request, 'upload.html')
+
+
+
+

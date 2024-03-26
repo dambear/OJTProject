@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
 from django.contrib.auth.decorators import login_required
-
+from datetime import datetime
 from main.models import Exam_Table
 
 @login_required(login_url="/login")
@@ -55,6 +55,12 @@ def add_data_c3d2(request):
         time = request.POST.get("time")
         status = request.POST.get("status")
         remark_or_grade = request.POST.get("remark_or_grade")
+        ilcdbcore_component= request.POST.get("ilcdbcore_component")
+        date_conducted=request.POST.get("date_conducted")
+        type=request.POST.get("type")
+
+        
+        date_conducted_obj = datetime.strptime(date_conducted, "%m/%d/%Y").strftime("%Y-%m-%d")
         
         new_exam = Exam_Table(
                 province=province,
@@ -64,6 +70,9 @@ def add_data_c3d2(request):
                 time=time,
                 status=status,
                 remark_or_grade=remark_or_grade,
+                ilcdbcore_component=ilcdbcore_component,
+                date_conducted=date_conducted_obj,
+                type=type,
                 
             )
 
@@ -87,13 +96,18 @@ def update_data_c3d2(request, c3d2_id):
     if request.method == "POST":
         # Handle form submission to update data
         # Assuming you receive data from a form POST request
-        province = request.POST.get("lgu_m")
+        province = request.POST.get("province")
         name_of_examinee = request.POST.get("name_of_examinee")
         venue_or_school = request.POST.get("venue_or_school")
         gender = request.POST.get("gender")
         time = request.POST.get("time")
         status = request.POST.get("status")
         remark_or_grade = request.POST.get("remark_or_grade")
+        ilcdbcore_component= request.POST.get("ilcdbcore_component")
+        date_conducted= request.POST.get("date_conducted")
+        type= request.POST.get("type")
+
+        date_conducted_obj = datetime.strptime(date_conducted, "%m/%d/%Y").strftime("%Y-%m-%d")
 
         # Update the fields of the retrieved application object
         c3d2.province = province
@@ -103,7 +117,9 @@ def update_data_c3d2(request, c3d2_id):
         c3d2.time = time
         c3d2.status = status
         c3d2.remark_or_grade = remark_or_grade
-        
+        c3d2.ilcdbcore_component = ilcdbcore_component
+        c3d2.date_conducted = date_conducted_obj
+        c3d2.type = type
 
         # Save the updated application object to the database
         c3d2.save()
