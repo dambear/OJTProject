@@ -3,7 +3,7 @@
 {% extends "_base.html" %} {% block content %}
 
 <div class="p-8 items-center justify-center h-auto rounded-xl bg-gray-100">
-  <div class="pl-8 text-2xl font-bold">Trainings and Webinars</div>
+  <div class="pl-8 pb-4 text-2xl font-bold">Trainings and Webinars</div>
   <form
     method="post"
     action="{% url 'add_data_tmd' %}"
@@ -11,7 +11,7 @@
   >
     {% csrf_token %}
 
-    <div class="relative shadow-md px-8 py-4">
+    <div class="relative shadow-md px-8 py-4 border border-gray-300">
       <h4 class="mb-8 text-lg font-semibold text-blue-500">
         Student Information
       </h4>
@@ -81,7 +81,7 @@
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder="Training Track"
               required
-            />
+                />
           </div>
         </div>
         <div class="relative">
@@ -112,6 +112,7 @@
               id="province"
               name="province"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-e-lg border-s-gray-100 w-full p-2.5"
+              required
             >
               <option value="" disabled selected>Select Province</option>
               <option value="Cavite">Cavite</option>
@@ -428,8 +429,8 @@
               name="nga_m"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
-              required
               oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+              required
             />
           </div>
         </div>
@@ -463,8 +464,8 @@
               name="suc_m"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
-              required
               oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+              required
             />
           </div>
         </div>
@@ -498,8 +499,8 @@
               name="lgu_m"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
-              required
               oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+              required
             />
           </div>
         </div>
@@ -533,8 +534,8 @@
               name="others_m"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
-              required
               oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+              required
             />
           </div>
         </div>
@@ -603,8 +604,8 @@
               name="nga_f"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
-              required
               oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+              required
             />
           </div>
         </div>
@@ -638,8 +639,8 @@
               name="suc_f"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
-              required
               oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+              required
             />
           </div>
         </div>
@@ -673,8 +674,8 @@
               name="lgu_f"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
-              required
               oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+              required
             />
           </div>
         </div>
@@ -709,8 +710,8 @@
               name="others_f"
               class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-600 block w-full ps-10 p-2.5"
               placeholder=""
-              required
               oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+              required
             />
           </div>
         </div>
@@ -807,7 +808,6 @@
               type="file"
               accept="image/*,.pdf,.doc,.docx,.xls,.xlsx"
               onchange="validateFileSize(this)"
-              required
             />
             <p id="fileSizeError" style="color: red; display: none">
               File size must be less than 2MB
@@ -828,7 +828,6 @@
               type="file"
               accept="image/*,.pdf,.doc,.docx,.xls,.xlsx"
               onchange="validateFileSize(this)"
-              required
             />
             <p id="fileSizeError" style="color: red; display: none">
               File size must be less than 2MB
@@ -849,7 +848,6 @@
               type="file"
               accept="image/*,.pdf,.doc,.docx,.xls,.xlsx"
               onchange="validateFileSize(this)"
-              required
             />
             <p id="fileSizeError" style="color: red; display: none">
               File size must be less than 2MB
@@ -870,7 +868,6 @@
               type="file"
               accept="image/*"
               onchange="validateFileSize(this)"
-              required
             />
             <p id="fileSizeError" style="color: red; display: none">
               File size must be less than 2MB
@@ -891,7 +888,6 @@
               type="file"
               accept="image/*,.pdf,.doc,.docx,.xls,.xlsx"
               onchange="validateFileSize(this)"
-              required
             />
             <p id="fileSizeError" style="color: red; display: none">
               File size must be less than 2MB
@@ -1028,5 +1024,7 @@
   });
 
 </script>
+
+
 
 {% endblock mainjs %}

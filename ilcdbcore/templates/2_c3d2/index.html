@@ -22,7 +22,6 @@
   new DataTable("#dataTable");
 </script>
 
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const fileInput = document.getElementById("dropzone-file");
@@ -42,8 +41,10 @@
 {% endblock mainjs %} {% block content %}
 
 <div class="items-center justify-center h-auto rounded-xl bg-gray-200">
-  <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
-    <div class="pl-8 pt-4 text-4xl">C3D2</div>
+  <main
+    class="flex-1 overflow-x-hidden overflow-y-auto rounded-xl bg-gray-100 p-4"
+  >
+    <div class="pl-8 pt-4 font-bold text-2xl">C3D2</div>
     <div class="shadow-md px-8 py-4 overflow-x-auto mx-2">
       <table id="dataTable" class="mx-auto w-full">
         <thead class="uppercase text-center">

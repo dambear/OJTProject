@@ -42,7 +42,7 @@
 
 <div class="items-center justify-center h-auto rounded-xl bg-gray-200">
   <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
-    <div class="pl-8 pt-4 text-4xl">Trainings and Webinars</div>
+    <div class="pl-8 pt-4 font-bold text-2xl">Trainings and Webinars</div>
     <div class="shadow-md px-8 py-4 overflow-x-auto mx-2">
       <table id="dataTable" class="mx-auto w-full">
         <thead class="uppercase text-center">
@@ -293,7 +293,7 @@
 
 
 
-<form method="post" action="{% url 'upload_csv_engage'%}" enctype="multipart/form-data" >
+<form method="post" action="{% url 'upload_csv_tmd'%}" enctype="multipart/form-data" >
   {% csrf_token %}
   <div
     id="upload-modal"

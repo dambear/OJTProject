@@ -17,7 +17,7 @@ from .views.util.generate import export_intern_table_to_excel, export_exam_table
 
 from .views.util.cloudinary import  upload_attendance_sheet_file, upload_certificates_issued_file, upload_participants_list_file, upload_group_photo_file, upload_resource_persons_cv_file, upload_recommendation_letter_file, upload_application_form_file, upload_acceptance_letter_file, upload_cv_resume_file, upload_coc_file, upload_interview_form_file, upload_medical_certificate_file, upload_nda_file, upload_timesheet_file, upload_war_file, upload_wfh_arrangement_file, upload_work_assignment_form_file, upload_workplan_form_file
 from .views.limit.limit_view import limit
-from .views.auth.auth import login_page, logout_page, register_page
+from .views.auth.auth import login_page, logout_page, register_page, view_data_register,  add_data_register, update_data_register, delete_data_register
 
 from django.contrib.auth import views as auth_views
 
@@ -36,6 +36,10 @@ urlpatterns = [
     #
     #
     path("register", register_page, name="register"),
+    path("add_data_register/", add_data_register, name="add_data_register"),
+    path("update_data_register/<int:user_id>/", update_data_register, name="update_data_register"),
+    path("view_data_register/<int:user_id>/", view_data_register, name="view_data_register"),
+    path("delete_data_register/<int:user_id>/", delete_data_register, name="delete_data_register"),
     #
     #
     #

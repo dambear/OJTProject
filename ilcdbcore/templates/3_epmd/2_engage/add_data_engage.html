@@ -2,13 +2,13 @@
 
 {% extends "_base.html" %} {% block content %}
 
-<div class="p-8 items-center justify-center h-auto rounded-xl bg-gray-200">
-  <div class="pl-8 mb-6 text-2xl font-bold">Engaged Partners</div>
+<div class="p-8 items-center justify-center h-auto rounded-xl bg-gray-100">
+  <div class="pl-8 mb-6 pb-4 text-2xl font-bold">Engaged Partners</div>
 
   <form method="post" action="{% url 'add_data_engage' %}">
     {% csrf_token %}
 
-    <div class="relative shadow-md px-8 py-4">
+    <div class="relative shadow-md px-8 py-4 border border-gray-300">
       <div class="grid grid-cols-3 gap-4 mb-4">
         <div class="relative">
           <label
@@ -259,7 +259,7 @@
           >
           <div class="flex">
             <label
-              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-gray-50 rounded-s-lg  focus:ring-4 focus:outline-none focus:ring-gray-100"
+              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-gray-50 border borde-gray-200 rounded-s-lg  focus:ring-4 focus:outline-none focus:ring-gray-100"
             >
               <svg
                 class="w-5 h-6 text-blue-500"
@@ -331,7 +331,7 @@
           >
           <div class="flex">
             <label
-              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-gray-50 rounded-s-lg  focus:ring-4 focus:outline-none focus:ring-gray-100"
+              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-gray-50 border border-gray-200 rounded-s-lg  focus:ring-4 focus:outline-none focus:ring-gray-100"
             >
               <svg
                 class="w-4 h-4 text-blue-500"
@@ -383,15 +383,15 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="flex-col flex items-center mt-6">
-      <button
-        type="submit"
-        class="btnSub btn-primary btn-lg text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-base px-8 py-2 .5 text-center"
-      >
-        Submit
-      </button>
-    </div>
+      <div class="flex-col flex items-center mt-6">
+        <button
+          type="submit"
+          class="btnSub btn-primary btn-lg text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-base px-8 py-2 .5 text-center"
+        >
+          Submit
+        </button>
+      </div>
+    </div>  
   </form>
 </div>
 

@@ -41,8 +41,10 @@
 {% endblock mainjs %} {% block content %}
 
 <div class="items-center justify-center h-auto rounded-xl bg-gray-200">
-  <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
-    <div class="pl-8 pt-4 text-4xl">OJT Trainees</div>
+  <main
+    class="flex-1 overflow-x-hidden overflow-y-auto rounded-xl bg-gray-100 p-4"
+  >
+    <div class="pl-8 pt-4 font-bold text-2xl">OJT Trainees</div>
     <div class="shadow-md px-8 py-4 overflow-x-auto mx-2">
       <table id="dataTable" class="mx-auto w-full">
         <thead class="uppercase text-center">
@@ -74,7 +76,7 @@
             <td>{{ ojt.student_name }}</td>
             <td>{{ ojt.ojt_duration }}</td>
 
-            <td data-label="Actions" class="flex justify-between">
+            <td data-label="Actions" class="flex justify-center">
               <div class="action-buttons">
                 <a href="{% url 'view_data_ojt' ojt.id %}">
                   <button
@@ -293,7 +295,11 @@
 
 <!-- Upload Modal -->
 
-<form method="post" action="{% url 'upload_csv_ojt'%}" enctype="multipart/form-data" >
+<form
+  method="post"
+  action="{% url 'upload_csv_ojt'%}"
+  enctype="multipart/form-data"
+>
   {% csrf_token %}
   <div
     id="upload-modal"
@@ -358,7 +364,12 @@
                   CSV (MAX. 2MB)
                 </p>
               </div>
-              <input id="dropzone-file" name="dropzone-file" type="file" class="hidden" />
+              <input
+                id="dropzone-file"
+                name="dropzone-file"
+                type="file"
+                class="hidden"
+              />
             </label>
           </div>
           <button

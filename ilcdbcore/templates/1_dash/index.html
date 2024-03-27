@@ -1,156 +1,168 @@
 <!-- templates/index.html -->
 
 {% extends "_base.html" %} {% block content %}
-<div class="text-2xl font-semibold text-black mt-2 mb-2">
-  <h1>Dashboard</h1>
-</div>
-<!-- <div
-  class="p-4 border-2 border-gray-200 border-solid rounded-lg dark:border-gray-700 "
-> -->
 
 <div
-  class="flex-col p-6 mb-6 border border-gray-300 rounded-lg shadow bg-gradient-to-r from-cyan-500 to-blue-500"
+  class=""
 >
-  <!--jskkdk-->
-  <div class="text-2xl font-semibold text-white mb-6 mt">
-    <p>Exams</p>
-  </div>
-  <!--      Exam      -->
-  <div class="grid grid-cols-5 gap-4 mb-4">
-    <div class="flex-col h-auto rounded bg-gray-50 font-medium shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg text-left">Cavite</h1>
-      <div class="" id="donut-chart-exam-cavite"></div>
-    </div>
-
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Laguna</h1>
-      <div class="" id="donut-chart-exam-laguna"></div>
-    </div>
-
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Batangas</h1>
-      <div class="" id="donut-chart-exam-batangas"></div>
-    </div>
-
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Rizal</h1>
-      <div class="" id="donut-chart-exam-rizal"></div>
-    </div>
-
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Quezon</h1>
-      <div class="" id="donut-chart-exam-quezon"></div>
-    </div>
-  </div>
-</div>
-<!-- end EXAM -->
-
-<!--      Engage Partners      -->
-<div
-  class="flex-col p-6 mb-6 border-gray-300 rounded-lg shadow bg-gradient-to-r from-cyan-500 to-blue-500"
->
-  <div class="text-2xl font-semibold text-white mb-6">
-    <p>Engaged Partners</p>
+  <div class="text-2xl font-bold mb-4">
+    <h1>Dashboard</h1>
   </div>
 
-  <div class="grid grid-cols-5 gap-4 mb-10">
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Cavite</h1>
-      <div class="" id="donut-chart-engage-cavite"></div>
-    </div>
-
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Laguna</h1>
-      <div class="" id="donut-chart-engage-laguna"></div>
-    </div>
-
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Batangas</h1>
-      <div class="" id="donut-chart-engage-batangas"></div>
-    </div>
-
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Rizal</h1>
-      <div class="" id="donut-chart-engage-rizal"></div>
-    </div>
-
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Quezon</h1>
-      <div class="" id="donut-chart-engage-quezon"></div>
-    </div>
-  </div>
-
-  <!--jskkdk-->
-  <div class="text-2xl font-semibold text-white mb-6">
-    <p>OJT Trainees</p>
-  </div>
-  <!--      OJT Trainees      -->
-  <div class="grid grid-cols-5 gap-4 mb-4">
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Cavite</h1>
-      <div class="" id="donut-chart-ojt-cavite"></div>
-    </div>
-
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Laguna</h1>
-      <div class="" id="donut-chart-ojt-laguna"></div>
-    </div>
-
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Batangas</h1>
-      <div class="" id="donut-chart-ojt-batangas"></div>
-    </div>
-
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Rizal</h1>
-      <div class="" id="donut-chart-ojt-rizal"></div>
-    </div>
-
-    <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
-      <h1 class="pt-2 pl-3 text-lg font-medium text-left">Quezon</h1>
-      <div class="" id="donut-chart-ojt-quezon"></div>
-    </div>
-  </div>
-</div>
-
-<div class="flex-col">
-  <!--jskkdk-->
   <div
-    class="flex-col p-6 mb-6 border-gray-300 rounded-lg shadow bg-gradient-to-r from-cyan-500 to-blue-500"
+    class="flex-col p-6 mb-6 border border-gray-300 rounded-lg shadow bg-gradient-to-r from-cyan-500 to-blue-500"
   >
-    <div class="text-2xl font-semibold text-white mb-6">
-      <p>Trainings and Webinars</p>
+    <!--jskkdk-->
+    <div class="text-2xl font-semibold text-white mb-6 mt">
+      <p>Exams</p>
     </div>
-    <!--      Trainings and Webinars     -->
-    <div class="grid grid-cols-5 gap-4 mb-4">
-      <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
+    <!--      Exam      -->
+    <div class="grid grid-cols-5 gap-4 mb-4 rounded-xl">
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Cavite</h1>
+        <div class="" id="donut-chart-exam-cavite"></div>
+      </div>
+
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Laguna</h1>
+        <div class="" id="donut-chart-exam-laguna"></div>
+      </div>
+
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Batangas</h1>
+        <div class="" id="donut-chart-exam-batangas"></div>
+      </div>
+
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Rizal</h1>
+        <div class="" id="donut-chart-exam-rizal"></div>
+      </div>
+
+      <div class="flex-col h-auto bg-gray-50 rounded-xl pb-2 shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Quezon</h1>
+        <div class="" id="donut-chart-exam-quezon"></div>
+      </div>
+    </div>
+  </div>
+  <!-- end EXAM -->
+
+  <!-- Start of Ojt -->
+  <div
+    class="flex-col p-6 mb-6 border border-gray-300 rounded-lg shadow bg-gradient-to-r from-cyan-500 to-blue-500"
+  >
+    <!--jskkdk-->
+    <div class="text-2xl font-semibold text-white mb-6 mt">
+      <p>OJT Trainees</p>
+    </div>
+    <!--      OJT Trainees      -->
+    <div class="grid grid-cols-5 gap-4 mb-4 rounded-xl">
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Cavite</h1>
+        <div class="" id="donut-chart-ojt-cavite"></div>
+      </div>
+
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Laguna</h1>
+        <div class="" id="donut-chart-ojt-laguna"></div>
+      </div>
+
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Batangas</h1>
+        <div class="" id="donut-chart-ojt-batangas"></div>
+      </div>
+
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Rizal</h1>
+        <div class="" id="donut-chart-ojt-rizal"></div>
+      </div>
+
+      <div class="flex-col h-auto bg-gray-50 rounded-xl pb-2 shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Quezon</h1>
+        <div class="" id="donut-chart-ojt-quezon"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end ojt -->
+
+  <!-- Start of Engage -->
+  <div
+    class="flex-col p-6 mb-6 border border-gray-300 rounded-lg shadow bg-gradient-to-r from-cyan-500 to-blue-500"
+  >
+    <!--jskkdk-->
+    <div class="text-2xl font-semibold text-white mb-6 mt">
+      <p>Engaged Partners</p>
+    </div>
+    <!--      Engage Partners     -->
+    <div class="grid grid-cols-5 gap-4 mb-4 rounded-xl">
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Cavite</h1>
+        <div class="" id="donut-chart-engage-cavite"></div>
+      </div>
+
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Laguna</h1>
+        <div class="" id="donut-chart-engage-laguna"></div>
+      </div>
+
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Batangas</h1>
+        <div class="" id="donut-chart-engage-batangas"></div>
+      </div>
+
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Rizal</h1>
+        <div class="" id="donut-chart-engage-rizal"></div>
+      </div>
+
+      <div class="flex-col h-auto bg-gray-50 rounded-xl pb-2 shadow-xl">
+        <h1 class="pt-2 pl-3 text-lg font-medium text-left">Quezon</h1>
+        <div class="" id="donut-chart-engage-quezon"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end Engage -->
+
+  <!-- Start of Tmd -->
+  <div
+    class="flex-col p-6 mb-6 border border-gray-300 rounded-lg shadow bg-gradient-to-r from-cyan-500 to-blue-500"
+  >
+    <!--jskkdk-->
+    <div class="text-2xl font-semibold text-white mb-6 mt">
+      <p>Trainings/Webinars</p>
+    </div>
+    <!--      Trainings/Webinars      -->
+    <div class="grid grid-cols-5 gap-4 mb-4 rounded-xl">
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
         <h1 class="pt-2 pl-3 text-lg font-medium text-left">Cavite</h1>
         <div class="" id="donut-chart-tmd-cavite"></div>
       </div>
 
-      <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
         <h1 class="pt-2 pl-3 text-lg font-medium text-left">Laguna</h1>
         <div class="" id="donut-chart-tmd-laguna"></div>
       </div>
 
-      <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
         <h1 class="pt-2 pl-3 text-lg font-medium text-left">Batangas</h1>
         <div class="" id="donut-chart-tmd-batangas"></div>
       </div>
 
-      <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
+      <div class="flex-col h-auto bg-gray-50 rounded-xl shadow-xl">
         <h1 class="pt-2 pl-3 text-lg font-medium text-left">Rizal</h1>
         <div class="" id="donut-chart-tmd-rizal"></div>
       </div>
 
-      <div class="flex-col h-auto rounded bg-gray-50 shadow-xl">
+      <div class="flex-col h-auto bg-gray-50 rounded-xl pb-2 shadow-xl">
         <h1 class="pt-2 pl-3 text-lg font-medium text-left">Quezon</h1>
         <div class="" id="donut-chart-tmd-quezon"></div>
       </div>
     </div>
   </div>
-  <!-- </div> -->
 </div>
+<!-- end Tmd -->
+
 {% endblock content %} {% block mainjs %}
 <!--    Start of Exam Script           -->
 

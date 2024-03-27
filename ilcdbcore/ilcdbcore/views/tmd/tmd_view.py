@@ -79,9 +79,11 @@ def update_data_tmd(request, tmd_id):
         lgu_f = request.POST.get("lgu_f")
         others_m = request.POST.get("others_m")
         others_f = request.POST.get("others_f")
-        total_m = request.POST.get("total_m")
-        total_f = request.POST.get("total_f")
-        total_participants = request.POST.get("total_participants")
+       
+        total_m = int(nga_m) + int(suc_m) + int(lgu_m) + int(others_m)
+        total_f =  int(nga_f) + int(suc_f) + int(lgu_f) + int(others_f)
+        total_participants =  int(total_m) + int(total_f)
+        
        
         implementation_mode = request.POST.get("implementation_mode")
         
@@ -168,14 +170,16 @@ def add_data_tmd(request):
         lgu_f = request.POST.get("lgu_f")
         others_m = request.POST.get("others_m")
         others_f = request.POST.get("others_f")
-        total_m = request.POST.get("total_m")
-        total_f = request.POST.get("total_f")
-        total_participants = request.POST.get("total_participants")
+        
         implementation_mode = request.POST.get("implementation_mode")
         resource_persons = request.POST.get("resource_persons")
         course_officers = request.POST.get("course_officers")
         course_officers_email = request.POST.get("course_officers_email")
         remarks = request.POST.get("remarks")
+        
+        total_m = int(nga_m) + int(suc_m) + int(lgu_m) + int(others_m)
+        total_f =  int(nga_f) + int(suc_f) + int(lgu_f) + int(others_f)
+        total_participants =  int(total_m) + int(total_f)
         
         
         participants_list = request.FILES['participants_list']
